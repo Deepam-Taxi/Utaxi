@@ -1,0 +1,18 @@
+﻿
+<script src="https://apis.google.com/js/platform.js?onload=renderOptIn" async defer></script>
+
+<script type="text/javascript">
+    window.renderOptIn = function () {
+        window.gapi.load('surveyoptin', function () {
+            window.gapi.surveyoptin.render(
+                {
+                    // REQUIRED FIELDS
+                    "merchant_id": 117201211,
+                    "order_id": "10",
+                    "email": "utaxiindia@gmail.com",
+                    "delivery_country": "IN",
+                    "estimated_delivery_date": "2019-05-04",
+                });
+        });
+    }
+</script>

@@ -1,0 +1,635 @@
+﻿﻿<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <title>
+        @ViewBag.Title
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow" />
+    <meta name="description" content="@ViewBag.Description" />
+    <meta name="keywords" content="@ViewBag.Keywords" />
+    <meta name="google-site-verification" content="YjMSxJcF19Pz3R99oOVICxufyYFuH8zXhRt97-bkKnY" />
+    <meta property="og:type" content="business.business">
+    <meta property="og:title" content="Airport Taxi | Cabs in Bangalore | Cheapest OutStation Cab in Bnaglore ">
+    <meta property="og:description" content="Airport Taxi in Bangalore - Rs 474/- Pick-Up, Rs 674/- Drop, Cheapest OutStation taxi rates.Indica Rs.7/-Logan/Etios/Dzire Rs.9">
+    <meta property="og:url" content="https://utaxi.in">
+    <meta property="business:contact_data:street_address" content="No. 28, 7th Main, ">
+    <meta property="business:contact_data:locality" content="N.S. Palya, Near Cafe Coffee Day, BTM layout 2nd Stage, ">
+    <meta property="business:contact_data:region" content="Bengaluru, Karnataka ">
+    <meta property="business:contact_data:postal_code" content="560076">
+    <meta property="business:contact_data:country_name" content="India">
+    <meta property="business:contact_data:email" content="utaxiindia@gmail.com">
+    <meta property="business:contact_data:phone_number" content="9901160735">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Airport Taxi | Cabs in Bangalore | Rs 474 Pickup | Rs 674 Drop">
+    <meta name="twitter:description" content="Airport Taxi in Bangalore - Rs 474/- Pick-Up, Rs 674/- Drop, Cheapest OutStation Cabs rates.Indica Rs.7/-Logan/Etios/Dzire Rs.9">
+
+    <link rel="icon" type="image/png" href="/Images/Utaxi-Semi-Logo.ico" />
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/fontawesome")
+    @Styles.Render("~/Content/jqueryUI")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryUI")
+    @*@Scripts.Render("~/bundles/popper")*@
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/bootbox")
+    @RenderSection("scripts", required: false)
+    <style>
+        .navlink {
+            color: white !important;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .carousel-item img {
+            width: 100% !important;
+        }
+
+        .modal-body img {
+            width: 100% !important;
+        }
+
+
+        #mixedSlider {
+            position: relative;
+        }
+
+            #mixedSlider .MS-content {
+                white-space: nowrap;
+                overflow: hidden;
+                margin: 0 5%;
+            }
+
+                #mixedSlider .MS-content .item {
+                    display: inline-block;
+                    width: 33.3333%;
+                    position: relative;
+                    vertical-align: top;
+                    overflow: hidden;
+                    height: 100%;
+                    white-space: normal;
+                    padding: 0 10px;
+                }
+
+
+                    #mixedSlider .MS-content .item .imgTitle {
+                        position: relative;
+                    }
+
+                        #mixedSlider .MS-content .item .imgTitle .blogTitle {
+                            margin: 0;
+                            text-align: left;
+                            letter-spacing: 2px;
+                            color: #252525;
+                            font-style: italic;
+                            position: absolute;
+                            background-color: rgba(255, 255, 255, 0.5);
+                            width: 100%;
+                            bottom: 0;
+                            font-weight: bold;
+                            padding: 0 0 2px 10px;
+                        }
+
+                        #mixedSlider .MS-content .item .imgTitle img {
+                            height: auto;
+                            width: 100%;
+                        }
+
+                    #mixedSlider .MS-content .item p {
+                        font-size: 16px;
+                        margin: 2px 10px 0 5px;
+                        text-indent: 15px;
+                    }
+
+                    #mixedSlider .MS-content .item a {
+                        float: right;
+                        margin: 0 20px 0 0;
+                        font-size: 16px;
+                        font-style: italic;
+                        color: rgba(173, 0, 0, 0.82);
+                        font-weight: bold;
+                        letter-spacing: 1px;
+                        transition: linear 0.1s;
+                    }
+
+                        #mixedSlider .MS-content .item a:hover {
+                            text-shadow: 0 0 1px grey;
+                        }
+
+            #mixedSlider .MS-controls button {
+                position: absolute;
+                border: none;
+                background-color: transparent;
+                outline: 0;
+                font-size: 50px;
+                top: 95px;
+                color: rgba(0, 0, 0, 0.4);
+                transition: 0.15s linear;
+            }
+
+                #mixedSlider .MS-controls button:hover {
+                    color: rgba(0, 0, 0, 0.8);
+                }
+
+
+
+            #mixedSlider .MS-controls .MS-left {
+                left: 0px;
+            }
+
+
+
+            #mixedSlider .MS-controls .MS-right {
+                right: 0px;
+            }
+
+
+        #basicSlider {
+            position: relative;
+        }
+
+            #basicSlider .MS-content {
+                white-space: nowrap;
+                overflow: hidden;
+                margin: 0 2%;
+                height: 50px;
+            }
+
+                #basicSlider .MS-content .item {
+                    display: inline-block;
+                    width: 20%;
+                    position: relative;
+                    vertical-align: top;
+                    overflow: hidden;
+                    height: 100%;
+                    white-space: normal;
+                    line-height: 50px;
+                    vertical-align: middle;
+                }
+
+
+                    #basicSlider .MS-content .item a {
+                        line-height: 50px;
+                        vertical-align: middle;
+                    }
+
+            #basicSlider .MS-controls button {
+                position: absolute;
+            }
+
+            #basicSlider .MS-controls .MS-left {
+                top: 35px;
+                left: 10px;
+            }
+
+            #basicSlider .MS-controls .MS-right {
+                top: 35px;
+                right: 10px;
+            }
+    </style>
+    <script>
+        window.renderOptIn = function () {
+            window.gapi.load('surveyoptin', function () {
+                window.gapi.surveyoptin.render(
+                    {
+                        // REQUIRED FIELDS
+                        "merchant_id": 117201211,
+                        "order_id": "ORDER_ID",
+                        "email": "CUSTOMER_EMAIL",
+                        "delivery_country": "COUNTRY_CODE",
+                        "estimated_delivery_date": "YYYY-MM-DD",
+
+                        // OPTIONAL FIELDS
+                        "products": [{ "gtin": "GTIN1" }, { "gtin": "GTIN2" }]
+                    });
+            });
+        }
+    </script>
+    <script src="/scripts/multislider.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('#mixedSlider').multislider({
+                duration: 750,
+                interval: 3000
+            });
+        });
+
+    </script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-134213901-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-134213901-1');
+        ga('send', 'pageview', '/cheapesttaxiinbangalore/JayanagartoAirporttransfer/AirportPickup');
+        ga('myTracker.set', 'page', '/cheapesttaxiinbangalore/JayanagartoAirporttransfer/AirportPickup');
+    </script>
+
+    <!-- Google Tag Manager -->
+    <script>
+    (function (w, d, s, l, i) {
+        w[l] = w[l] || []; w[l].push({
+            'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+        }); var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-K5N2WF2');</script>
+    <!-- End Google Tag Manager -->
+
+
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K5N2WF2"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <header>
+        <!-- Fixed navbar -->
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <a class="navbar-brand" href="~/Home/Index">
+                <img src="~/Images/utaxi-title-logos1.png" alt="Airport Taxi | Cabs in Bangalore | Rs 474 Pickup | Rs 674 Drop" />
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link navlink" href="https://www.utaxi.in/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link navlink" href="https://www.utaxi.in/Home/Packages">Holiday packages</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link navlink" href="https://www.utaxi.in/bangalore/outstation-taxi/bangalore-outstation-cabs.aspx">Outstation Tariffs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link navlink" href="https://www.utaxi.in/bangalore/airport-taxi/bangalore-airport-taxi-offers.aspx">Airport Taxi Offers</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link navlink" href="https://blog.utaxi.in/">Blog</a>
+                    </li>
+
+
+                </ul>
+                @*<form class="form-inline mt-2 mt-md-0">
+
+                    </form>*@
+            </div>
+            <div style="margin: 10px;">
+                <a href="https://www.facebook.com/utaxi123">
+                    <img src="~/Images/facebook-3-32.png" alt="Airport Taxi | Cabs in Bangalore | Rs 325 Pickup |Rs525 Drop" />
+                </a>
+            </div>
+            <div style="margin: 10px;">
+                <a href="https://twitter.com/Utaxi3">
+                    <img src="~/Images/twitter-3-32.png" alt="Airport Taxi | Cabs in Bangalore | Rs 325 Pickup |Rs525 Drop" />
+                </a>
+            </div>
+            <div class="boldFields" style="font-size: 17px; color: white;">
+                <a href="tel:08046844684" style="color:#fff;">Call 080 4684 4684</a>
+            </div>
+        </nav>
+    </header>
+    <main role="main" class="container">
+        @RenderBody()
+        <input type="hidden" id="hdnWebApiURL" value='@System.Configuration.ConfigurationManager.AppSettings["webApIURL"]' />
+    </main>
+    <footer class="footer">
+        <div class="container" style="margin-bottom: 10px;">
+            <div class="row">
+                <div id="mixedSlider">
+                    <div class="MS-content">
+                        <div class="item">
+                            <div class="imgTitle">
+                                <img class="imgPackages" src="~/Images/bangalore-darshan-package-from-bangalore-price--all-inclusive--except-toll-&-parking-.png" alt="cab hire in bangalore" />
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="imgTitle">
+                                <img class="imgPackages" src="~/Images/chikka-tirupati-and-kotilingeshwara-1-day-fix-package-from-bangalore-price--all-inclusive--except-toll-&-parking-.png" alt="cheapest cab service in bangalore" />
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="imgTitle">
+                                <img class="imgPackages" src="~/Images/coorg-2-day-fix-package-from-bangalore-price--all-inclusive--except-toll-&-parking-.png" alt="innova cabs in bangalore" />
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="imgTitle">
+                                <a href="/cheapestholidaypackage/weekendgetaway/Hogenakkalpackagetour/bestplaceinhogenakkalfalls">
+                                    <img class="imgPackages" src="~/Images/hogenkkal-falls-1-day-package-from-bangalore-price--all-inclusive--except-toll-&-parking-.png" alt="cabs in bangalore airport" />
+                                </a>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="imgTitle">
+                                <a href="/cheapestholidaypackage/weekendgetaway/InnovativeFilmCityBangalorePackageTour/bestplaceinInnovativefilmcityBangalore">
+                                    <img class="imgPackages" src="~/Images/innovative-film-city--full-day-fix-ed-package-from-bangalore-price--all-inclusive--except-toll-&-parking-.png" alt="daily cab services in bangalore" />
+                                </a>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="imgTitle">
+                                <a href="/cheapestholidaypackage/weekendgetaway/mysore1daypackage/bestplaceinmysore">
+                                    <img class="imgPackages" src="~/Images/mysore-1-day-Package-from-Bangalore-Price--all-inclusive--except-toll-&-parking-.png" alt="cheapest cab service in bangalore for airport" />
+                                </a>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="imgTitle">
+                                <a href="/cheapestholidaypackage/weekendgetaway/Nandihillspackage/bestplaceinnandihills"><img class="imgPackages" src="~/Images/nandi-hills-package-from-bangalore-price--all-inclusive--except-toll-&-parking-.png" alt="cab hire in bangalore" /></a>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="imgTitle">
+                                <a href="/cheapestholidaypackage/weekendgetaway/OotyandcoonoorPackageTour/bestplaceinOotyandCoonoor"><img class="imgPackages" src="~/Images/ooty-and-coonoor-3-day-2-night-fix-package-from-bangalore-price--all-inclusive--except-toll-&-parking-.png" alt="taxi service in bangalore" /></a>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="imgTitle">
+                                <a href="/cheapestholidaypackage/weekendgetaway/shivanasamudrawaterfallspackagetour/bestplaceinshivanasamudrawaterfalls">
+                                    <img class="imgPackages" src="~/Images/shivanasamudra-and-talakadu-full-day-fix-package-from-bangalore-price--all-inclusive--except-toll-&-parking-.png" alt="outstation taxi service in bangalore" />
+                                </a>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="imgTitle">
+                                <a href="/cheapestholidaypackage/weekendgetaway/Wayanadpackagetour/bestplaceinWayanad">
+                                    <img class="imgPackages" src="~/Images/Wayanad-3-Day-2-Night-Fix-package-from-bangalore-price--all-inclusive--except-toll-&-parking-.png" alt="call taxi in bangalore" />
+                                </a>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="imgTitle">
+                                <a href="/cheapestholidaypackage/weekendgetaway/wonderlapackagetour/bestplaceinwonderla">
+                                    <img class="imgPackages" src="~/Images/wonder-la--1-day-fix-ed-ackage-from-bangalore-price--all-inclusive--except-toll-&-parking-.png" alt="taxi in bangalore airport" />
+                                </a>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="imgTitle">
+                                <a href="/cheapestholidaypackage/weekendgetaway/coorgpackagetour/bestplaceincoorg"><img class="imgPackages" src="~/Images/coorg-2-day-fix-package-from-bangalore-price--all-inclusive--except-toll-&-parking-.png" alt="best taxi service in bangalore" /></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="MS-controls">
+                        <button class="MS-left"><i class="fa fa-angle-left" aria-hidden="true"></i></button>
+                        <button class="MS-right"><i class="fa fa-angle-right" aria-hidden="true"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="card-header boldFields">Popular destinations</div>
+                        <div class="card-body">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <h6><a href="https://www.utaxi.in/bangalore/outstation-taxi/bangalore-outstation-cabs.aspx">Bangalore to Coimbatore</a></h6>
+                                </li>
+                                <li class="list-group-item">
+                                    <h6><a href="https://www.utaxi.in/bangalore/outstation-taxi/bangalore-outstation-cabs.aspx">Bangalore to Chennai</a></h6>
+                                </li>
+
+                                <li class="list-group-item">
+                                    <h6><a href="https://www.utaxi.in/bangalore/outstation-taxi/bangalore-outstation-cabs.aspx">Bangalore to Coorg</a></h6>
+                                </li>
+                                <li class="list-group-item">
+                                    <h6><a href="https://www.utaxi.in/bangalore/outstation-taxi/bangalore-outstation-cabs.aspx">Bangalore to Mysore</a></h6>
+                                </li>
+                                <li class="list-group-item">
+                                    <h6><a href="https://www.utaxi.in/bangalore/outstation-taxi/bangalore-outstation-cabs.aspx">Bangalore to Ooty</a></h6>
+                                </li>
+
+                                <li class="list-group-item">
+                                    <h6><a href="https://www.utaxi.in/bangalore/outstation-taxi/bangalore-outstation-cabs.aspx">Bangalore to Puducherry</a></h6>
+                                </li>
+                                <li class="list-group-item">
+                                    <h6><a href="https://www.utaxi.in/bangalore/outstation-taxi/bangalore-outstation-cabs.aspx">Bangalore to  Tiruati</a></h6>
+                                </li>
+                                <li class="list-group-item">
+                                    <h6><a href="https://www.utaxi.in/bangalore/outstation-taxi/bangalore-outstation-cabs.aspx">Bangalore to Vellore</a></h6>
+                                </li>
+
+                                <li class="list-group-item">
+                                    <h6>
+                                        <a href="https://www.utaxi.in/bangalore/outstation-taxi/bangalore-outstation-cabs.aspx">Marathahalli  To Airport Drop</a>
+                                    </h6>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="card-header boldFields">24/7 Services</div>
+                        <div class="card-body">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <h6><a href="/cheapesttaxiinbangalore/BanashankaritoAirporttransfer/AirportPickup">Banashankari To Airport</a></h6>
+                                </li>
+                                <li class="list-group-item">
+                                    <h6><a href="/cheapesttaxiinbangalore/banaswaditoAirporttransfer/AirportPickup">Banaswadi To Airport</a></h6>
+                                </li>
+                                <li class="list-group-item">
+                                    <h6><a href="/cheapesttaxiinbangalore/BTMLayouttoAirporttransfer/AirportPickup">BTM Layout To Airport</a></h6>
+                                </li>
+                                <li class="list-group-item">
+                                    <h6><a href="/cheapesttaxiinbangalore/frazertowntoAirporttransfer/AirportPickup">Frazer Town To Airport</a></h6>
+                                </li>
+                                <li class="list-group-item">
+                                    <h6><a href="/cheapesttaxiinbangalore/JalahallitoAirporttransfer/AirportPickup">Jalahalli To Airport</a></h6>
+                                </li>
+                                <li class="list-group-item">
+                                    <h6>
+                                        <a href="/cheapesttaxiinbangalore/JPNagartoAirporttransfer/AirportPickup">JP Nagar To Airport</a>
+                                    </h6>
+                                </li>
+
+                                <li class="list-group-item">
+                                    <h6>
+                                        <a href="/cheapesttaxiinbangalore/JayanagartoAirporttransfer/AirportPickup">Jayanagar To Airport</a>
+                                    </h6>
+                                </li>
+                                <li class="list-group-item">
+                                    <h6>
+                                        <a href="/cheapesttaxiinbangalore/KrishnarajapuramtoAirporttransfer/AirportPickup">Krishnarajapuram To Airport</a>
+                                    </h6>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="card-header boldFields">24/7 Services</div>
+                        <div class="card-body">
+                            <ul class="list-group list-group-flush">
+
+                                <li class="list-group-item">
+                                    <h6>
+                                        <a href="/cheapesttaxiinbangalore/MalleswaramtoAirporttransfer/AirportPickup">Malleswaram To Airport</a>
+                                    </h6>
+                                </li>
+                                <li class="list-group-item">
+                                    <h6>
+                                        <a href="/cheapesttaxiinbangalore/MarathahallitoAirporttransfer/AirportPickup">Marathahalli To Airport</a>
+                                    </h6>
+                                </li>
+                                <li class="list-group-item">
+                                    <h6>
+                                        <a href="/cheapesttaxiinbangalore/MGRoadtoAirporttransfer/AirportPickup">MG Road To Airport</a>
+                                    </h6>
+                                </li>
+                                <li class="list-group-item">
+                                    <h6>
+                                        <a href="/cheapesttaxiinbangalore/PeenyatoAirporttransfer/AirportPickup">Peenya To Airport</a>
+                                    </h6>
+                                </li>
+                                <li class="list-group-item">
+                                    <h6>
+                                        <a href="/cheapesttaxiinbangalore/RajajinagartoAirporttransfer/AirportPickup">Rajaji Nagar To Airport</a>
+                                    </h6>
+                                </li>
+
+                                <li class="list-group-item">
+                                    <h6>
+                                        <a href="/cheapesttaxiinbangalore/VijayaNagartoAirporttransfer/AirportPickup">Vijaya Nagar To Airport</a>
+
+                                    </h6>
+                                </li>
+                                <li class="list-group-item">
+                                    <h6>
+                                        <a href="/cheapesttaxiinbangalore/WhitefieldtoAirporttransfer/AirportPickup">Whitefield To Airport</a>
+                                    </h6>
+                                </li>
+
+
+                                <li class="list-group-item">
+                                    <h6>
+                                        <a href="/cheapesttaxiinbangalore/YelahankatoAirporttransfer/AirportPickup">Yelahanka To Airport</a>
+                                    </h6>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="card-header boldFields">Popular Services</div>
+                        <div class="card-body">
+                            <ul class="list-group list-group-flush">
+
+
+                                <li class="list-group-item">
+                                    <h6><a href="/Home/Index">Bangalore City Cab Service</a></h6>
+                                </li>
+                                <li class="list-group-item">
+                                    <h6><a href="/Home/Index">Bangalore Airport Cab Service</a></h6>
+
+                                </li>
+                                <li class="list-group-item">
+                                    <h6><a href="/Home/Index">Bangalore Local Cabs for Hire</a></h6>
+                                </li>
+                                <li class="list-group-item">
+                                    <h6><a href="/Home/Index">Bangalore Outstation Cab</a></h6>
+                                </li>
+                                <li class="list-group-item">
+                                    <h6><a href="/Home/Index">Bangalore Local Package </a></h6>
+                                </li>
+                                <li class="list-group-item">
+                                    <h6><a href="/Home/Index">Bangalore Point to Point </a></h6>
+                                </li>
+                                <li class="list-group-item">
+                                    <h6><a href="/Home/Index">Bangalore Local Cabs for Hire</a></h6>
+                                </li>
+                                <li class="list-group-item">
+                                    <h6><a href="/Home/Index">Bangalore Taxi Services</a></h6>
+                                </li>
+
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="row fullWidth" style="background-color: #000;">
+
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4" style="padding: 20px;color:#fff;">
+
+                        <ul class="w3ls-footer-bottom-list" style="color:#fff; list-style: none;">
+                            <li style="font-size: 20px;font-weight: bold;">GET IN TOUCH</li>
+                            <li><a href="/About.html" style="color: #ffffff;">About Utaxi</a></li>
+                            <li><a href="/Services.html" style="color: #ffffff;">Services</a></li>
+                            <li> <a href="/contactus.html" style="color: #ffffff;">Contact Us </a></li>
+                            <li> <a href="/sitemap.html" style="color: #ffffff;">HTML Sitemap </a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-4" style="padding: 20px;color: #fff;">
+
+
+                        <ul class="w3ls-footer-bottom-list" style="color:#fff;list-style: none;">
+                            <li style="font-size: 20px;font-weight: bold;">OUR LOCATION</li>
+                            <li> <i class="fa fa-map-marker" aria-hidden="true"></i> #26 6th main, 18th Cross Rd, NS Palya, Stage 2, Bengaluru, Karnataka 560076 </li>
+                            <li> <i class="fa fa-envelope-o" aria-hidden="true"></i>  <a href="mailto:info@utaxi.in" style="color: #ffffff;"> info@utaxi.in</a> </li>
+                            <li> <i class="fa fa-phone" aria-hidden="true"></i>  <a href="tel:08046844684" style="color: #ffffff;">Call 080 4684 4684</a>     </li>
+                            <li> <i class="fa fa-globe" aria-hidden="true"></i>  <a href="https://www.utaxi.in" style="color: #ffffff;">www.utaxi.in</a> </li>
+                            <li> <i class="fa fa-clock-o" aria-hidden="true"></i>  Office Time  : 24/7</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4" style="padding: 20px;color: #fff;">
+
+
+                        <ul class="w3ls-footer-bottom-list" style="list-style: none;color: #fff;">
+                            <li style="font-size: 20px;font-weight: bold;">OUR SERVICES</li>
+                            <li> <a href="/Home/Index" style="color: #ffffff;">Airport Transfer </a></li>
+                            <li> <a href="/Home/Index" style="color: #ffffff;">Local Drop</a></li>
+                            <li><a href="/Home/Index" style="color: #ffffff;">Airport Pickup</a></li>
+                            <li><a href="/Home/Index" style="color: #ffffff;">Local Package Outstation</a></li>
+                            <li><a href="/Home/Index" style="color: #ffffff;">Holiday Package</a></li>
+                        </ul>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-12" style="text-align: center;
+    color: #0a0a0a;
+    background-color: #ffa500;
+    padding: 10px;
+    font-weight: bold;">
+                <p>© 2019 Utaxi. All Rights Reserved Powered by Utaxi.in </p>
+            </div>
+
+
+        </div>
+    </footer>
+</body>
+</html>

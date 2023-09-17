@@ -1,0 +1,864 @@
+﻿
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]>          <html class="ie ie8"> <![endif]-->
+<!--[if IE 9]>          <html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html>
+<!--<![endif]-->
+<head>
+    <!-- Page Title -->
+    <title>
+        Book Airport Pickup @@ Rs.474/- No toll charges | Taxi in Bangalore
+    </title>
+
+    <!-- Meta Tags -->
+    <meta charset="utf-8">
+    <meta name="keywords" content="HTML5 Template" />
+    <meta name="description" content="Travelo - Travel, Tour Booking HTML5 Template">
+    <meta name="author" content="SoapTheme">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../Design new/images/favicon.png" type="image/png">
+
+    <!-- Theme Styles -->
+    <link rel="stylesheet" href="../Design new/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../Design new/css/font-awesome.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../Design new/css/animate.min.css">
+
+    <!-- Current Page Styles -->
+    <link rel="stylesheet" type="text/css" href="../Design new/components/revolution_slider/css/settings.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="../Design new/components/revolution_slider/css/style.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="../Design new/components/jquery.bxslider/jquery.bxslider.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="../Design new/components/flexslider/flexslider.css" media="screen" />
+
+    <!-- Main Style -->
+    <link id="main-style" rel="stylesheet" href="../Design new/css/style.css">
+
+    <!-- Updated Styles -->
+    <link rel="stylesheet" href="../Design new/css/updates.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="../Design new/css/custom.css">
+
+    <!-- Responsive Styles -->
+    <link rel="stylesheet" href="../Design new/css/responsive.css">
+
+    <!-- clock picker -->
+    <link rel="stylesheet" href="~/Content/mdtimepicker.css" rel="stylesheet" />
+
+    <!-- CSS for IE -->
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" type="text/css" href="css/ie.css" />
+    <![endif]-->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script type='text/javascript' src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+      <script type='text/javascript' src="http://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+    <![endif]-->
+    <style>
+        .hide{
+            display: none;
+        }
+        .disabled_booking {
+            background-color: #bdbdbd !important;
+            cursor: default;
+        }
+        @@media screen and (max-width: 999px) {
+            .popup {
+                width: 85%;
+                position: fixed;
+                max-width: 500px;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                visibility: hidden;
+                opacity: 0;
+                -webkit-transition: opacity .5s, visibility 0s linear .5s;
+                transition: opacity .5s, visibility 0s linear .5s;
+                z-index: 1;
+            }
+        }
+
+        @@media screen and (max-width: 999px) {
+            .hide-on-mobile {
+                display: none;
+            }
+        }
+
+        @@media only screen and (min-width: 960px) {
+            .screen {
+                display: none;
+            }
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        .column {
+            float: left;
+            width: 50%;
+            padding: 10px;
+        }
+
+        .rowo:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        #timepicker {
+            background-image: url('../Design new/images/clock1.png');
+            background-size: 35px;
+            background-position: right;
+            padding-left: 10px;
+            background-repeat: no-repeat;
+            background-color: black;
+        }
+
+
+        @@media only screen and (min-width: 960px) {
+            .hidedesktop {
+                display: none;
+            }
+        }
+
+        .list-group-item {
+            position: relative;
+            display: block;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            background-color: #fff;
+            border: 1px solid rgba(0,0,0,.125);
+        }
+
+
+    @@media screen and (max-width: 999px) {
+        .tabset > label {
+            position: relative;
+            display: inline-block;
+            padding: 10px 10px 20px;
+            border: 1px solid gold;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 11px;
+        }
+    }
+
+    @@media screen and (max-width: 999px) {
+        .popup {
+            width: 85%;
+            position: fixed;
+            max-width: 500%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            visibility: hidden;
+            opacity: 0;
+            -webkit-transition: opacity .5s, visibility 0s linear .5s;
+            transition: opacity .5s, visibility 0s linear .5s;
+            z-index: 1;
+        }
+    }
+
+    @@media screen and (max-width: 999px) {
+        .booking-form label {
+            font-size: 10px;
+        }
+    }
+
+    @@media screen and (max-width: 999px) {
+        .hide-on-mobile {
+            display: none;
+        }
+    }
+
+    @@media only screen and (min-width: 960px) {
+        .screen {
+            display: none;
+        }
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+
+    .column {
+        float: left;
+        width: 50%;
+        padding: 10px;
+    }
+
+    .rowo:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    /*Don't forget to add Font Awesome CSS : "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"*/
+    input[type="text"] {
+        width: 100%;
+        border: 2px solid #aaa;
+        border-radius: 4px;
+        outline: none;
+        padding: 8px;
+        box-sizing: border-box;
+        transition: 0.3s;
+    }
+
+        input[type="text"]:focus {
+            border-color: gold;
+            box-shadow: 0 0 8px 0 gold;
+        }
+
+    .inptWithIcon input[type="text"] {
+        padding-left: 40px;
+    }
+
+    .inptWithIcon {
+        position: relative;
+    }
+
+        .inptWithIcon i {
+            position: absolute;
+            left: 0;
+            top: 8px;
+            padding: 9px 8px;
+            color: #aaa;
+            transition: 0.3s;
+        }
+
+        .inptWithIcon input[type="text"]:focus {
+            color: gold;
+        }
+
+        .inptWithIcon.inptIconBg i {
+            width: 30px;
+            background-color: #aaa;
+            color: #fff;
+            padding: 9px 5px 17px;
+            border-radius: 4px 0 0 4px;
+        }
+
+        .inptWithIcon.inputIconBg input[type="text"]:focus + i {
+            color: #fff;
+            background-color: gold;
+        }
+
+    #text1 {
+        background-image: url('file:///C:/Users/shubh/Downloads/Travel/images/clock1.png');
+        background-size: 35px;
+        background-position: right;
+        padding-left: 10px;
+        background-repeat: no-repeat;
+        background-color: black;
+    }
+
+    </style>
+
+    <!-- Javascript -->
+    <script type="text/javascript" src="../Design new/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="../Design new/js/jquery.noconflict.js"></script>
+    <script type="text/javascript" src="../Design new/js/modernizr.2.7.1.min.js"></script>
+    <script type="text/javascript" src="../Design new/js/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="../Design new/js/jquery.placeholder.js"></script>
+    <script type="text/javascript" src="../Design new/js/jquery-ui.1.10.4.min.js"></script>
+
+    <!-- Twitter Bootstrap -->
+    <script type="text/javascript" src="../Design new/js/bootstrap.js"></script>
+
+    <!-- load revolution slider scripts -->
+    <script type="text/javascript" src="../Design new/components/revolution_slider/js/jquery.themepunch.tools.min.js"></script>
+    <script type="text/javascript" src="../Design new/components/revolution_slider/js/jquery.themepunch.revolution.min.js"></script>
+
+    <!-- load BXSlider scripts -->
+    <script type="text/javascript" src="../Design new/components/jquery.bxslider/jquery.bxslider.min.js"></script>
+
+    <!-- load FlexSlider scripts -->
+    <script type="text/javascript" src="../Design new/components/flexslider/jquery.flexslider-min.js"></script>
+
+    <!-- parallax -->
+    <script type="text/javascript" src="../Design new/js/jquery.stellar.min.js"></script>
+
+    <!-- waypoint -->
+    <script type="text/javascript" src="../Design new/js/waypoints.min.js"></script>
+
+    <!-- clock picker -->
+    <script type="text/javascript" src="~/Scripts/mdtimepicker.js"></script>
+
+    <!-- load page Javascript -->
+    <script type="text/javascript" src="../Design new/js/theme-scripts.js"></script>
+
+    <!-- Google Map Api -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?&key=AIzaSyC51t5-EB83jQUE0tXCsu8rmLJvM9SuR3g&libraries=places"></script>
+    <script src="../Design new/js/googlesearch.js"></script>
+
+    <script type="text/javascript">
+        tjq(document).ready(function () {
+            tjq("#price-range").slider({
+                range: true,
+                min: 0,
+                max: 1000,
+                values: [100, 800],
+                slide: function (event, ui) {
+                    tjq(".min-price-label").html("$" + ui.values[0]);
+                    tjq(".max-price-label").html("$" + ui.values[1]);
+                }
+            });
+            tjq(".min-price-label").html("$" + tjq("#price-range").slider("values", 0));
+            tjq(".max-price-label").html("$" + tjq("#price-range").slider("values", 1));
+
+            tjq('#timepicker').mdtimepicker();
+        });
+    </script>
+
+</head>
+<body>
+
+    <div id="page-wrapper">
+        <header class="header">
+            <a href="" class="logo"> <img style="padding-left" width="120px" src="../Design New/images/logo.png" alt="Travelo HTML5 Template" /></a>
+            <input class="menu-btn" type="checkbox" id="menu-btn" />
+            <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+            <ul class="menu">
+                <li><a href="file:///C:/Users/shubh/Downloads/Travel/travelo.html">Home</a></li>
+                <li><a href="file:///C:/Users/shubh/Downloads/Travel/Holiday%20packages.html">Holiday Packages</a></li>
+                <li><a href="file:///C:/Users/shubh/Downloads/Travel/Outstation%20Tarrifs.html">Outstation Tariffs</a></li>
+                <li><a href="file:///C:/Users/shubh/Downloads/Travel/Airport%20Taxi%20Offers.html">Airport Taxi Offers</a></li>
+                <li><a href="https://blog.utaxi.in/">Blog</a></li>
+            </ul>
+        </header>
+    </div>
+
+    @RenderBody()
+
+    <div id="page-wrapper">
+        <header class="header">
+            <a href="" class="logo"> <img style="padding-left" width="120px" src="../Design new/images/logo.png" alt="Travelo HTML5 Template" /></a>
+            <input class="menu-btn" type="checkbox" id="menu-btn" />
+            <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+            <ul class="menu">
+                <li><a href="file:///C:/Users/shubh/Downloads/Travel/travelo.html">Home</a></li>
+                <li><a href="file:///C:/Users/shubh/Downloads/Travel/Holiday%20packages.html">Holiday Packages</a></li>
+                <li><a href="file:///C:/Users/shubh/Downloads/Travel/Outstation%20Tarrifs.html">Outstation Tariffs</a></li>
+                <li><a href="file:///C:/Users/shubh/Downloads/Travel/Airport%20Taxi%20Offers.html">Airport Taxi Offers</a></li>
+                <li><a href="https://blog.utaxi.in/">Blog</a></li>
+            </ul>
+        </header>
+    </div>
+
+    <section id="content">
+        <div class="container">
+            <div class="image-style style1 large-block" style="margin-top:-30px;">
+                <h1 style="border-bottom:1px solid #D8D8D8;padding-bottom:5px;" class="title"><a href="#">About the trip</a></h1>
+                <div class="card-body">
+                    <li class="list-group-item">
+                        Airport pickup for the time of <b>4:00 AM - 7:45 AM</b> would cost <b>Rs.474</b> for <b>Indica Non/AC</b>
+                    </li>
+                    <li class="list-group-item">
+                        Airport pickup for the time of <b>8:00 AM - 3:45 AM</b> would cost <b>Rs.624</b> for <b>Indica Non/AC</b>
+                    </li>
+                    <li class="list-group-item">
+                        Extra Charge for Luggage would be Rs.30 extra
+                    </li>
+                    <li class="list-group-item">
+                        Sedan cars would cost Rs.50 extra
+                    </li>
+                    <li class="list-group-item">
+                        A/C charges would cost Rs.75 extra
+                    </li>
+                    <li class="list-group-item">
+                        <b>Off Toll road Service</b>
+                    </li>
+                    <li class="list-group-item">
+                        <b>Applicable for limited areas</b>
+                    </li>
+                </div>
+
+                <div class="clearfix"></div>
+            </div>
+            <div class="image-style style1 large-block" style="margin-top:-30px;">
+                <h1 class="title">Outstation Taxi Service in Bangalore</h1>
+                <p style="text-align:justify;">
+                    If you are looking for an outstation trip from
+                    Bangalore for a family weekend gateway, office trip or even business travel,
+                    Bangalore gives you lot of options, for 2-3 days or even for week long trips.
+                    This can be temple tours, weekend getaways to hill stations, trekking places,
+                    forests, beautiful waterfalls, or heritage places.Visiting to these places
+                    with family or friends is best done by availing outstation taxi services in
+                    Bangalore. Going for for bangalore outstation cabs helps you easily spend time
+                    with family and friends and let the experienced driver manage the driving part.
+                </p>
+
+
+                <h1 class="title">Outstation Cabs from Bangalore</h1>
+                <p style="text-align:justify;">
+                    When you want to travel outstation and look for cab
+                    service, there are many things to keep in mind, such as type of vehicle, driver
+                    experience and knowledge of the route, agency background, rates, ease of booking,
+                    refunds, cancellations. It is not just about choosing less rates but also quality
+                    and service matters. Utaxi is developed to serve you this.To ease this hassle
+                    of comparing with tens of operators and not knowing exactly which operator to
+                    rely, Utaxi helps by verifying Bangalore operators and getting real time prices
+                    from them. At Utaxi, by submitting trip request, you will get up to 10 quotes
+                    with operator ratings and prices and vehicle models, so you can easily choose.
+                    This way Utaxi makes your booking most easy and get you cabs at best rates.
+                </p>
+
+
+                <h1 class="title">Distance and time from Bangalore to major cities</h1>
+                <p style="text-align:justify;">
+                    Bengaluru (Bangalore) is situated close to the
+                    most beautiful cities in Karnataka which includes Nandi Hills, Mysore, Coorg,
+                    Chennai, Wayanad, Chikmagalur, and Pondicherry. If you want to have a weekend
+                    getaway to any of these places, then hiring outstation cabs in Bangalore is the
+                    most appropriate mode of travel as you can reach your destination in optimal time.
+                </p>
+                <p>
+                    The below table highlights the major cities near Bangalore and approximate time to reach.
+
+                </p>
+                <table id="customers">
+                    <thead>
+                        <tr>
+                            <th style="box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;">Destination</th>
+                            <th style="box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;">Distance from Bangalore</th>
+                            <th style="box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;">Time required to reach	</th>
+                            <th style="box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;">Book Taxi</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="padding-top:10px;">Taxi from Bangalore to Mysore</td>
+                            <td style="padding-top:10px;">143 kms</td>
+                            <td style="padding-top:10px;">3 hrs 30 mns</td>
+                            <td style="padding-top:10px;">	Book Now</td>
+                        </tr>
+                        <tr class="active-row">
+                            <td>Taxi from Bangalore to Coorg</td>
+                            <td>237 kms</td>
+                            <td>5 hrs 30 mns</td>
+                            <td>	Book Now</td>
+                        </tr>
+                        <tr>
+                            <td>Taxi from Bangalore to Nandi Hills	</td>
+                            <td>60 kms</td>
+                            <td>1 hrs 15 mns</td>
+                            <td>	Book Now</td>
+                        </tr>
+                        <tr>
+                            <td>Taxi from Bangalore to Ooty</td>
+                            <td>270 kms</td>
+                            <td>	6 hrs</td>
+                            <td>	Book Now</td>
+                        </tr>
+                        <tr>
+                            <td>Taxi from Bangalore to Wayanad	</td>
+                            <td>277 kms</td>
+                            <td>	6 hrs 30 mns</td>
+                            <td>	Book Now</td>
+                        </tr>
+                        <tr>
+                            <td>Taxi form Bangalore to Tirupat</td>
+                            <td>250 kms</td>
+                            <td>6 hrs</td>
+                            <td>	Book Now</td>
+                        </tr>
+                        <tr>
+                            <td>Taxi from Bangalore to Talakadu</td>
+                            <td>242 kms</td>
+                            <td>	5 hrs 40 mns</td>
+                            <td>	Book Now</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="row" style="margin-bottom: 40px; border-style: solid;
+  border-width: 1px;  padding: 10px 15px 10px 15px; border-color: #E8E8E8;margin-left:2px; ">
+                    <p style="text-align:justify;" class="two">
+                        <b>Driver Food and Stay</b> - Although we dont ask our Customer's to pay for our Drivers Food and Stay, for the cab etc are part of the trip and not considered seperately. when you stay at Hotels/Resorts/Home Stays or atleast give them time to find out themselves. Driver spending time for his food, filling fuel but atleast ensure they are given
+                        enough time to take care of themselves. Drivers should get access to basic
+                        amenities to get fresh etc,
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+            </div>
+            <div>
+                <div class="container">
+                    <div class="image-style style1 large-block" style="margin-top:-90px;">
+                        <h1 class="title">Why book outstation cabs in Bangalore with Utaxi?</h1>
+                        <p style="text-align:justify;">
+                            To book an outstation taxi service in
+                            Bangalore online, the most important thing to do is compare prices
+                            online! With so many new outstation taxi services in Bangalore hitting
+                            the market, you can easily end up paying more than your budget.
+                        </p>
+                        <p>
+                            Utaxi is your one-stop destination to find the best cab operators/cab
+                            rental agencies for outstation taxis in Bangalore, compare the best
+                            prices and book your cab online.
+                        </p>
+                        <p>
+                            This way you can compare and choose the best vehicle at affordable
+                            prices from local operators or agencies. Utaxi is the top site in India
+                            for comparing outstation taxi prices in Bangalore and booking outstation
+                            cabs in Bangalore online.
+                        </p>
+                        <table id="customers">
+                            <tbody>
+                                <tr>
+                                    <th style="box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;">Bangalore Airport Services</th>
+                                    <th style="box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;">Book<br></th>
+                                </tr>
+                                <tr>
+                                    <td style="padding-top:10px;">Bangalore Airport Pickup</td>
+                                    <td style="padding-top:10px;"><a href="#">Book Now</a></td>
+                                </tr>
+                                <tr>
+                                    <td>Bangalore Airport Drop</td>
+                                    <td><a href="#">Book Now</a></td>
+                                </tr>
+                                <tr>
+                                    <td>Bangalore Airport Round Pickup</td>
+                                    <td><a href="#">Book Now</a></td>
+                                </tr>
+                                <tr>
+                                    <td>Bangalore Cab for Outstation</td>
+                                    <td><a href="#">Book Now</a></td>
+                                </tr>
+                                <tr>
+                                    <td>Bangalore Taxi Services</td>
+                                    <td><a href="#">Book Now</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </section>
+    <div class="global-map-area section parallax" data-stellar-background-ratio="0.5" style="background-color:black;">
+        <div class="container" style="background-attachment: ../Design new/images/global-map.png;">
+            <div class="text-center description">
+                <h1 style="color:white;">We Provide You An Ultimate Travel Experience</h1>
+                <p style="color:white;">Nunc cursus libero purusac congue arcu cursus utsed vitae pulvinar massa idporta neque.</p>
+                <p style="color:white;">Etiam elerisque mi id faucibus iaculis vitae pulvinar.</p>
+            </div>
+            <br />
+            <div class="row image-box style8">
+                <div class="col-md-6">
+                    <article class="box animated" data-animation-type="fadeInUp">
+                        <figure class="middle-block">
+                            <img src="../Design new/images/travel.png" alt="" class="middle-item" width="100" height="172" />
+                            <span class="opacity-wrapper"></span>
+                        </figure>
+                        <div class="details">
+                            <h2 class="box-title">Popular destinations</h2>
+                            <div class="card-body">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">
+                                        <h6><a href="https://www.utaxi.in/bangalore/outstation-taxi/bangalore-outstation-cabs.aspx">Bangalore to Coimbatore</a></h6>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <h6><a href="https://www.utaxi.in/bangalore/outstation-taxi/bangalore-outstation-cabs.aspx">Bangalore to Chennai</a></h6>
+                                    </li>
+
+                                    <li class="list-group-item">
+                                        <h6><a href="https://www.utaxi.in/bangalore/outstation-taxi/bangalore-outstation-cabs.aspx">Bangalore to Coorg</a></h6>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <h6><a href="https://www.utaxi.in/bangalore/outstation-taxi/bangalore-outstation-cabs.aspx">Bangalore to Mysore</a></h6>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <h6><a href="https://www.utaxi.in/bangalore/outstation-taxi/bangalore-outstation-cabs.aspx">Bangalore to Ooty</a></h6>
+                                    </li>
+
+                                    <li class="list-group-item">
+                                        <h6><a href="https://www.utaxi.in/bangalore/outstation-taxi/bangalore-outstation-cabs.aspx">Bangalore to Puducherry</a></h6>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <h6><a href="https://www.utaxi.in/bangalore/outstation-taxi/bangalore-outstation-cabs.aspx">Bangalore to  Tiruati</a></h6>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <h6><a href="https://www.utaxi.in/bangalore/outstation-taxi/bangalore-outstation-cabs.aspx">Bangalore to Vellore</a></h6>
+                                    </li>
+
+                                    <li class="list-group-item">
+                                        <h6>
+                                            <a href="https://www.utaxi.in/bangalore/outstation-taxi/bangalore-outstation-cabs.aspx">Marathahalli  To Airport Drop</a>
+                                        </h6>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-md-6">
+                    <article class="box animated" data-animation-type="fadeInUp">
+                        <figure class="middle-block">
+                            <img src="../Design new/images/travel.png" alt="" class="middle-item" width="100" height="172" />
+                            <span class="opacity-wrapper"></span>
+                        </figure>
+                        <div class="details">
+                            <h2 class="box-title">24/7 Services</h2>
+                            <div class="card-body">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">
+                                        <h6><a href="/cheapesttaxiinbangalore/BanashankaritoAirporttransfer/AirportPickup">Banashankari To Airport</a></h6>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <h6><a href="/cheapesttaxiinbangalore/banaswaditoAirporttransfer/AirportPickup">Banaswadi To Airport</a></h6>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <h6><a href="/cheapesttaxiinbangalore/BTMLayout-to-Airporttransfer.aspx">BTM Layout To Airport</a></h6>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <h6><a href="/cheapesttaxiinbangalore/frazertowntoAirporttransfer/AirportPickup">Frazer Town To Airport</a></h6>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <h6><a href="/cheapesttaxiinbangalore/JalahallitoAirporttransfer/AirportPickup">Jalahalli To Airport</a></h6>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <h6>
+                                            <a href="/cheapesttaxiinbangalore/JPNagartoAirporttransfer/AirportPickup">JP Nagar To Airport</a>
+                                        </h6>
+                                    </li>
+
+                                    <li class="list-group-item">
+                                        <h6>
+                                            <a href="/cheapesttaxiinbangalore/JayanagartoAirporttransfer/AirportPickup">Jayanagar To Airport</a>
+                                        </h6>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <h6>
+                                            <a href="/cheapesttaxiinbangalore/KrishnarajapuramtoAirporttransfer/AirportPickup">Krishnarajapuram To Airport</a>
+                                        </h6>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <h6>
+                                            <a href="/cheapesttaxiinbangalore/WhitefieldtoAirporttransfer/AirportDrop">Whitefield  To Airport Drop</a>
+                                        </h6>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+            <div class="row image-box style8">
+                <div class="col-md-6">
+                    <article class="box animated" data-animation-type="fadeInUp">
+                        <figure class="middle-block">
+                            <img src="../Design new/images/travel.png" alt="" class="middle-item" width="100" height="172" />
+                            <span class="opacity-wrapper"></span>
+                        </figure>
+                        <div class="details">
+                            <h2 class="box-title">24/7 Services</h2>
+                            <div class="card-body">
+                                <ul class="list-group list-group-flush">
+
+                                    <li class="list-group-item">
+                                        <h6>
+                                            <a href="/cheapesttaxiinbangalore/MalleswaramtoAirporttransfer/AirportPickup">Malleswaram To Airport</a>
+                                        </h6>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <h6>
+                                            <a href="/cheapesttaxiinbangalore/MarathahallitoAirporttransfer/AirportPickup">Marathahalli To Airport</a>
+                                        </h6>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <h6>
+                                            <a href="/cheapesttaxiinbangalore/MGRoadtoAirporttransfer/AirportPickup">MG Road To Airport</a>
+                                        </h6>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <h6>
+                                            <a href="/cheapesttaxiinbangalore/PeenyatoAirporttransfer/AirportPickup">Peenya To Airport</a>
+                                        </h6>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <h6>
+                                            <a href="/cheapesttaxiinbangalore/RajajinagartoAirporttransfer/AirportPickup">Rajaji Nagar To Airport</a>
+                                        </h6>
+                                    </li>
+
+                                    <li class="list-group-item">
+                                        <h6>
+                                            <a href="/cheapesttaxiinbangalore/VijayaNagartoAirporttransfer/AirportPickup">Vijaya Nagar To Airport</a>
+
+                                        </h6>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <h6>
+                                            <a href="/cheapesttaxiinbangalore/WhitefieldtoAirporttransfer/AirportPickup">Whitefield To Airport</a>
+                                        </h6>
+                                    </li>
+
+
+                                    <li class="list-group-item">
+                                        <h6>
+                                            <a href="/cheapesttaxiinbangalore/YelahankatoAirporttransfer/AirportPickup">Yelahanka To Airport</a>
+                                        </h6>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <h6>
+                                            <a href="/cheapesttaxiinbangalore/BTMLayouttoAirporttransfer/AirportDrop">BTM Layout  To Airport Drop</a>
+                                        </h6>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-md-6">
+                    <article class="box animated" data-animation-type="fadeInUp">
+                        <figure class="middle-block">
+                            <img src="../Design new/images/travel.png" alt="" class="middle-item" width="100" height="172" />
+                            <span class="opacity-wrapper"></span>
+                        </figure>
+                        <div class="details">
+                            <h2 class="box-title">Popular Services</h2>
+                            <div class="card-body">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">
+                                        <h6><a href="/Home/Index">Bangalore City Cab Service</a></h6>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <h6><a href="/Home/Index">Bangalore Airport Cab Service</a></h6>
+
+                                    </li>
+                                    <li class="list-group-item">
+                                        <h6><a href="/Home/Index">Bangalore Local Cabs for Hire</a></h6>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <h6><a href="/Home/Index">Bangalore Outstation Cab</a></h6>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <h6><a href="/Home/Index">Bangalore Local Package </a></h6>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <h6><a href="/Home/Index">Bangalore Point to Point </a></h6>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <h6><a href="/Home/Index">Bangalore Local Cabs for Hire</a></h6>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <h6><a href="/Home/Index">Bangalore Taxi Services</a></h6>
+                                    </li>
+
+                                    <li class="list-group-item">
+                                        <h6>
+                                            <a href="/cheapesttaxiinbangalore/KrishnarajapuramtoAirporttransfer/AirportDrop">Krishnarajapuram To Airport Drop</a>
+                                        </h6>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div type="button" class="email-bt">
+        <div class="text-call">
+            <a href="tel:8046844684">
+                <i class="fa fa-phone" style="color:black;" aria-hidden="true"></i>
+            </a>
+        </div>
+    </div>
+    <footer id="footer">
+        <div class="footer-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-md-3">
+                        <h2 style="font-size:20px;font-weight:bold;padding-left:10px;text-decoration: underline;">Quick Links</h2>
+                        <ul class="discover triangle hover row">
+                            <li class="col-xs-12"><a href="#">Home</a></li>
+                            <li class="col-xs-12"><a href="#">Holiday Packages</a></li>
+                            <li class="col-xs-12"><a href="#">Outstation Tarifs</a></li>
+                            <li class="col-xs-12"><a href="#">Airport Taxi Offers</a></li>
+                            <li class="col-xs-12"><a href="#">Blog</a></li>
+                            <li class="col-xs-12"><a href="#">Airport Transfer</a></li>
+                            <li class="col-xs-12"><a href="#">Local Drop</a></li>
+                            <li class="col-xs-12"><a href="#">Airport Pickup</a></li>
+                            <li class="col-xs-12"><a href="#">Local Package Outstation</a></li>
+                            <li class="col-xs-12"><a href="#">Holiday Package</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 col-md-3">
+                        <h2 style="font-size:20px;font-weight:bold;padding-left:10px;text-decoration: underline;">Travel News</h2>
+                        <ul class="travel-news">
+                            <li>
+                                <div class="thumb">
+                                    <a href="#">
+                                        <img src="../Design new/images/Car Image/car5.png" alt="" width="63" height="63" />
+                                    </a>
+                                </div>
+                                <div class="description">
+                                    <h5 class="s-title"><a href="#">Amazing Places</a></h5>
+                                    <p>Purus ac congue arcu cursus ut vitae pulvinar massaidp.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="thumb">
+                                    <a href="#">
+                                        <img src="../Design new/images/Car Image/car5.png" alt="" width="63" height="63" />
+                                    </a>
+                                </div>
+                                <div class="description">
+                                    <h5 class="s-title"><a href="#">Travel Insurance</a></h5>
+                                    <p>Purus ac congue arcu cursus ut vitae pulvinar massaidp.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 col-md-3">
+                        <h2 style="font-size:20px;font-weight:bold;padding-left:10px;text-decoration: underline;">Mailing List</h2>
+                        <p>Sign up for our mailing list to get latest updates and offers.</p>
+                        <br />
+                        <div class="icon-check">
+                            <input type="text" class="input-text full-width" placeholder="your email" />
+                        </div>
+                        <br />
+                        <span>We respect your privacy</span>
+                    </div>
+                    <div class="col-sm-6 col-md-3">
+                        <h2 style="font-size:20px;font-weight:bold;padding-left:10px;text-decoration: underline;">About Utaxi</h2>
+                        <p>Nunc cursus libero purus ac congue arcu cursus ut sed vitae pulvinar massaidp nequetiam lore elerisque.</p>
+                        <br />
+                        <address class="contact-details">
+                            <span class="contact-phone"><i class="soap-icon-phone"></i><a href="tel:08046844684">080-4684-4684</a></span>
+                            <br />
+                            <a href="#" class="contact-email">help@utaxi.in</a>
+                        </address>
+                        <ul class="social-icons clearfix">
+                            <li class="twitter"><a title="twitter" href="#" data-toggle="tooltip"><i class="soap-icon-twitter"></i></a></li>
+                            <li class="googleplus"><a title="googleplus" href="#" data-toggle="tooltip"><i class="soap-icon-googleplus"></i></a></li>
+                            <li class="facebook"><a title="facebook" href="#" data-toggle="tooltip"><i class="soap-icon-facebook"></i></a></li>
+                            <li class="linkedin"><a title="linkedin" href="#" data-toggle="tooltip"><i class="soap-icon-linkedin"></i></a></li>
+                            <li class="flickr"><a title="flickr" href="#" data-toggle="tooltip"><i class="soap-icon-flickr"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    
+</body>
+</html>
+

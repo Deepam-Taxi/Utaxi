@@ -1,0 +1,425 @@
+﻿
+
+@Scripts.Render("~/bundles/jBox")
+@Styles.Render("~/Content/jBox")
+@Scripts.Render("~/bundles/AirportTransferPackage")
+@Styles.Render("~/Content/mdtimepicker")
+@Scripts.Render("~/bundles/mdtimepicker")
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADC1qojpbIsrNj-oPZwPh1yVATPTIj1U8&libraries=places"></script>
+@*<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyADC1qojpbIsrNj-oPZwPh1yVATPTIj1U&libraries=places"></script>*@
+<script src="~/Scripts/googlesearch.js"></script>
+<style type="text/css">
+    .ajax-loader {
+        visibility: hidden;
+        background-color: rgba(255,255,255,0.7);
+        position: absolute;
+        z-index: +100 !important;
+        width: 100%;
+        height: 100%;
+    }
+
+        .ajax-loader img {
+            position: relative;
+            top: 50%;
+            left: 50%;
+        }
+
+    .marginleft3px {
+        margin-left: 3px;
+    }
+
+    #divloadMap {
+        height: 100%;
+        margin: 0px;
+        padding: 0px;
+        margin-top: 15px;
+    }
+
+    /*.apply {
+        margin-top: 16px;
+        border: 1px solid transparent;
+        border-radius: 2px 0 0 2px;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        height: 32px;
+        outline: none;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+      }*/
+
+    #txtsearch {
+        background-color: #fff;
+        padding: 0 11px 0 13px;
+        width: 400px;
+        font-family: Roboto;
+        font-size: 15px;
+        font-weight: 300;
+        text-overflow: ellipsis;
+    }
+
+        #txtsearch:focus {
+            border-color: #4d90fe;
+            margin-left: -1px;
+            padding-left: 14px;
+            width: 401px;
+        }
+
+    .pac-container {
+        font-family: Roboto;
+    }
+
+    #type-selector {
+        color: #fff;
+        background-color: #4d90fe;
+        padding: 5px 11px 0px 11px;
+    }
+
+        #type-selector label {
+            font-family: Roboto;
+            font-size: 13px;
+            font-weight: 300;
+        }
+
+    .searchplaces {
+        background-color: #eaeaea;
+    }
+</style>
+<div class="row" style="margin-top: 5px;">
+    <div class="col-md-6">
+        <div class="card border-dark mb-3">
+            <div class="card-header boldFields">
+                <ul class="nav nav-tabs card-header-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="idAirportTab" data-toggle="tab" href="#" onclick="showTabs('Airport');">Airport Transfer</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="card-body">
+                <div class="container" id="divSearchRides">
+                    <div class="form-group well" style="text-align: center;" id="airportPickupOptions">
+                        <label class="form-check-inline">
+                            <input type="radio" class="form-check-input" name="pickupOption" id="rdAirportPickup" value="1">Airport Pickup
+                        </label>
+                        <label class="form-check-inline">
+                            <input type="radio" class="form-check-input" name="pickupOption" id="rdAirportDrop" value="2">Airport Drop
+                        </label>
+                        <label class="form-check-inline">
+                            <input type="radio" class="form-check-input" name="pickupOption" id="rdAirportRT" checked value="3">Airport Round trip
+                        </label>
+                    </div>
+                    <div class="form-group well" style="text-align: center;" id="outstationOptions">
+                        <label class="form-check-inline">
+                            <input type="radio" class="form-check-input" name="outstationOption" id="rdOutstationTrip" checked value="">One way
+                        </label>
+                        <label class="form-check-inline">
+                            <input type="radio" class="form-check-input" name="outstationOption" id="rdOutstationPackage" value="">Two way
+                        </label>
+                    </div>
+                    <div class="form-group mt-2" id="divPickup">
+                        <label for="pickupPlace" class="boldFields">Pickup place<span class="mandatoryFields">*</span></label>
+                        @*<div class="searchplaces form-control" id="pickupPlace">
+                                Enter Search Place
+                            </div>*@
+                        <input type="text" class="form-control" value="Jalahalli, Bengaluru, Karnataka, India" placeholder="Jalahalli, Bengaluru, Karnataka, India" readonly id="pickupPlaceSearch">
+                        @*<div class="E_FromPlace E_Msg"></div>*@
+                    </div>
+                    <div class="form-group mt-2" id="divAiportPickupField">
+                        <label for="dropPlace" class="boldFields">Airport Pickup<span class="mandatoryFields">*</span></label>
+                        <input type="text" class="form-control" value="Kempegowda International Airport (BLR), Devanahalli, Bengaluru, Karnataka 560300, India" placeholder="Kempegowda International Airport (BLR), Devanahalli, Bengaluru, Karnataka 560300, India" disabled id="pickupPlaceAirportSearch">
+                    </div>
+                    <div class="form-group" id="divDrop">
+                        <label for="dropPlace" class="boldFields">Drop place<span class="mandatoryFields">*</span></label>
+                        @*<div class="searchplaces form-control" id="dropPlace">
+                                Enter Search Place
+                            </div>*@
+                        <input type="text" class="form-control" value="Jalahalli, Bengaluru, Karnataka, India" placeholder="Jalahalli, Bengaluru, Karnataka, India" readonly id="dropPlaceSearch">
+                        @*<div class="E_ToPlace E_Msg"></div>*@
+                    </div>
+                    <div class="form-group" id="divAiportDropField">
+                        <label for="dropPlace" class="boldFields">Airport Drop<span class="mandatoryFields">*</span></label>
+                        <input type="text" class="form-control" value="Kempegowda International Airport (BLR), Devanahalli, Bengaluru, Karnataka 560300, India" placeholder="Kempegowda International Airport (BLR), Devanahalli, Bengaluru, Karnataka 560300, India" disabled id="dropPlaceAirportSearch">
+                    </div>
+                    <div class="form-group" id="divPackageType">
+                        <label for="PackageType" class="boldFields">Package Type<span class="mandatoryFields">*</span></label>
+                        <select name="ddlPackageType" id="ddlPackageType" class="form-control"></select>
+                    </div>
+                    <div class="form-group" id="divPickupTime">
+                        <label for="pickupdatetime" class="boldFields">Pickup Date & Time<span class="mandatoryFields">*</span></label>
+                        <div class="row">
+                            <div class="col-md-5">
+                                <div class='input-group date'>
+                                    <input type='text' class="form-control" id="pickupdatepicker" placeholder="mm/dd/yyyy" />
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <input type="text" class="form-control" id="pickuptimepicker" placeholder="hh:mm AM/PM">
+                            </div>
+                            <div class="col-md-3">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group" id="divDropTime">
+                        <label for="pickupdatetime" class="boldFields">Drop Date & Time<span class="mandatoryFields">*</span></label>
+                        <div class="row">
+                            <div class="col-md-5">
+                                <div class='input-group date'>
+                                    <input type='text' class="form-control" id="dropdatepicker" placeholder="mm/dd/yyyy" />
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <input type="text" class="form-control" id="droptimepicker" placeholder="hh:mm AM/PM">
+                            </div>
+                            <div class="col-md-3">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group" id="btnSearchNext">
+                        <button id="btnSubmit" class="btn btn-primary">Search Rides</button>
+                        <input type="hidden" value="" id="hdnServiceNameID" />
+                        <input type="hidden" value="" id="hdnServiceTypeID" />
+                        <input type="hidden" value="" id="hdnStatusID" />
+                        <input type="hidden" value="" id="hdndropPlaceID" />
+                        <input type="hidden" value="" id="hdnpickupPlaceID" />
+                        <input type="hidden" value="" id="hdnFare" />
+                        <input type="hidden" value="" id="hdnACType" />
+                        <input type="hidden" value="" id="hdnACTypeID" />
+                        <input type="hidden" value="" id="hdnRateID" />
+                        <input type="hidden" value="" id="hdnRequestID" />
+                        <input type="hidden" value="" id="hdnPaidAmount" />
+                        <input type="hidden" value="" id="hdnDiscount" />
+                        <input type="hidden" value="" id="hdnBalance" />
+                        <input type="hidden" value="" id="hdnPaymentType" />
+                        <input type="hidden" value="1" id="hdnOutstationTypeID" />
+                        <input type="hidden" value="1" id="hdnEnableOnlinePayment" />
+
+
+                        <input type="hidden" id="hdnPackageType" value="@ViewBag.PackageValue" />
+                        <input type="hidden" id="hdnAirportServiceNameID" value="@ViewBag.AirportServiceNameID" />
+                        <input type="hidden" id="hdnPackageRateID" value="@ViewBag.Fare" />
+                        <input type="hidden" id="hdnPackageACTypeID" value="@ViewBag.ACType" />
+                        <input type="hidden" id="hdnPackageFare" value="@ViewBag.RateID" />
+                        @*<a href="#" data-toggle="popover" title="Popover Header" data-content="Some content inside the popover">Toggle popover</a>*@
+                    </div>
+                    <div class="form-group">
+                        <div class="alert alert-danger errorMsg">
+                            <strong>!</strong> Correct the errors
+                        </div>
+                    </div>
+                </div>
+                <div id="divloadMap"></div>
+                <div class="container" id="divAvailableRides">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    Available rides
+                                </div>
+                                <div class="col-md-5" style="margin-left: 27px;">
+                                    <button type="button" class="btn btn-primary bookingHeader">
+                                        Non AC
+                                    </button>
+                                    <button type="button" class="btn btn-success bookingHeader">
+                                        AC
+                                    </button>
+                                </div>
+                                <div class="col-md-1">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-group list-group-flush ratelist"></ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="container" id="divOTPVerification">
+                    <div class="card">
+                        <div class="card-header">
+                            OTP verification
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group" id="divMobileNumber">
+                                <label for="mobileNumber" class="boldFields">Mobile number<span class="mandatoryFields">*</span></label>
+                                <input type="text" class="form-control numberOnly" id="mobileNumber" maxlength="10">
+                            </div>
+                            <div class="form-group" id="divOTP">
+                                <label for="OTP" class="boldFields">OTP<span class="mandatoryFields">*</span></label>
+                                <input type="text" class="form-control numberOnly" id="OTP">
+                            </div>
+                            <div class="form-group">
+                                <button id="btnSubmitOTP" class="btn btn-primary">Next</button>
+                                <button id="btnCancelOTP" class="btn btn-primary">Cancel</button>
+                                <input type="hidden" value="" id="hdnCustomerOTP" />
+                            </div>
+                            <div class="form-group">
+                                <div class="alert alert-danger errorMsgOTP">
+                                    <strong>!</strong> Correct the errors
+                                </div>
+                                <div class="alert alert-info infoMsgOTP">
+                                    <strong>!</strong> OTP have sent your mobile number. Please click here to <a href="#" onclick="sendSMS()">resend</a> if you haven't received.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container" id="divBooking">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group" id="divName">
+                                <label for="bookingName" class="boldFields">Name<span class="mandatoryFields">*</span></label>
+                                <input type="text" class="form-control" id="bookingName">
+                            </div>
+                            <div class="form-group" id="divMobileno">
+                                <label for="bookingMobileNumber" class="boldFields">Mobile no<span class="mandatoryFields">*</span></label>
+                                <input type="text" class="form-control" disabled id="bookingMobileNumber" maxlength="10">
+                            </div>
+                            <div class="form-group" id="divEmailID">
+                                <label for="bookingEmailID" class="boldFields">EmailID<span class="mandatoryFields">*</span></label>
+                                <input type="email" class="form-control" id="bookingEmailID">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group" id="divACType">
+                                <label for="bookingACType" class="boldFields">AC Type<span class="mandatoryFields">*</span></label>
+                                <select class="form-control" id="bookingACType" disabled style="height: 33px;">
+                                    <option value="-1">-- Select --</option>
+                                    <option value="1">AC</option>
+                                    <option value="2">Non AC</option>
+                                </select>
+                            </div>
+                            <div class="form-group" id="divFare">
+                                <label for="bookingFare" class="boldFields">Fare</label>
+                                <input type="text" class="form-control" disabled id="bookingFare">
+                            </div>
+                            <div class="form-group" id="divAddress">
+                                <label for="bookingAddress" class="boldFields">Address<span class="mandatoryFields">*</span></label>
+                                <textarea id="bookingAddress" class="form-control"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group" id="divComments">
+                        <label for="bookingComments" class="boldFields">Comments</label>
+                        <textarea id="bookingComments" class="form-control"></textarea>
+                    </div>
+                    <div class="form-group well" id="paymentOption">
+                        <div id="RdlOnlinePay">
+                            <label class="form-check">
+                                <input type="radio" class="form-check-input" name="bookingPayOption" id="rdPay100percent" value="1">Pay now - get <span class="badge badge-pill badge-info">5% discount </span>
+                            </label>
+                            <label class="form-check">
+                                <input type="radio" class="form-check-input" name="bookingPayOption" id="rdPay50percent" value="2">Pay 50% now - get <span class="badge badge-pill badge-info">2.5% discount </span>
+                            </label>
+                        </div>
+                        <label class="form-check">
+                            <input type="radio" class="form-check-input" name="bookingPayOption" id="rdPayLater" value="5">I want to Pay later
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label for="p_TripFare" class="p_TripFare p_T"></label><br />
+                        <label for="p_Discount" class="p_Discount p_T"></label><br />
+                        <label for="p_Balance" class="p_Balance p_T"></label>
+                    </div>
+                    <div class="form-group">
+                        <button id="btnBooknow" class="btn btn-primary">Book now</button>
+                        <button id="btnReplan" class="btn btn-primary">Replan</button>
+                    </div>
+                    <div class="form-group p_PaymentProcessing">
+
+                    </div>
+                    <div class="form-group">
+                        <div class="alert alert-danger errorMsgBooking">
+                            <strong>!</strong> Correct the errors
+                        </div>
+                    </div>
+                </div>
+                <div id="divBookingSuccess" class="container">
+                    <div class="form-group">
+                        <div class="alert alert-info infoMsgSuccess">
+                            Booked successfully with the BookingID. Kindly provide your valuable feedback either in one of our social network page.
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="alert row" style="margin-left: -22px;">
+                            <img style="width: 100%;" src="~/Images/feedback.png" alt="airport roundtrip from Jalahalli"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-2"></div>
+                            <div class="col-md-2" style="border: 1px solid #eaeaea; padding: 5px; text-align: center;">
+                                <a href="https://www.facebook.com/utaxi12/?modal=admin_todo_tour" class="clsbookNow">
+                                    <img style="width: 100%;" src="~/Images/Social media Icon/facebook-icon-png-social-media-icons.png" alt="airport transfer from Jalahalli" />
+                                </a>
+                            </div>
+                            <div class="col-md-1"></div>
+                            <div class="col-md-2" style="border: 1px solid #eaeaea; padding: 5px; text-align: center;">
+                                <a href="https://twitter.com/Utaxi3">
+                                    <img style="width: 100%;" src="~/Images/Social media Icon/twitter--social-media-icons-.png" alt="local taxi services in bangalore" />
+                                </a>
+                            </div>
+                            <div class="col-md-1"></div>
+                            <div class="col-md-2" style="border: 1px solid #eaeaea; padding: 5px; text-align: center;">
+                                <a href="https://www.google.co.in/search?q=utaxi&oq=utaxi&aqs=chrome..69i57j69i60j35i39j69i61l3.6428j1j7&sourceid=chrome&ie=UTF-8#lrd=0x3bae151ddb3b9c3b:0x453bb66e876199fc,3,,,">
+                                    <img style="width: 100%;" src="~/Images/Social media Icon/google-plus-3-169 (1).png"  alt="local cab services in bangalore"/>
+                                </a>
+                            </div>
+                            <div class="col-md-2"></div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        Click <a href="#" class="clsbookNow">here</a> for another booking
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer"></div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header boldFields">About the Jalahalli</div>
+            <div class="card-body">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        <b>Jalahalli -</b>
+                        Jalahalli is famous for being one of the greenest areas of Bangalore. It is located in the northern part of Bangalore. Divided into Jalahalli East and Jalahalli West, Jalahalli is also renowned for being a place of archeological importance. Many stone age (>1000 BCs) remains such as articles and jewellery have been found in Jalahalli. The junction present between the roads that join Jalahalli West, Jalahalli East, Jalahalli Cross, Jalahalli Village and Gangamma Circle. These areas also act as landmarks for the entire Jalahalli area.
+                    </li>
+                </ul>
+            </div>
+        </div><br />
+        <div class="card">
+            <div class="card-header boldFields">Other Services</div>
+            <div class="card-body">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        <h5>Jalahalli to airport distance 32 km</h5>
+                    </li>
+                    <li class="list-group-item">
+                        <h5>Tumkur Road To Airport Drop Rs.545/-</h5>
+                    </li>
+                    <li class="list-group-item">
+                        <h5>Jalahalli To Airport Drop Rs.545/-</h5>
+                    </li>
+                    <li class="list-group-item">
+                        <h5>Jalahalli East To Airport Drop Rs.545/-</h5>
+                    </li>
+                    <li class="list-group-item">
+                        <h5>Prakashnagara To Airport Distance: 125 KM Fare : Rs.450/-</h5>
+                    </li>
+                    <li class="list-group-item">
+                        <h5>Jalahalli West To Airport Drop Rs.545/-</h5>
+                    </li>
+                    <li class="list-group-item">
+                        <h5>Lottegollahalli To Airport Drop Rs.545/-</h5>
+                    </li>
+                    <li class="list-group-item">
+                        <h5>Madanayakahalli To Airport Drop Rs.545/-</h5>
+                    </li>
+                    <li class="list-group-item">
+                        <h5>Madanayakahalli To Airport Drop Rs.545/-</h5>
+                    </li>
+                    <li class="list-group-item">
+                        <h5>Muthyala Nagar To Airport Drop Rs.545/- </h5>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

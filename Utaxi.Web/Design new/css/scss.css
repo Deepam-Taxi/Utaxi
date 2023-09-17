@@ -1,0 +1,84 @@
+@import "bourbon";
+
+// Variables
+$line-height-base:              20px;
+$line-height-computed:          $line-height-base / 2;
+$table-cell-padding:            13px !default;
+$table-condensed-cell-padding:  5px !default;
+$table-bg:                      transparent !default;
+$table-bg-accent:               #f9f9f9 !default;
+$table-border-color:            #ddd !default;
+
+
+// Baseline styles
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin-bottom: $line-height-computed;
+  max-width: 100%;
+  width: 100%;
+  // Cells
+  > thead,
+  > tbody,
+  > tfoot {
+    > tr {
+      > th,
+      > td {
+        border: 1px solid $table-border-color;
+        line-height: $line-height-base;
+        padding: $table-cell-padding;
+        vertical-align: top;
+      }
+    }
+  }
+  > thead > tr > th {
+    background: #444;
+    color: #fff;
+    font-weight: normal;
+    vertical-align: bottom;
+  }
+ 
+  th {
+    text-align: left;
+  }
+}
+
+// All block elements
+table {
+  &,
+  thead,
+  tbody,
+  tfoot {
+    &,
+    tr {
+      &,
+      th,
+      td {
+        display: block;
+      }
+    }
+  }
+}
+
+// Horizontal
+table {
+  > thead {
+    float: left;
+  }
+  > tbody {
+    > tr {
+      display: inline-block;
+      vertical-align: top;
+    }
+  }
+}
+
+
+// Horizontal scroll
+table {
+  > tbody {
+    width: auto;
+    white-space: nowrap;
+    overflow-x: auto;
+  }
+}

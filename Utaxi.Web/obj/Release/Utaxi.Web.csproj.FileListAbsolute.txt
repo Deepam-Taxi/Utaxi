@@ -1,0 +1,8 @@
+D:\Utaxi\Git hub\Utaxi.in\Utaxi.Web\bin\Utaxi.Web.dll.config
+D:\Utaxi\Git hub\Utaxi.in\Utaxi.Web\bin\Utaxi.Web.dll
+D:\Utaxi\Git hub\Utaxi.in\Utaxi.Web\bin\Utaxi.Web.pdb
+D:\Utaxi\Git hub\Utaxi.in\Utaxi.Web\obj\Release\Utaxi.Web.csproj.AssemblyReference.cache
+D:\Utaxi\Git hub\Utaxi.in\Utaxi.Web\obj\Release\Utaxi.Web.csproj.CoreCompileInputs.cache
+D:\Utaxi\Git hub\Utaxi.in\Utaxi.Web\obj\Release\Utaxi.Web.csproj.CopyComplete
+D:\Utaxi\Git hub\Utaxi.in\Utaxi.Web\obj\Release\Utaxi.Web.dll
+D:\Utaxi\Git hub\Utaxi.in\Utaxi.Web\obj\Release\Utaxi.Web.pdb

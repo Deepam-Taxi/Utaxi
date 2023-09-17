@@ -1,0 +1,206 @@
+﻿
+@Styles.Render("~/Content/mdtimepicker")
+@Scripts.Render("~/bundles/mdtimepicker")
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADC1qojpbIsrNj-oPZwPh1yVATPTIj1U8&libraries=places"></script>
+<script src="~/Scripts/googlesearchPackages.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $("#hdnPaymentType").val('5');
+        $('#pickupPlaceSearch').hide();
+        $('#pickupPlace').show();
+        $('#dropPlace').hide();
+        $('#dropPlaceSearch').show();
+
+        $('#pickupdatepicker, #dropdatepicker').datepicker({ minDate: 0 });
+        $('#pickuptimepicker, #droptimepicker').mdtimepicker();
+        $('.errorMsg, .errorMsgOTP, .errorMsgBooking, .infoMsgOTP').hide();
+
+        $('#divSearchRides').show();
+        $('#divOTPVerification').hide();
+        $('#divBooking').hide();
+
+        $('#pickupPlace').click(function () {
+            debugger;
+            $('#pickupPlaceSearch').show().val('').focus();
+            $('#pickupPlace').hide();
+        });
+
+        $('#dropPlace').click(function () {
+            $('#dropPlaceSearch').show().val('').focus();
+            $('#dropPlace').hide();
+        });
+    });
+</script>
+<div class="row">
+    <div class="container" id="divSearchRides">
+        <div class="form-group mt-2" id="divPickup">
+            <label for="pickupPlace" class="boldFields">Pickup place<span class="mandatoryFields">*</span></label>
+            <div class="searchplaces form-control" id="pickupPlace">
+                Enter Search Place
+            </div>
+            <input type="text" class="form-control" placeholder="Enter Search Place" id="pickupPlaceSearch">
+            <div class="E_FromPlace E_Msg"></div>
+        </div>
+        <div class="form-group" id="divDrop">
+            <label for="dropPlace" class="boldFields">Drop place<span class="mandatoryFields">*</span></label>
+            <div class="searchplaces form-control" id="dropPlace">
+                Enter Search Place
+            </div>
+            <input type="text" class="form-control" placeholder="Enter Search Place" disabled id="dropPlaceSearch">
+            <div class="E_ToPlace E_Msg"></div>
+        </div>
+        <div class="form-group" id="divPickupTime">
+            <label for="pickupdatetime" class="boldFields">Pickup Date & Time<span class="mandatoryFields">*</span></label>
+            <div class="row">
+                <div class="col-md-5">
+                    <div class='input-group date'>
+                        <input type='text' class="form-control" id="pickupdatepicker" placeholder="mm/dd/yyyy" />
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <input type="text" class="form-control" id="pickuptimepicker" placeholder="hh:mm AM/PM">
+                </div>
+                <div class="col-md-3">
+                </div>
+            </div>
+        </div>
+        <div class="form-group" id="divDropTime">
+            <label for="pickupdatetime" class="boldFields">Drop Date & Time<span class="mandatoryFields">*</span></label>
+            <div class="row">
+                <div class="col-md-5">
+                    <div class='input-group date'>
+                        <input type='text' class="form-control" id="dropdatepicker" placeholder="mm/dd/yyyy" />
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <input type="text" class="form-control" id="droptimepicker" placeholder="hh:mm AM/PM">
+                </div>
+                <div class="col-md-3">
+                </div>
+            </div>
+        </div>
+        <div class="form-group" id="btnSearchNext">
+            <button id="btnSubmit" class="btn btn-primary">Next</button>
+            <input type="hidden" value="" id="hdnServiceNameID" />
+            <input type="hidden" value="" id="hdnServiceTypeID" />
+            <input type="hidden" value="" id="hdnStatusID" />
+            <input type="hidden" value="" id="hdndropPlaceID" />
+            <input type="hidden" value="" id="hdnpickupPlaceID" />
+            <input type="hidden" value="" id="hdnFare" />
+            <input type="hidden" value="" id="hdnACType" />
+            <input type="hidden" value="" id="hdnACTypeID" />
+            <input type="hidden" value="" id="hdnRateID" />
+            <input type="hidden" value="" id="hdnRequestID" />
+            <input type="hidden" value="" id="hdnPaidAmount" />
+            <input type="hidden" value="" id="hdnDiscount" />
+            <input type="hidden" value="" id="hdnBalance" />
+            <input type="hidden" value="" id="hdnPaymentType" />
+            <input type="hidden" value="1" id="hdnOutstationTypeID" />
+        </div>
+        <div class="form-group">
+            <div class="alert alert-danger errorMsg">
+                <strong>!</strong> Correct the errors
+            </div>
+        </div>
+    </div>
+    <div id="divloadMap"></div>
+    <div class="container" id="divOTPVerification">
+        <div class="card">
+            <div class="card-header">
+                OTP verification
+            </div>
+            <div class="card-body">
+                <div class="form-group" id="divMobileNumber">
+                    <label for="mobileNumber" class="boldFields">Mobile number<span class="mandatoryFields">*</span></label>
+                    <input type="text" class="form-control numberOnly" id="mobileNumber" maxlength="10">
+                </div>
+                <div class="form-group" id="divOTP">
+                    <label for="OTP" class="boldFields">OTP<span class="mandatoryFields">*</span></label>
+                    <input type="text" class="form-control numberOnly" id="OTP">
+                </div>
+                <div class="form-group">
+                    <button id="btnSubmitOTP" class="btn btn-primary">Next</button>
+                    <button id="btnCancelOTP" class="btn btn-primary">Cancel</button>
+                    <input type="hidden" value="" id="hdnCustomerOTP" />
+                </div>
+                <div class="form-group">
+                    <div class="alert alert-danger errorMsgOTP">
+                        <strong>!</strong> Correct the errors
+                    </div>
+                    <div class="alert alert-info infoMsgOTP">
+                        <strong>!</strong> OTP have sent your mobile number. Please click here to <a href="#" onclick="sendSMS()">resend</a> if you haven't received.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" id="divBooking">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group" id="divName">
+                    <label for="bookingName" class="boldFields">Name<span class="mandatoryFields">*</span></label>
+                    <input type="text" class="form-control" id="bookingName">
+                </div>
+                <div class="form-group" id="divMobileno">
+                    <label for="bookingMobileNumber" class="boldFields">Mobile no<span class="mandatoryFields">*</span></label>
+                    <input type="text" class="form-control" disabled id="bookingMobileNumber" maxlength="10">
+                </div>
+                <div class="form-group" id="divEmailID">
+                    <label for="bookingEmailID" class="boldFields">EmailID<span class="mandatoryFields">*</span></label>
+                    <input type="email" class="form-control" id="bookingEmailID">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group" id="divACType">
+                    <label for="bookingACType" class="boldFields">AC Type<span class="mandatoryFields">*</span></label>
+                    <select class="form-control" id="bookingACType" disabled style="height: 33px;">
+                        <option value="-1">-- Select --</option>
+                        <option value="1">AC</option>
+                        <option value="2">Non AC</option>
+                    </select>
+                </div>
+                <div class="form-group" id="divFare">
+                    <label for="bookingFare" class="boldFields">Fare</label>
+                    <input type="text" class="form-control" disabled id="bookingFare">
+                </div>
+                <div class="form-group" id="divAddress">
+                    <label for="bookingAddress" class="boldFields">Address<span class="mandatoryFields">*</span></label>
+                    <textarea id="bookingAddress" class="form-control"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="form-group" id="divComments">
+            <label for="bookingComments" class="boldFields">Comments</label>
+            <textarea id="bookingComments" class="form-control"></textarea>
+        </div>
+        <div class="form-group well" id="paymentOption">
+            @*<label class="form-check">
+                    <input type="radio" class="form-check-input" name="bookingPayOption" id="rdPay100percent" value="1">Pay now - get <span class="badge badge-pill badge-info">5% discount </span>
+                </label>
+                <label class="form-check">
+                    <input type="radio" class="form-check-input" name="bookingPayOption" id="rdPay50percent" value="2">Pay 50% now - get <span class="badge badge-pill badge-info">2.5% discount </span>
+                </label>*@
+            <label class="form-check">
+                <input type="radio" class="form-check-input" name="bookingPayOption" id="rdPayLater" value="5" checked>I want to Pay later
+            </label>
+        </div>
+        <div class="form-group">
+            <label for="p_TripFare" class="p_TripFare"></label><br />
+            <label for="p_Discount" class="p_Discount"></label><br />
+            <label for="p_Balance" class="p_Balance"></label>
+        </div>
+        <div class="form-group">
+            <button id="btnBooknow" class="btn btn-primary">Book now</button>
+            <button id="btnReplan" class="btn btn-primary">Replan</button>
+        </div>
+        <div class="form-group p_PaymentProcessing">
+
+        </div>
+        <div class="form-group">
+            <div class="alert alert-danger errorMsgBooking">
+                <strong>!</strong> Correct the errors
+            </div>
+        </div>
+    </div>
+</div>

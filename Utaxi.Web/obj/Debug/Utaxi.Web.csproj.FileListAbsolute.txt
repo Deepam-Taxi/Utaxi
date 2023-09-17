@@ -1,0 +1,16 @@
+D:\Utaxi\TFS\Utaxi.in\Utaxi.Web\bin\Utaxi.Web.dll.config
+D:\Utaxi\TFS\Utaxi.in\Utaxi.Web\bin\Utaxi.Web.dll
+D:\Utaxi\TFS\Utaxi.in\Utaxi.Web\bin\Utaxi.Web.pdb
+D:\Utaxi\TFS\Utaxi.in\Utaxi.Web\obj\Debug\Utaxi.Web.csproj.AssemblyReference.cache
+D:\Utaxi\TFS\Utaxi.in\Utaxi.Web\obj\Debug\Utaxi.Web.csproj.CoreCompileInputs.cache
+D:\Utaxi\TFS\Utaxi.in\Utaxi.Web\obj\Debug\Utaxi.Web.csproj.CopyComplete
+D:\Utaxi\TFS\Utaxi.in\Utaxi.Web\obj\Debug\Utaxi.Web.dll
+D:\Utaxi\TFS\Utaxi.in\Utaxi.Web\obj\Debug\Utaxi.Web.pdb
+D:\Utaxi\Git hub\Utaxi.in\Utaxi.Web\bin\Utaxi.Web.dll.config
+D:\Utaxi\Git hub\Utaxi.in\Utaxi.Web\bin\Utaxi.Web.dll
+D:\Utaxi\Git hub\Utaxi.in\Utaxi.Web\bin\Utaxi.Web.pdb
+D:\Utaxi\Git hub\Utaxi.in\Utaxi.Web\obj\Debug\Utaxi.Web.csproj.AssemblyReference.cache
+D:\Utaxi\Git hub\Utaxi.in\Utaxi.Web\obj\Debug\Utaxi.Web.csproj.CoreCompileInputs.cache
+D:\Utaxi\Git hub\Utaxi.in\Utaxi.Web\obj\Debug\Utaxi.Web.csproj.CopyComplete
+D:\Utaxi\Git hub\Utaxi.in\Utaxi.Web\obj\Debug\Utaxi.Web.dll
+D:\Utaxi\Git hub\Utaxi.in\Utaxi.Web\obj\Debug\Utaxi.Web.pdb
