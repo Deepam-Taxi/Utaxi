@@ -241,7 +241,7 @@
                 </a>
             </div>
             <div class="boldFields" style="font-size: 17px; color: white;">
-                <a href="tel:08046844684" style="color: #fff;">Call 080 4684 4684</a>
+                <a href="tel:08041466888" style="color: #fff;">Call 080 4146 6888</a>
             </div>
         </nav>
     </header>
@@ -273,13 +273,13 @@
                             <input type="radio" class="form-check-input" name="outstationOption" id="rdOutstationPackage" value="">Two way
                         </label>
                     </div>
-                    <div class="form-group mt-2" id="divPickup">
+                    <div class="form-group" id="divPickup">
                         <label for="pickupPlace" class="boldFields">Pickup place<span class="mandatoryFields">*</span></label>
                        
                         <input type="text" class="form-control" value="Vittasandra, Bengaluru, Karnataka" placeholder="Vittasandra, Bengaluru, Karnataka" readonly id="pickupPlaceSearch">
                        
                     </div>
-                    <div class="form-group mt-2" id="divAiportPickupField">
+                    <div class="form-group" id="divAiportPickupField">
                         <label for="dropPlace" class="boldFields">Airport Pickup<span class="mandatoryFields">*</span></label>
                         <input type="text" class="form-control" value="Kempegowda International Airport (BLR), Devanahalli, Bengaluru, Karnataka 560300, India" placeholder="Kempegowda International Airport (BLR), Devanahalli, Bengaluru, Karnataka 560300, India" disabled id="pickupPlaceAirportSearch">
                     </div>
@@ -1074,7 +1074,7 @@
                             <li style="font-size: 20px; font-weight: bold;">OUR LOCATION</li>
                             <li><i class="fa fa-map-marker" aria-hidden="true"></i>#26 6th main, 18th Cross Rd, NS Palya, Stage 2, Bengaluru, Karnataka 560076 </li>
                             <li><i class="fa fa-envelope-o" aria-hidden="true"></i><a href="mailto:info@utaxi.in" style="color: #ffffff;">info@utaxi.in</a> </li>
-                            <li><i class="fa fa-phone" aria-hidden="true"></i><a href="tel:08046844684" style="color: #ffffff;">Call 080 4684 4684</a>     </li>   
+                            <li><i class="fa fa-phone" aria-hidden="true"></i><a href="tel:08041466888" style="color: #ffffff;">Call 080 4146 6888</a>     </li>   
                             <li><i class="fa fa-clock-o" aria-hidden="true"></i>Office Time  : 24/7</li>
                         </ul>
                     </div>

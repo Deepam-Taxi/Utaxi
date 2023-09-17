@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en-us">
 <head>
     <title>Bangalore Airport Taxi Offers Pickup & Drop Only 474 @ U Taxi
@@ -19,7 +19,7 @@
     <meta property="business:contact_data:postal_code" content="560076">
     <meta property="business:contact_data:country_name" content="India">
     <meta property="business:contact_data:email" content="utaxiindia@gmail.com">
-    <meta property="business:contact_data:phone_number" content="9901160735">
+    <meta property="business:contact_data:phone_number" content="08046844684">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Online Car Rental from Bangalore to Bangalore Airport Offers and get best Best Deals on your cab">
     <meta name="twitter:description" content="U Taxi offers a hassle-free, comfortable and affordable taxi cab service nearby your location to travel within city">
@@ -128,7 +128,7 @@
 
     <script src="/Scripts/mdtimepicker.js"></script>
 
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBiFNtCEUrKPHbCUOdqVKMCsq9-uPB5sc4&libraries=places">
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCrVud8x3PFL-jig7HpNaw7hXZbo0rl1jo&libraries=places">
     </script>
     <script src="/Scripts/googlesearch.js"></script>
     <style type="text/css">
@@ -237,7 +237,7 @@
                     </a>
                 </div>
                 <div id="phonenumberContainer" class="boldFields" style="font-size: 17px; color: white;">
-                <a href="tel:08046844684" style="color:#fff;">Call 080 4684 4684</a>
+                <a href="tel:080 4684 4684" style="color:#fff;">Call 080 4684 4684</a>
             </div>
             </div>
         </nav>
@@ -568,10 +568,17 @@
         }
     </style>
 
-    <link href="https://deepamtaxi.com/assets/css/callpage-callback.default.css" rel="stylesheet" type="text/css">
+    <link href="https://www.deepamtaxi.com/assets/css/callpage-callback.default.css" rel="stylesheet" type="text/css">
+	<!--<div id="callpage1" dir="ltr" data-specifity="" class="cp-callpage cp-callpage--widget-callback cp-theme-light">
+   <div data-test="widget-button-section" class="cp-button-section cp-callpage__button" style="bottom: 40% !important;right: 0px !important;position: fixed!important;z-index: 100!important;transition: all .25s ease-in-out!important;" >
+
+            <a href="https://play.google.com/store/apps/details?id=com.deepam_cabs.customer" target="__blank">
+               <img src="https://www.deepamtaxi.com/admin/uploads/play-store-logoclock.png" alt="playstore" class="playimg" style="float: right; width: 27%;"> </a> 
+   </div>
+</div>-->
     <div id="callpage" dir="ltr" data-specifity="" class="cp-callpage cp-callpage--widget-callback cp-theme-light">
         <div data-test="widget-button-section" class="cp-button-section cp-callpage__button">
-            <a href="tel:08046844684">
+            <a href="tel:080 4684 4684">
                 <div data-test="widget-button" class="cp-widget-button">
                     <div data-brand-color="background" class="cp-widget-button__inner">
 

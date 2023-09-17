@@ -3,7 +3,7 @@
 <html lang="en-us">
 <head>
     <title>
-        Day Trip Ooty @ Rs.6999/- | Coonoor | sightseeing | Book cab for Outstation
+        Day Trip Ooty @ Rs.6999/- | Coonoor | sightseeing | Cab for Outstation
     </title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -304,7 +304,7 @@
                 </a>
             </div>
             <div class="boldFields" style="font-size: 17px; color: white;">
-                <a href="tel:08046844684" style="color:#fff;">Call 080 4684 4684</a>
+                <a href="tel:080 4684 4684" style="color:#fff;">Call 080 4684 4684</a>
             </div>
         </nav>
     </header>
@@ -320,8 +320,7 @@
 
 <script src="/bundles/mdtimepicker?v=ElKFOGCsYzofN8sV1aVQTDfUC5wnRjT6rvR07xpFzU41"></script>
 
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADC1qojpbIsrNj-oPZwPh1yVATPTIj1U8&libraries=places"></script>
-
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6Xpy-WKHM3285LxVUTqqf_vDdXHfx4Wc&libraries=places"></script>
 <script src="/Scripts/googlesearch.js"></script>
 <style type="text/css">
     .ajax-loader {
@@ -455,7 +454,7 @@
                             <input type="radio" class="form-check-input" name="outstationOption" id="rdOutstationPackage" value="">Two way
                         </label>
                     </div>
-                    <div class="form-group mt-2" id="divPickup">
+                    <div class="form-group" id="divPickup">
                         <label for="pickupPlace" class="boldFields">Pickup place<span class="mandatoryFields">*</span></label>
                         <div class="searchplaces form-control" id="pickupPlace">
                             Enter Search Place
@@ -463,7 +462,7 @@
                         <input type="text" class="form-control" placeholder="Enter Search Place" id="pickupPlaceSearch">
                         <div class="E_FromPlace E_Msg"></div>
                     </div>
-                    <div class="form-group mt-2" id="divAiportPickupField">
+                    <div class="form-group" id="divAiportPickupField">
                         <label for="dropPlace" class="boldFields">Airport Pickup<span class="mandatoryFields">*</span></label>
                         <input type="text" class="form-control" placeholder="Kempegowda International Airport (BLR), Devanahalli, Bengaluru, Karnataka 560300, India" disabled id="pickupPlaceAirportSearch">
                     </div>
@@ -1027,7 +1026,7 @@
             <div class="row">
                 <div id="mixedSlider">
                     <div class="MS-content">
-                        <div class="item">
+                                            <div class="item">
                             <div class="imgTitle">
                                 <img class="imgPackages" src="/Images/bangalore-darshan-package-from-bangalore-price--all-inclusive--except-toll-&amp;-parking-.png" alt="cab hire in bangalore" />
                             </div>
@@ -1044,59 +1043,59 @@
                         </div>
                         <div class="item">
                             <div class="imgTitle">
-                                <a href="/cheapestholidaypackage/weekendgetaway/Hogenakkalpackagetour/bestplaceinhogenakkalfalls">
+                                <a href="https://www.utaxi.in/bangalore/holiday-package-taxi-services/bangalore-to-hogenakkal-one-day-package.aspx">
                                     <img class="imgPackages" src="/Images/hogenkkal-falls-1-day-package-from-bangalore-price--all-inclusive--except-toll-&amp;-parking-.png" alt="cabs in bangalore airport" />
                                 </a>
                             </div>
                         </div>
                         <div class="item">
                             <div class="imgTitle">
-                                <a href="/cheapestholidaypackage/weekendgetaway/InnovativeFilmCityBangalorePackageTour/bestplaceinInnovativefilmcityBangalore">
+                                <a href="https://www.utaxi.in/bangalore/holiday-package-taxi-services/bangalore-to-innovative-film-city-one-day-trip.aspx">
                                     <img class="imgPackages" src="/Images/innovative-film-city--full-day-fix-ed-package-from-bangalore-price--all-inclusive--except-toll-&amp;-parking-.png" alt="daily cab services in bangalore" />
                                 </a>
                             </div>
                         </div>
                         <div class="item">
                             <div class="imgTitle">
-                                <a href="/cheapestholidaypackage/weekendgetaway/mysore1daypackage/bestplaceinmysore">
+                                <a href="https://www.utaxi.in/bangalore/holiday-package-taxi-services/bangalore-to-mysore-one-day-tour-package.aspx">
                                     <img class="imgPackages" src="/Images/mysore-1-day-Package-from-Bangalore-Price--all-inclusive--except-toll-&amp;-parking-.png" alt="cheapest cab service in bangalore for airport" />
                                 </a>
                             </div>
                         </div>
                         <div class="item">
                             <div class="imgTitle">
-                                <a href="/cheapestholidaypackage/weekendgetaway/Nandihillspackage/bestplaceinnandihills"><img class="imgPackages" src="/Images/nandi-hills-package-from-bangalore-price--all-inclusive--except-toll-&amp;-parking-.png" alt="cab hire in bangalore" /></a>
+                                <a href="https://www.utaxi.in/bangalore/holiday-package-taxi-services/bangalore-to-nandi-hills-one-day-sightseeing.aspx"><img class="imgPackages" src="/Images/nandi-hills-package-from-bangalore-price--all-inclusive--except-toll-&amp;-parking-.png" alt="cab hire in bangalore" /></a>
                             </div>
                         </div>
                         <div class="item">
                             <div class="imgTitle">
-                                <a href="/cheapestholidaypackage/weekendgetaway/OotyandcoonoorPackageTour/bestplaceinOotyandCoonoor"><img class="imgPackages" src="/Images/ooty-and-coonoor-3-day-2-night-fix-package-from-bangalore-price--all-inclusive--except-toll-&amp;-parking-.png" alt="taxi service in bangalore" /></a>
+                                <a href="https://www.utaxi.in/bangalore/holiday-package-taxi-services/coorg-ooty-conoor-2-nights-3-days-package.aspx"><img class="imgPackages" src="/Images/ooty-and-coonoor-3-day-2-night-fix-package-from-bangalore-price--all-inclusive--except-toll-&amp;-parking-.png" alt="taxi service in bangalore" /></a>
                             </div>
                         </div>
                         <div class="item">
                             <div class="imgTitle">
-                                <a href="/cheapestholidaypackage/weekendgetaway/shivanasamudrawaterfallspackagetour/bestplaceinshivanasamudrawaterfalls">
+                                <a href="https://www.utaxi.in/bangalore/holiday-package-taxi-services/bangalore-to-shivanasamudra-talakad-one-day-trip.aspx">
                                     <img class="imgPackages" src="/Images/shivanasamudra-and-talakadu-full-day-fix-package-from-bangalore-price--all-inclusive--except-toll-&amp;-parking-.png" alt="outstation taxi service in bangalore" />
                                 </a>
                             </div>
                         </div>
                         <div class="item">
                             <div class="imgTitle">
-                                <a href="/cheapestholidaypackage/weekendgetaway/Wayanadpackagetour/bestplaceinWayanad">
+                                <a href="https://www.utaxi.in/bangalore/holiday-package-taxi-services/bangalore-to-wayanand-2-night-3-days-tour-package.aspx">
                                     <img class="imgPackages" src="/Images/Wayanad-3-Day-2-Night-Fix-package-from-bangalore-price--all-inclusive--except-toll-&amp;-parking-.png" alt="call taxi in bangalore" />
                                 </a>
                             </div>
                         </div>
                         <div class="item">
                             <div class="imgTitle">
-                                <a href="/cheapestholidaypackage/weekendgetaway/wonderlapackagetour/bestplaceinwonderla">
+                                <a href="https://www.utaxi.in/bangalore/holiday-package-taxi-services/one-day-wonderla-bangalore-package.aspx">
                                     <img class="imgPackages" src="/Images/wonder-la--1-day-fix-ed-ackage-from-bangalore-price--all-inclusive--except-toll-&amp;-parking-.png" alt="taxi in bangalore airport" />
                                 </a>
                             </div>
                         </div>
                         <div class="item">
                             <div class="imgTitle">
-                                <a href="/cheapestholidaypackage/weekendgetaway/coorgpackagetour/bestplaceincoorg"><img class="imgPackages" src="/Images/coorg-2-day-fix-package-from-bangalore-price--all-inclusive--except-toll-&amp;-parking-.png" alt="best taxi service in bangalore" /></a>
+                                <a href="https://www.utaxi.in/bangalore/holiday-package-taxi-services/bangalore-to-coorg-tour-package-for-1-night-2-days.aspx"><img class="imgPackages" src="/Images/coorg-2-day-fix-package-from-bangalore-price--all-inclusive--except-toll-&amp;-parking-.png" alt="best taxi service in bangalore" /></a>
                             </div>
                         </div>
                     </div>
@@ -1312,7 +1311,7 @@
                             <li style="font-size: 20px;font-weight: bold;">OUR LOCATION</li>
                             <li> <i class="fa fa-map-marker" aria-hidden="true"></i> #26 6th main, 18th Cross Rd, NS Palya, Stage 2, Bengaluru, Karnataka 560076 </li>
                             <li> <i class="fa fa-envelope-o" aria-hidden="true"></i>  <a href="mailto:info@utaxi.in" style="color: #ffffff;"> info@utaxi.in</a> </li>
-                            <li> <i class="fa fa-phone" aria-hidden="true"></i>  <a href="tel:08046844684" style="color: #ffffff;">Call 080 4684 4684</a>     </li>
+                            <li> <i class="fa fa-phone" aria-hidden="true"></i>  <a href="tel:080 4684 4684" style="color: #ffffff;">Call 080 4684 4684</a>     </li>
                             <li> <i class="fa fa-globe" aria-hidden="true"></i>  <a href="https://www.utaxi.in" style="color: #ffffff;">www.utaxi.in</a> </li>
                             <li> <i class="fa fa-clock-o" aria-hidden="true"></i>  Office Time  : 24/7</li>
                         </ul>
@@ -1348,5 +1347,42 @@
 
         </div>
     </footer>
+	<div id="callpage1" dir="ltr" data-specifity="" class="cp-callpage cp-callpage--widget-callback cp-theme-light">
+   <div data-test="widget-button-section" class="cp-button-section cp-callpage__button" style="bottom: 40% !important;right: 0px !important;position: fixed!important;z-index: 100!important;transition: all .25s ease-in-out!important;" >
+
+            <a href="https://play.google.com/store/apps/details?id=com.deepam_cabs.customer" target="__blank">
+               <img src="https://www.deepamtaxi.com/admin/uploads/play-store-logoclock.png" alt="playstore" class="playimg" style="float: right; width: 27%;"> </a> 
+   </div>
+</div>
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+        (function () {
+            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/593e4214b3d02e11ecc6964c/default';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+    </script>
+    <!--End of Tawk.to Script-->
+<!-- Default Statcounter code for U taxi
+https://www.utaxi.in -->
+<script type="text/javascript">
+var sc_project=12078456; 
+var sc_invisible=1; 
+var sc_security="cd01ad45"; 
+var sc_https=1; 
+</script>
+<script type="text/javascript"
+src="https://www.statcounter.com/counter/counter.js"
+async></script>
+<noscript><div class="statcounter"><a title="Web Analytics"
+href="https://statcounter.com/" target="_blank"><img
+class="statcounter"
+src="https://c.statcounter.com/12078456/0/cd01ad45/1/"
+alt="Web Analytics"></a></div></noscript>
+<!-- End of Statcounter Code -->
 </body>
 </html>

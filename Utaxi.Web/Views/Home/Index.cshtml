@@ -1,14 +1,39 @@
-﻿﻿﻿﻿
+﻿﻿﻿
 
 @Scripts.Render("~/bundles/jBox")
 @Styles.Render("~/Content/jBox")
 @*@Scripts.Render("~/bundles/index")*@
-<script src="~/Scripts/Home/Index_V1.js"></script>
+<script src="~/Scripts/Home/Index_V1.min.js"></script>
 @Styles.Render("~/Content/mdtimepicker")
 @Scripts.Render("~/bundles/mdtimepicker")
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?&key=AIzaSyDKaraLvnKHjArEbdL7SEfi4ihkxyMzK58&libraries=places"></script>
-<script src="~/Scripts/googlesearch.js"></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?&key=AIzaSyDUznTiPcMB6dsRkOq9ZLNrKLCzVZzvZXo&libraries=places"></script>
+
 <style type="text/css">
+#li_drop_loc li{
+	width: 100%;
+    font-weight: bold;
+    text-anchor: end;
+    text-align: left;
+    margin-left: 20px;
+    font-size: 11px;
+    padding: 5px 15px;
+    margin: 0px !important;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+ }
+
+#li_pick_loc li{
+       width: 100%;
+    font-weight: bold;
+    text-anchor: end;
+    text-align: left;
+    margin-left: 20px;
+    font-size: 11px;
+    padding: 5px 15px;
+    margin: 0px !important;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+ }
     .ajax-loader {
         visibility: hidden;
         background-color: rgba(255,255,255,0.7);
@@ -96,7 +121,7 @@
         }
 
         #customers tr:nth-child(even) {
-            background-color: #f2f2f2;
+            /*background-color: #f2f2f2;*/
         }
 
         #customers tr:hover {
@@ -127,50 +152,24 @@
     $('.btnCloseModal').click(function () {
         $('#myModal').modal('hide');
     });
-</script><!-- The Modal -->
-@*<div class="modal fade" id="myModal">
-        <div class="modal-dialog modal-dialog-centered" style="max-width: 535px !important;">
-            <div class="modal-content">
-
-                <!-- Modal Header -->
-                <div class="modal-header">
-                    <h4 class="modal-title">Special offers & discount</h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-
-                <!-- Modal body -->
-                <div class="modal-body">
-                    <img src="~/Images/Book-taxiFrom-airport-pickup-together!.png" />
-                </div>
-
-                <!-- Modal footer -->
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                </div>
-
-            </div>
-        </div>
-    </div>*@
+</script>
 <div class="row" style="margin-top: 5px;">
     <div class="col-md-6">
         <div class="card border-dark mb-3">
             <div class="card-header boldFields">
                 <ul class="nav nav-tabs card-header-tabs">
                     <li class="nav-item">
-                        <a class="nav-link active" id="idAirportTab" data-toggle="tab" onclick="showTabs('Airport');">Airport Transfer</a>
+                        <a class="nav-link active" style="color: black; cursor: pointer;" id="idAirportTab" data-toggle="tab" onclick="showTabs('Airport');">Airport Transfer</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="idLocalDropTab" data-toggle="tab" onclick="showTabs('Citytaxi');">Local Drop</a>
+                        <a class="nav-link" style="color: black; cursor: pointer;" id="idLocalDropTab" data-toggle="tab" onclick="showTabs('Citytaxi');">Local Drop</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="idPackageTab" data-toggle="tab" onclick="showTabs('Package');">Local Package</a>
+                        <a class="nav-link" style="color: black; cursor: pointer;" id="idPackageTab" data-toggle="tab" onclick="showTabs('Package');">Local Package</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="idOutstationTab" data-toggle="tab" style="cursor: pointer;" onclick="showTabs('OutstationPage');">Outstation</a>
+                        <a class="nav-link" style="color: black; cursor: pointer;" id="idOutstationTab" data-toggle="tab" style="cursor: pointer;" onclick="showTabs('OutstationPage');">Outstation</a>
                     </li>
-                    <!--<li class="nav-item">
-                        <a class="nav-link" data-toggle="tab" href="#" onclick="showTabs('OutstationPackages');">Holiday Packages</a>
-                    </li>-->
                 </ul>
             </div>
             <div class="card-body">
@@ -194,12 +193,13 @@
                             <input type="radio" class="form-check-input" name="outstationOption" id="rdOutstationPackage" value="">Two way
                         </label>
                     </div>
-                    <div class="form-group mt-2" id="divPickup">
+                    <div class="form-group" id="divPickup">
                         <label for="pickupPlace" class="boldFields">Pickup place<span class="mandatoryFields">*</span></label>
                         <div class="searchplaces form-control" id="pickupPlace">
                             Enter Search Place
                         </div>
                         <input type="text" class="form-control" placeholder="Enter Search Place" id="pickupPlaceSearch">
+						<ul class="" id="li_pick_loc" style="max-height:200px;overflow: auto;padding: 0;margin: 0;box-shadow: 0 0 8px rgba(0,0,0,0.23);background: #fff;"></ul>
                         <div class="E_FromPlace E_Msg"></div>
                     </div>
                     <div class="form-group mt-2" id="divAiportPickupField">
@@ -212,6 +212,7 @@
                             Enter Search Place
                         </div>
                         <input type="text" class="form-control" placeholder="Enter Search Place" id="dropPlaceSearch">
+						<ul class="" id="li_drop_loc" style="max-height:200px;overflow: auto;padding: 0;margin: 0;box-shadow: 0 0 8px rgba(0,0,0,0.23);background: #fff;"></ul>
                         <div class="E_ToPlace E_Msg"></div>
                     </div>
                     <div class="form-group mt-2" id="divAiportDropField">
@@ -440,7 +441,7 @@
                 </div>
                 <div class="form-group mt-2">
                     <div class="alert row" style="margin-left: -22px;">
-                        <img style="width: 100%;" src="~/Images/feedback.png" alt="cab for airport" />
+                        <img style="width: 100%;" src="~/Images/feedback.webp" alt="cab for airport" />
                     </div>
                 </div>
                 <div class="form-group mt-2">
@@ -448,19 +449,19 @@
                         <div class="col-md-2"></div>
                         <div class="col-md-2" style="border: 1px solid #eaeaea; padding: 5px; text-align: center;">
                             <a href="https://www.facebook.com/utaxi12/?modal=admin_todo_tour" class="clsbookNow">
-                                <img style="width: 100%;" src="~/Images/Social media Icon/facebook-icon-png-social-media-icons.png" alt="taxi in bnaglore" />
+                                <img style="width: 100%;" src="~/Images/utaxi-facebook-social-media-icons.webp" alt="taxi in bnaglore" />
                             </a>
                         </div>
                         <div class="col-md-1"></div>
                         <div class="col-md-2" style="border: 1px solid #eaeaea; padding: 5px; text-align: center;">
                             <a href="https://twitter.com/Utaxi3">
-                                <img style="width: 100%;" src="~/Images/Social media Icon/twitter--social-media-icons-.png" alt="taxi for airport" />
+                                <img style="width: 100%;" src="~/Images/utaxi-twitter-social-media-icons.webp" alt="taxi for airport" />
                             </a>
                         </div>
                         <div class="col-md-1"></div>
                         <div class="col-md-2" style="border: 1px solid #eaeaea; padding: 5px; text-align: center;">
                             <a href="https://www.google.co.in/search?q=utaxi&oq=utaxi&aqs=chrome..69i57j69i60j35i39j69i61l3.6428j1j7&sourceid=chrome&ie=UTF-8#lrd=0x3bae151ddb3b9c3b:0x453bb66e876199fc,3,,,">
-                                <img style="width: 100%;" src="~/Images/Social media Icon/google-plus-3-169 (1).png" alt="cabs for airport" />
+                                <img style="width: 100%;" src="~/Images/utaxi-google-plus-social-media-icons.webp" alt="cabs for airport" />
                             </a>
                         </div>
                         <div class="col-md-2"></div>
@@ -476,7 +477,7 @@
         <div class="card">
             <div class="card-header boldFields">
                 Offers
-                <img src="~/Images/taxiservices-cabservices-outstationcab.png" style="width:100%;" alt="outstation cab services Bangalore" />
+                <img src="~/Images/taxi-services-cab-services-outstation-cab.webp" style="width:100%;" alt="outstation cab services Bangalore" />
             </div>
             <div class="card-body">
                 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -489,20 +490,20 @@
                     </ol>
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="~/Images/Book-taxiFrom-airport-pickup-together!.png" alt="Best Airport Pickup Drop" />
+                            <img src="~/Images/Book-taxiFrom-airport-pickup-together.webp" alt="Best Airport Pickup Drop" />
+                        </div>
+                        @*<div class="carousel-item">
+                            <img src="~/Images/hogenakkal-falls-1-day-flat-package-in-around-bangalore-for-outstation-.webp" alt="Hogenakkal Falls one day trip from bangalore" />
                         </div>
                         <div class="carousel-item">
-                            <img src="~/Images/hogenkkal-falls-1-day-flat-package-in-around-bangalore-for-outstation-.jpg" alt="Hogenakkal Falls one day trip from bangalore" />
+                            <img src="~/Images/book-any-sedan-in-around-bangalore-for-outstation-.webp" alt="Outstation Taxi Service in Bangalore" />
                         </div>
                         <div class="carousel-item">
-                            <img src="~/Images/book-any-sedan-in-around-bangalore-for-outstation-.png" alt="Outstation Taxi Service in Bangalore" />
+                            <img src="~/Images/utaxi-1-day-bangalore-to-mysore-tour-package.webp" alt="Mysore Tour Packages from Bangalore" />
                         </div>
                         <div class="carousel-item">
-                            <img src="~/Images/utaxi-cabs-taxi-1-day-bangalore-to-mysore-tour-package-925740370s.png" alt="Mysore Tour Packages from Bangalore" />
-                        </div>
-                        <div class="carousel-item">
-                            <img src="~/Images/hogenkkal-falls-1-day-flat-package-in-around-bangalore-for-outstation-2-.jpg" alt="Hogenakkal Falls Local Taxi for one day trip" />
-                        </div>
+                            <img src="~/Images/hogenakkal-falls-1-day-flat-package-in-around-bangalore-for-outstation.webp" alt="Hogenakkal Falls Local Taxi for one day trip" />
+                        </div>*@
                     </div>
                     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -531,7 +532,7 @@
     <div class="row">
         <div class="col-md-4">
 
-            <div>  <a href="https://www.utaxi.in/bangalore/holiday-package-taxi-services/bangalore-sightseeing-one-day-packages.aspx"><img src="~/Images/one-bay-sightseeing-in-bangalore.jpg" style="width: 100%;border-radius: 20px;" alt="One Day Trip from  Bangalore" /></a></div>
+            <div>  <a href="https://www.utaxi.in/bangalore/holiday-package-taxi-services/bangalore-sightseeing-one-day-packages.aspx"><img src="~/Images/one-day-sightseeing-in-bangalore.webp" style="width: 100%;border-radius: 20px;" alt="One Day Trip from  Bangalore" /></a></div>
             <h2 style="font-size: 22px;margin-bottom: 5px;">One Day sightseeing in Bangalore </h2>
             <div>
 
@@ -542,7 +543,7 @@
         </div>
         <div class="col-md-4">
 
-            <div><a href="https://www.utaxi.in/bangalore/outstation-taxi/bangalore-outstation-cabs.aspx"><img src="~/Images/Outstation-holiday-package-taxi.jpg" style="width: 100%;border-radius: 20px;" alt="Book Taxi Online for One Day Holiday Package" /></a></div>
+            <div><a href="https://www.utaxi.in/bangalore/outstation-taxi/bangalore-outstation-cabs.aspx"><img src="~/Images/Outstation-holiday-package-taxi.webp" style="width: 100%;border-radius: 20px;" alt="Book Taxi Online for One Day Holiday Package" /></a></div>
             <h2 style="font-size: 21px;margin-bottom: 5px;">Book Outstation Cab at Lowest Cost </h2>
             <div>
 
@@ -554,7 +555,7 @@
 
         <div class="col-md-4">
 
-            <div> <a href="~/Home/Index"><img src="~/Images/bext-taxi-cabs-utaxi.png" style="width: 100%;border-radius: 20px;" alt="Book Taxi for Outstation and Holiday Package" /></a></div>
+            <div> <a href="~/Home/Index"><img src="~/Images/best-taxi-cabs-utaxi.webp" style="width: 100%;border-radius: 20px;" alt="Book Taxi for Outstation and Holiday Package" /></a></div>
             <h2 style="font-size: 22px;margin-bottom: 5px;">Best & Cheapest Taxi, Cab Service</h2>
             <div>
 
@@ -572,16 +573,16 @@
 
 <div class="container">
     <div class="title-box">
-        <h2> Book a Cab from U Taxi</h2>
+        <h3> Book a Cab from U Taxi</h3>
 
     </div>
     <div class="row">
         <div class="col-md-4">
 
-            <div>  <a href="https://www.utaxi.in/bangalore/holiday-package-taxi-services/bangalore-sightseeing-one-day-packages.aspx"><img src="~/Images/utaxi-hatchback-car.png" style="width: 100%;border-radius: 20px;" alt="One Day Trip from  Bangalore" /></a></div>
-            <h2 style="font-size: 22px;margin-bottom: 5px;">
+            <div>  <a href="https://www.utaxi.in/bangalore/holiday-package-taxi-services/bangalore-sightseeing-one-day-packages.aspx"><img src="~/Images/utaxi-hatchback-car.webp" style="width: 100%;border-radius: 20px;" alt="One Day Trip from  Bangalore" /></a></div>
+            <h4 style="font-size: 22px;margin-bottom: 5px;">
                 HatchBack Cabs Rs 8.00/- Per km
-            </h2>
+            </h4>
             <div>
                 <p>Up to 4 Passenger can Travel </p>
                 <p class="card-description">
@@ -594,10 +595,10 @@
         </div>
         <div class="col-md-4">
 
-            <div><a href="https://www.utaxi.in/bangalore/outstation-taxi/bangalore-outstation-cabs.aspx"><img src="~/Images/utaxi-sedan-car.png" style="width: 100%;border-radius: 20px;" alt="Book Taxi Online for One Day Holiday Package" /></a></div>
-            <h2 style="font-size: 21px;margin-bottom: 5px;">
+            <div><a href="https://www.utaxi.in/bangalore/outstation-taxi/bangalore-outstation-cabs.aspx"><img src="~/Images/utaxi-sedan-car.webp" style="width: 100%;border-radius: 20px;" alt="Book Taxi Online for One Day Holiday Package" /></a></div>
+            <h4 style="font-size: 21px;margin-bottom: 5px;">
                 Sedan Taxi Rs 9.00/- Per km
-            </h2>
+            </h4>
 
             <div>
                 <p>Up to 4 Passenger can Travel </p>
@@ -609,10 +610,10 @@
 
         <div class="col-md-4">
 
-            <div> <a href="~/Home/Index"><img src="~/Images/utaxi-suv-car.png" style="width: 100%;border-radius: 20px;" alt="Book Taxi for Outstation and Holiday Package" /></a></div>
-            <h2 style="font-size: 22px;margin-bottom: 5px;">
+            <div> <a href="~/Home/Index"><img src="~/Images/utaxi-suv-car.webp" style="width: 100%;border-radius: 20px;" alt="Book Taxi for Outstation and Holiday Package" /></a></div>
+            <h4 style="font-size: 22px;margin-bottom: 5px;">
                 SUV Cabs Rs 12.50/- Per km
-            </h2>
+            </h4>
             <div>
                 <p>Up to 7 Passenger can Travel </p>
                 <p class="card-description"> Book Outstation Cabs online at lowest fares Rs 12.50/- Per km with minimum 250 km/per day and Driver Bata  Rs.300.00/-. Our SUV Vehicles like Toyota Innova, Mahindra Xylo, Chevrolet. SUV Cab has a seating capacity of 6+1 and luggage space for 6 suitcases or trolleys and also available with top carriers top of the vehicle. </p>
@@ -703,13 +704,13 @@
 
 
 
-                <li class="list-group-item">
+
                     <b>Driver Food and Stay -</b>
                     Although we dont ask our Customer's to pay for our Drivers Food and Stay, for the cab etc are part of the trip and not considered seperately.
                     when you stay at Hotels/Resorts/Home Stays or atleast give them time to find out themselves. Driver spending time for his food, filling fuel
                     but atleast ensure they are given enough time to take care of themselves. Drivers should get access to basic amenities to get fresh etc,
 
-                </li>
+
 
                 <br>
                 <h5>Outstation taxi services prices from Bangalore</h5>
@@ -843,46 +844,46 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header" style="background-color: #ffc107;">
-                    <h6 class="modal-title FD_FromPalceToPlace"></h6>
+                    <h4 class="modal-title FD_FromPalceToPlace"></h4>
                 </div>
                 <div class="modal-body">
                     <table border="1" style="width: 100%">
                         <tr>
                             <td>
-                                <h6><b>Pickup Date</b></h6>
+                                <h5><b>Pickup Date</b></h5>
                             </td>
                             <td>
 
-                                <h6><span class="FD_PickupDate">2021-01-21</span></h6>
+                                <h5><span class="FD_PickupDate">2021-01-21</span></h5>
                             </td>
                             <td>
-                                <h6><b>Vehicle Type:</b> </h6>
+                                <h5><b>Vehicle Type:</b> </h5>
                             </td>
                             <td>
 
-                                <h6><span class="FD_VehicleType"></span><b><span class="FD_ACType"></span></b></h6>
+                                <h5><span class="FD_VehicleType"></span><b><span class="FD_ACType"></span></b></h5>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <h6><b>Pickup Time:</b></h6>
+                                <h5><b>Pickup Time:</b></h5>
                             </td>
                             <td>
-                                <h6><span class="FD_PickupTime"></span></h6>
+                                <h5><span class="FD_PickupTime"></span></h5>
                             </td>
                             <td>
-                                <h6><b>Total No. of Seats:</b> </h6>
+                                <h5><b>Total No. of Seats:</b> </h5>
                             </td>
                             <td>
-                                <h6><span id="person">4</span></h6>
+                                <h5><span id="person">4</span></h5>
                             </td>
                         </tr>
                         <tr>
                             <td colspan="2">
-                                <h6><b>Estimated Price:</b> </h6>
+                                <h5><b>Estimated Price:</b> </h5>
                             </td>
                             <td>
-                                <h6><span> <b>₹</b><b><span style="font-size: 15px" class="FD_Rate"></span></b></span></h6>
+                                <h5><span> <b>₹</b><b><span style="font-size: 15px" class="FD_Rate"></span></b></span></h5>
                             </td>
                             <td></td>
                         </tr>
@@ -890,24 +891,24 @@
                     <br />
                     <table border="1" style="width: 100%">
                         <tr>
-                            <td><h6>Included Km :</h6></td>
-                            <td><h6><span class="FD_distance"></span> Km </h6></td>
-                            <td><h6>₹<span class="FD_min_amount">20000</span></h6></td>
+                            <td><h5>Included Km :</h5></td>
+                            <td><h5><span class="FD_distance"></span> Km </h5></td>
+                            <td><h5>₹<span class="FD_min_amount">20000</span></h5></td>
                         </tr>
                         <tr>
-                            <td><h6>Additional fare/Km(beyond included Km)</h6></td>
-                            <td><h6>₹<span class="FD_extra_km_charge">10</span>/KM</h6></td>
+                            <td><h5>Additional fare/Km(beyond included Km)</h5></td>
+                            <td><h5>₹<span class="FD_extra_km_charge">10</span>/KM</h5></td>
                             <td></td>
                         </tr>
                         <tr>
-                            <th><h6>Discount Price:</h6></th>
+                            <th><h5>Discount Price:</h5></th>
                             <th></th>
-                            <td><h6>-₹<span id="FD_discont_price">0</span></h6></td>
+                            <td><h5>-₹<span id="FD_discont_price">0</span></h5></td>
                         </tr>
                         <tr>
-                            <td><h6>Total Fare :</h6></td>
+                            <td><h5>Total Fare :</h5></td>
                             <td></td>
-                            <td><h6>₹<span class="FD_Rate"></span></h6></td>
+                            <td><h5>₹<span class="FD_Rate"></span></h5></td>
                         </tr>
                     </table>
                     <ol class="TripsTerms"></ol>

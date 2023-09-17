@@ -20,7 +20,7 @@
     <meta property="business:contact_data:postal_code" content="560076">
     <meta property="business:contact_data:country_name" content="India">
     <meta property="business:contact_data:email" content="utaxiindia@gmail.com">
-    <meta property="business:contact_data:phone_number" content="9901160735">
+    <meta property="business:contact_data:phone_number" content="08046844684">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Airport Taxi | Cabs in Bangalore | Rs 474 Pickup | Rs 674 Drop">
     <meta name="twitter:description" content="Airport Taxi in Bangalore - Rs 474/- Pick-Up, Rs 674/- Drop, Cheapest OutStation Cabs rates.Indica Rs.7/-Logan/Etios/Dzire Rs.9">

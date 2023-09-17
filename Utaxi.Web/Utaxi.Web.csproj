@@ -1960,6 +1960,7 @@
     <Content Include="bangalore\holiday-package-taxi-services\one-day-wonderla-bangalore-package.aspx" />
     <Content Include="bangalore\outstation-taxi\bangalore-outstation-cabs.aspx" />
     <Content Include="bangalore\srinivasa-nagar-to-airport.aspx" />
+    <Content Include="BingSiteAuth.xml" />
     <Content Include="bin\Antlr3.Runtime.dll" />
     <Content Include="bin\EntityFramework.dll" />
     <Content Include="bin\EntityFramework.SqlServer.dll" />
@@ -2401,8 +2402,11 @@
     <Content Include="fonts\facebook-3-32.png" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\twitter-3-32.png" />
+    <Content Include="gettransactiondetailsbyorderid.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="google7a59a18a5bedcb71.html" />
+    <Content Include="home.aspx" />
     <Content Include="Images\Airport Drop\book-suv-airport-drop.png" />
     <Content Include="Images\Airport Drop\book-taxi-where-you-need-to-be-airport-drop.png" />
     <Content Include="Images\Airport Drop\utaxi-Airport-drop-in-banaglore.png" />
@@ -2567,8 +2571,15 @@
     <Content Include="img\demo-screen-1.png" />
     <Content Include="img\utaxi-logo.png" />
     <Content Include="img\Utaxi-Semi-Logo.ico" />
+    <Content Include="index.html" />
     <Content Include="js\new-age.js" />
     <Content Include="js\new-age.min.js" />
+    <Content Include="logo_192_by_192.png" />
+    <Content Include="payTM.aspx" />
+    <Content Include="PayTM_GT.aspx" />
+    <Content Include="PayTM_TN.aspx" />
+    <Content Include="pushcrew-sw.js" />
+    <Content Include="robots.txt" />
     <Content Include="Scripts\bootbox.js" />
     <Content Include="Scripts\bootbox.min.js" />
     <Content Include="Scripts\bootstrap-datetimepicker.js" />
@@ -2716,6 +2727,8 @@
     <Content Include="Areas\cheapesttaxiinbangalore\Views\UdupiGardenJunctiontoAirporttransfer\AirportDrop.cshtml" />
     <Content Include="Areas\cheapesttaxiinbangalore\Views\AirportPickup\silkboardjunction.cshtml" />
     <Content Include="bangalore\airport-taxi\aiportMaster.Master" />
+    <Content Include=".user.ini" />
+    <Content Include="ApplicationInsights.config" />
     <None Include="bin\Utaxi.Web.dll.config" />
     <Content Include="Images\Images.zip" />
     <Content Include="Images\packages.zip" />
@@ -2780,6 +2793,7 @@
     <Content Include="Design new\sass\_base.scss" />
     <Content Include="Design new\sass\_mixin.scss" />
     <Content Include="Design new\sass\_variables.scss" />
+    <Content Include="manifest.json" />
     <None Include="Properties\PublishProfiles\UTAXI.pubxml" />
     <Content Include="Scripts\bootstrap.esm.js.map" />
     <Content Include="Scripts\bootstrap.esm.min.js.map" />
@@ -2814,12 +2828,17 @@
     <Content Include="Scripts\umd\popper.min.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Services.html" />
+    <Content Include="sitemap.html" />
+    <Content Include="sitemap.xml" />
     <Content Include="SQL Queries\USP_DC_Home_CreateRequest.sql" />
+    <Content Include="sw.js" />
     <Content Include="terms.aspx" />
     <Content Include="terms.html" />
     <Content Include="TestPage.html" />
     <Content Include="Thank-You-Utaxi.aspx" />
     <Content Include="Thank-You-utaxi.html" />
+    <Content Include="Thank-You-utaxi1.html" />
+    <Content Include="Thank-You-Utaxi_PayTM.aspx" />
     <Content Include="vendor\bootstrap\css\bootstrap-grid.css" />
     <Content Include="vendor\bootstrap\css\bootstrap-grid.min.css" />
     <Content Include="vendor\bootstrap\css\bootstrap-reboot.css" />
@@ -4496,6 +4515,8 @@
     <Content Include="Views\Home\Index_New.cshtml" />
     <Content Include="Views\Home\Index_Sample.cshtml" />
     <Content Include="Views\Shared\_LayoutSample.cshtml" />
+    <Content Include="Utaxi.Web.csproj.vspscc" />
+    <Content Include="Web.config_backup" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

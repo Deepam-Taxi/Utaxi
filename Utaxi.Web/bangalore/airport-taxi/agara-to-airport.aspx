@@ -20,7 +20,7 @@
     <meta property="business:contact_data:postal_code" content="560076">
     <meta property="business:contact_data:country_name" content="India">
     <meta property="business:contact_data:email" content="utaxiindia@gmail.com">
-    <meta property="business:contact_data:phone_number" content="9901160735">
+    <meta property="business:contact_data:phone_number" content="08046844684">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Airport Taxi | Cabs in Bangalore | Rs 474 Pickup | Rs 674 Drop">
     <meta name="twitter:description" content="Airport Taxi in Bangalore - Rs 474/- Pick-Up, Rs 674/- Drop, Cheapest OutStation Cabs rates.Indica Rs.7/-Logan/Etios/Dzire Rs.9">
@@ -247,7 +247,7 @@
                     </a>
                 </div>
                 <div id="phonenumberContainer" class="boldFields" style="font-size: 17px; color: white;">
-                    <a href="tel:08046844684" style="color: #fff;">Call 080 4684 4684</a>
+                    <a href="tel:08046844684" style="color: #fff;">Call 08046844684</a>
                 </div>
             </div>
         </nav>
@@ -1073,7 +1073,7 @@
                             <li style="font-size: 20px; font-weight: bold;">OUR LOCATION</li>
                             <li><i class="fa fa-map-marker" aria-hidden="true"></i>#26 6th main, 18th Cross Rd, NS Palya, Stage 2, Bengaluru, Karnataka 560076 </li>
                             <li><i class="fa fa-envelope-o" aria-hidden="true"></i><a href="mailto:info@utaxi.in" style="color: #ffffff;">info@utaxi.in</a> </li>
-                            <li><i class="fa fa-phone" aria-hidden="true"></i><a href="tel:08046844684" style="color: #ffffff;">Call 080 4684 4684</a>     </li>
+                            <li><i class="fa fa-phone" aria-hidden="true"></i><a href="tel:08046844684" style="color: #ffffff;">Call 08046844684</a>     </li>
                             <li><i class="fa fa-clock-o" aria-hidden="true"></i>Office Time  : 24/7</li>
                         </ul>
                     </div>

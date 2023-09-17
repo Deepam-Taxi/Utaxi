@@ -1,13 +1,13 @@
 ﻿<!DOCTYPE html>
 <html lang="en-us">
 <head>
-<title>Book Taxi  from Airport from BTM Layout to Airport Pickup Rs 474/-
+<title>Book Taxi  from BTM Layout to Airport Pickup Rs 474/-
 </title>
 <meta charset="utf-8" />
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="index, follow" />
-<meta name="description" content="Taxi Cabs Booking Form BTM Layout, Our Airport Taxi Cab offers Flat rental basis from BTM Layout to Bengaluru International Airport" />
+<meta name="description" content="Book Cabs form BTM Layout,  Airport Taxi Cab offers Flat rental basis from BTM Layout to Bengaluru International Airport" />
 <meta name="keywords" content="airport transfer bangalore, airport pickup taxi bangalore, airport pickup bangalore, airport pickup bangalore offer, bangalore airport pickup offers, bangalore airport pickup, airport pickup taxi bangalore, airport pickup bangalore 500 rs, airport pickup taxi bangalore, cab for airport pickup in bangalore, airport pickup and drop bangalore, bangalore airport pickup taxi offers, city taxi bangalore airport pickup, airport pickup taxi, bangalore airport pickup taxi, airport pickup and drop Bangalore, bangalore airport pickup, airport pickup bangalore, airport pickup" />
 <meta name="google-site-verification" content="YjMSxJcF19Pz3R99oOVICxufyYFuH8zXhRt97-bkKnY" />
 <meta property="og:type" content="business.business">
@@ -99,7 +99,7 @@
 
         <script src="/Scripts/mdtimepicker.js"></script>
 
-        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADC1qojpbIsrNj-oPZwPh1yVATPTIj1U8&libraries=places"></script>
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDUznTiPcMB6dsRkOq9ZLNrKLCzVZzvZXo&libraries=places"></script>
 
         <script src="/Scripts/googlesearch.js"></script>
         <style type="text/css">
@@ -215,10 +215,10 @@
                         <a class="nav-link navlink" href="/Home/Packages">Holiday packages</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link navlink" href="/bestprice/cheapestoutstationcabservice">Outstation Tariffs</a>
+                        <a class="nav-link navlink" href="https://www.utaxi.in/bangalore/outstation-taxi/bangalore-outstation-cabs.aspx">Outstation Tariffs</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link navlink" href="/Home/BestOffers">Best Offers</a>
+                        <a class="nav-link navlink" href="https://www.utaxi.in/bangalore/airport-taxi/bangalore-airport-taxi-offers.aspx">Best Offers</a>
                     </li>
 
 
@@ -236,7 +236,7 @@
                 </a>
             </div>
             <div class="boldFields" style="font-size: 17px; color: white;">
-                <a href="tel:08046844684" style="color: #fff;">Call 080 4684 4684</a>
+                <a href="tel:080 4684 4684" style="color: #fff;">Call </a>
             </div>
         </nav>
     </header>
@@ -274,7 +274,7 @@
                                     <input type="radio" class="form-check-input" name="outstationOption" id="rdOutstationPackage" value="">Two way
                                 </label>
                             </div>
-                            <div class="form-group mt-2" id="divPickup">
+                            <div class="form-group" id="divPickup">
                                 <label for="pickupPlace" class="boldFields">Pickup place<span class="mandatoryFields">*</span></label>
                                 <%--<div class="searchplaces form-control" id="pickupPlace">
                                     Enter Search Place
@@ -284,7 +284,7 @@
                                 <%--<div class="E_FromPlace E_Msg"></div>
                                 --%>
                             </div>
-                            <div class="form-group mt-2" id="divAiportPickupField">
+                            <div class="form-group" id="divAiportPickupField">
                                 <label for="dropPlace" class="boldFields">Airport Pickup<span class="mandatoryFields">*</span></label>
                                 <input type="text" class="form-control" value="Kempegowda International Airport (BLR), Devanahalli, Bengaluru, Karnataka 560300, India" placeholder="Kempegowda International Airport (BLR), Devanahalli, Bengaluru, Karnataka 560300, India" disabled id="pickupPlaceAirportSearch">
                             </div>
@@ -747,7 +747,7 @@
                         <h2>Outstation Taxi Service in Bangalore</h2>
                         <p>If you are looking for an outstation trip from Bangalore for a family weekend gateway, office trip or even business travel, Bangalore gives you lot of options, for 2-3 days or even for week long trips. This can be temple tours, weekend getaways to hill stations, trekking places, forests, beautiful waterfalls, or heritage places.</p>
 
-                        <p>Visiting to these places with family or friends is best done by availing <a href="https://www.utaxi.in/bestprice/cheapestoutstationcabservice">Outstation taxi services in Bangalore.</a> Going for for bangalore outstation cabs helps you easily spend time with family and friends and let the experienced driver manage the driving part.</p>
+                        <p>Visiting to these places with family or friends is best done by availing <a href="https://www.utaxi.in/bangalore/outstation-taxi/bangalore-outstation-cabs.aspx">Outstation taxi services in Bangalore.</a> Going for for bangalore outstation cabs helps you easily spend time with family and friends and let the experienced driver manage the driving part.</p>
 
                         <h5>Outstation Cabs from Bangalore</h5>
                         <p>When you want to travel outstation and look for cab service, there are many things to keep in mind, such as type of vehicle, driver experience and knowledge of the route, agency background, rates, ease of booking, refunds, cancellations. It is not just about choosing less rates but also quality and service matters. Utaxi is developed to serve you this.</p>
@@ -761,58 +761,58 @@
                         <p>The below table highlights the major cities near Bangalore and approximate time to reach.</p>
 
 
-                        <table id="customers">
-                            <tbody>
-                                <tr>
-                                    <th>Destination</th>
-                                    <th>Distance from Bangalore</th>
-                                    <th>Time required to reach </th>
-                                    <th>Book Taxi</th>
-                                </tr>
-                                <tr>
-                                    <td>Bangalore to Mysore</td>
-                                    <td>143 kms </td>
-                                    <td>3 hrs 30 mns</td>
-                                    <td><a href="https://www.utaxi.in/cheapestholidaypackage/weekendgetaway/mysore1daypackage/bestplaceinmysore">Book Now</a></td>
-                                </tr>
-                                <tr>
-                                    <td>Bangalore to Coorg</td>
-                                    <td>237 kms </td>
-                                    <td>5 hrs 30 mns</td>
-                                    <td><a href="https://www.utaxi.in/cheapestholidaypackage/weekendgetaway/coorgpackagetour/bestplaceincoorg">Book Now</a></td>
-                                </tr>
-                                <tr>
-                                    <td>Bangalore to Nandi Hills</td>
-                                    <td>60 kms </td>
-                                    <td>1 hrs 15 mns</td>
-                                    <td><a href="https://www.utaxi.in/cheapestholidaypackage/weekendgetaway/Nandihillspackage/bestplaceinnandihills">Book Now</a></td>
-                                </tr>
-                                <tr>
-                                    <td>Bangalore to Ooty</td>
-                                    <td>270 kms </td>
-                                    <td>6 hrs </td>
-                                    <td><a href="https://www.utaxi.in/cheapestholidaypackage/weekendgetaway/OotyandcoonoorPackageTour/bestplaceinOotyandCoonoor">Book Now</a></td>
-                                </tr>
-                                <tr>
-                                    <td>Bangalore to Wayanad</td>
-                                    <td>277 kms </td>
-                                    <td>6 hrs 30 mns</td>
-                                    <td><a href="https://www.utaxi.in/cheapestholidaypackage/weekendgetaway/Wayanadpackagetour/bestplaceinWayanad">Book Now</a></td>
-                                </tr>
-                                <tr>
-                                    <td>Bangalore to Tirupati</td>
-                                    <td>250 kms </td>
-                                    <td>6 hrs </td>
-                                    <td><a href="https://www.utaxi.in/cheapestholidaypackage/weekendgetaway/ChikkatirupathiandKotilingeshwaraPackage/bestplaceinChikkaThirupatiandkotilingeshwara">Book Now</a></td>
-                                </tr>
-                                <tr>
-                                    <td>Bangalore to Talakadu</td>
-                                    <td>242 kms </td>
-                                    <td>5 hrs 40 mns</td>
-                                    <td><a href="https://www.utaxi.in/cheapestholidaypackage/weekendgetaway/shivanasamudrawaterfallspackagetour/bestplaceinshivanasamudrawaterfalls">Book Now</a></td>
-                                </tr>
-                            </tbody>
-                        </table>
+                         <table id="customers">
+                        <tbody>
+                            <tr>
+                                <th>Destination</th>
+                                <th>Distance from Bangalore</th>
+                                <th>Time required to reach </th>
+                                <th>Book Taxi</th>
+                            </tr>
+                            <tr>
+                                <td>Taxi from Bangalore to Mysore</td>
+                                <td>143 kms </td>
+                                <td>3 hrs 30 mns</td>
+                                <td> <a href="https://www.utaxi.in/bangalore/holiday-package-taxi-services/bangalore-to-mysore-one-day-tour-package.aspx">Book Now</a></td>
+                            </tr>
+                            <tr>
+                                <td>Taxi from Bangalore to Coorg</td>
+                                <td>237 kms </td>
+                                <td>5 hrs 30 mns</td>
+                                <td> <a href="https://www.utaxi.in/bangalore/holiday-package-taxi-services/bangalore-to-coorg-tour-package-for-1-night-2-days.aspx">Book Now</a></td>
+                            </tr>
+                            <tr>
+                                <td>Taxi from Bangalore to Nandi Hills</td>
+                                <td>60 kms </td>
+                                <td>1 hrs 15 mns</td>
+                                <td> <a href="https://www.utaxi.in/bangalore/holiday-package-taxi-services/bangalore-to-nandi-hills-one-day-sightseeing.aspx">Book Now</a></td>
+                            </tr>
+                            <tr>
+                                <td>Taxi from Bangalore to Ooty</td>
+                                <td>270 kms </td>
+                                <td>6 hrs </td>
+                                <td> <a href="https://www.utaxi.in/bangalore/holiday-package-taxi-services/coorg-ooty-conoor-2-nights-3-days-package.aspx">Book Now</a></td>
+                            </tr>
+                            <tr>
+                                <td>Taxi from Bangalore to Wayanad</td>
+                                <td>277 kms </td>
+                                <td>6 hrs 30 mns</td>
+                                <td> <a href="https://www.utaxi.in/bangalore/holiday-package-taxi-services/bangalore-to-wayanand-2-night-3-days-tour-package.aspx">Book Now</a></td>
+                            </tr>
+                            <tr>
+                                <td>Taxi form Bangalore to Tirupati</td>
+                                <td>250 kms </td>
+                                <td>6 hrs </td>
+                                <td> <a href="https://www.utaxi.in/bangalore/holiday-package-taxi-services/chikka-tirupathi-kotilingeshwara-one-day-package.aspx">Book Now</a></td>
+                            </tr>
+                            <tr>
+                                <td>Taxi from Bangalore to Talakadu</td>
+                                <td>242 kms </td>
+                                <td>5 hrs 40 mns</td>
+                                <td> <a href="https://www.utaxi.in/bangalore/holiday-package-taxi-services/bangalore-to-shivanasamudra-talakad-one-day-trip.aspx">Book Now</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
 
 
 
@@ -842,22 +842,22 @@
                                 <tr>
                                     <td>Bangalore Airport Pickup</td>
 
-                                    <td><a href="https://www.utaxi.in/cheapestprice/airporttaxibangalore/Airportpickup">Book Now</a></td>
+                                    <td><a href="https://www.utaxi.in/bangalore/airport-taxi/airport-pickup.aspx">Book Now</a></td>
                                 </tr>
                                 <tr>
                                     <td>Bangalore Airport Drop</td>
 
-                                    <td><a href="https://www.utaxi.in/cheapestprice/airporttaxibangalore/Airportdrop">Book Now</a></td>
+                                    <td><a href="https://www.utaxi.in/bangalore/airport-taxi/airport-drop.aspx">Book Now</a></td>
                                 </tr>
                                 <tr>
                                     <td>Bangalore  Airport Round Pickup</td>
 
-                                    <td><a href="https://www.utaxi.in/cheapestprice/airporttaxibangalore/Airportroundtrip">Book Now</a></td>
+                                    <td><a href="https://www.utaxi.in/bangalore/airport-taxi/airport-round-trip.aspx">Book Now</a></td>
                                 </tr>
                                 <tr>
                                     <td>Bangalore Cab for Outstation</td>
 
-                                    <td><a href="https://www.utaxi.in/bestprice/cheapestoutstationcabservice">Book Now</a></td>
+                                    <td><a href="https://www.utaxi.in/bangalore/outstation-taxi/bangalore-outstation-cabs.aspx">Book Now</a></td>
                                 </tr>
                                 <tr>
                                     <td>Bangalore Taxi Services</td>
@@ -1097,7 +1097,7 @@
                             <li style="font-size: 20px; font-weight: bold;">OUR LOCATION</li>
                             <li><i class="fa fa-map-marker" aria-hidden="true"></i>#26 6th main, 18th Cross Rd, NS Palya, Stage 2, Bengaluru, Karnataka 560076 </li>
                             <li><i class="fa fa-envelope-o" aria-hidden="true"></i><a href="mailto:info@utaxi.in" style="color: #ffffff;">info@utaxi.in</a> </li>
-                            <li><i class="fa fa-phone" aria-hidden="true"></i><a href="tel:08046844684" style="color: #ffffff;">Call 080 4684 4684</a>     </li>
+                            <li><i class="fa fa-phone" aria-hidden="true"></i><a href="tel:080 4684 4684" style="color: #ffffff;">Call 080 4684 4684</a>     </li>
                             <li><i class="fa fa-globe" aria-hidden="true"></i><a href="https://www.utaxi.in" style="color: #ffffff;">www.utaxi.in</a> </li>
                             <li><i class="fa fa-clock-o" aria-hidden="true"></i>Office Time  : 24/7</li>
                         </ul>

@@ -1,10 +1,250 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/bangalore/airport-taxi/aiportMaster.Master" AutoEventWireup="true" CodeBehind="AirportSamplePage.aspx.cs" Inherits="Utaxi.Web.bangalore.airport_taxi.AirportSamplePage" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <title>Book Taxi from Airport from MLA layout Kalena aghrahara to Airport Pickup Rs 474/-
-    </title>
-</asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+﻿<!DOCTYPE html>
+<html lang="en-us">
+<head>
+<title>Book Taxi  from Airport from BTM Layout to Airport Pickup Rs 474/-
+</title>
+<meta charset="utf-8" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow" />
+<meta name="description" content="Taxi Cabs Booking Form BTM Layout, Our Airport Taxi Cab offers Flat rental basis from BTM Layout to Bengaluru International Airport" />
+<meta name="keywords" content="airport transfer bangalore, airport pickup taxi bangalore, airport pickup bangalore, airport pickup bangalore offer, bangalore airport pickup offers, bangalore airport pickup, airport pickup taxi bangalore, airport pickup bangalore 500 rs, airport pickup taxi bangalore, cab for airport pickup in bangalore, airport pickup and drop bangalore, bangalore airport pickup taxi offers, city taxi bangalore airport pickup, airport pickup taxi, bangalore airport pickup taxi, airport pickup and drop Bangalore, bangalore airport pickup, airport pickup bangalore, airport pickup" />
+<meta name="google-site-verification" content="YjMSxJcF19Pz3R99oOVICxufyYFuH8zXhRt97-bkKnY" />
+<meta property="og:type" content="business.business">
+<meta property="og:title" content="Airport Taxi | Cabs in Bangalore | Cheapest OutStation Cab in Bnaglore">
+<meta property="og:description" content="Airport Taxi in Bangalore - Rs 474/- Pick-Up, Rs 674/- Drop, Cheapest OutStation taxi rates.Indica Rs.7/-Logan/Etios/Dzire Rs.9">
+<meta property="og:url" content="https://utaxi.in">
+<meta property="business:contact_data:street_address" content="No. 28, 7th Main, ">
+<meta property="business:contact_data:locality" content="N.S. Palya, Near Cafe Coffee Day, BTM layout 2nd Stage, ">
+<meta property="business:contact_data:region" content="Bengaluru, Karnataka ">
+<meta property="business:contact_data:postal_code" content="560076">
+<meta property="business:contact_data:country_name" content="India">
+<meta property="business:contact_data:email" content="utaxiindia@gmail.com">
+<meta property="business:contact_data:phone_number" content="9901160735">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Airport Taxi | Cabs in Bangalore | Rs 474 Pickup | Rs 674 Drop">
+<meta name="twitter:description" content="Airport Taxi in Bangalore - Rs 474/- Pick-Up, Rs 674/- Drop, Cheapest OutStation Cabs rates.Indica Rs.7/-Logan/Etios/Dzire Rs.9">
+
+<link rel="icon" type="image/png" href="/Images/Utaxi-Semi-Logo.ico" />
+<link href="/Content/bootstrap.css" rel="stylesheet" />
+<link href="/Content/site.css" rel="stylesheet" />
+
+<link href="/Content/font-awesome.css" rel="stylesheet" />
+
+<link href="/Content/jquery-ui.css" rel="stylesheet" />
+
+<script src="/Scripts/modernizr-2.6.2.js"></script>
+
+<script src="/Scripts/jquery-3.3.1.js"></script>
+
+<script src="/Scripts/jquery-ui-1.12.1.js"></script>
+
+
+<script src="/Scripts/bootstrap.js"></script>
+<script src="/Scripts/respond.js"></script>
+<script src="/Scripts/Common/Common.js"></script>
+
+<script src="/Scripts/bootbox.js"></script>
+
+
+<style>
+    .navlink {
+        color: white !important;
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    .carousel-item img {
+        width: 100% !important;
+    }
+</style>
+<script>
+    window.renderOptIn = function () {
+        window.gapi.load('surveyoptin', function () {
+            window.gapi.surveyoptin.render(
+                {
+                    // REQUIRED FIELDS
+                    "merchant_id": 117201211,
+                    "order_id": "ORDER_ID",
+                    "email": "CUSTOMER_EMAIL",
+                    "delivery_country": "COUNTRY_CODE",
+                    "estimated_delivery_date": "YYYY-MM-DD",
+
+                    // OPTIONAL FIELDS
+                    "products": [{ "gtin": "GTIN1" }, { "gtin": "GTIN2" }]
+                });
+        });
+    }
+</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-134213901-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-134213901-1');
+</script>
+
+
+
     
+        <script src="/Scripts/jBox.js"></script>
+
+        <link href="/Content/jBox.css" rel="stylesheet" />
+
+        <script src="/Scripts/Home/AirportTransferPackages.js"></script>
+
+        <link href="/Content/mdtimepicker.css" rel="stylesheet" />
+
+        <script src="/Scripts/mdtimepicker.js"></script>
+
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADC1qojpbIsrNj-oPZwPh1yVATPTIj1U8&libraries=places"></script>
+
+        <script src="/Scripts/googlesearch.js"></script>
+        <style type="text/css">
+            .ajax-loader {
+                visibility: hidden;
+                background-color: rgba(255,255,255,0.7);
+                position: absolute;
+                z-index: +100 !important;
+                width: 100%;
+                height: 100%;
+            }
+
+                .ajax-loader img {
+                    position: relative;
+                    top: 50%;
+                    left: 50%;
+                }
+
+            .marginleft3px {
+                margin-left: 3px;
+            }
+
+            #divloadMap {
+                height: 100%;
+                margin: 0px;
+                padding: 0px;
+                margin-top: 15px;
+            }
+
+            /*.apply {
+        margin-top: 16px;
+        border: 1px solid transparent;
+        border-radius: 2px 0 0 2px;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        height: 32px;
+        outline: none;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+      }*/
+
+            #txtsearch {
+                background-color: #fff;
+                padding: 0 11px 0 13px;
+                width: 400px;
+                font-family: Roboto;
+                font-size: 15px;
+                font-weight: 300;
+                text-overflow: ellipsis;
+            }
+
+                #txtsearch:focus {
+                    border-color: #4d90fe;
+                    margin-left: -1px;
+                    padding-left: 14px;
+                    width: 401px;
+                }
+
+            .pac-container {
+                font-family: Roboto;
+            }
+
+            #type-selector {
+                color: #fff;
+                background-color: #4d90fe;
+                padding: 5px 11px 0px 11px;
+            }
+
+                #type-selector label {
+                    font-family: Roboto;
+                    font-size: 13px;
+                    font-weight: 300;
+                }
+
+            .searchplaces {
+                background-color: #eaeaea;
+            }
+        </style>
+
+        <style>
+            table, td, th {
+                border: 1px solid #ddd;
+                text-align: left;
+            }
+
+            table {
+                border-collapse: collapse;
+                width: 100%;
+            }
+
+            th, td {
+                padding: 15px;
+            }
+        </style>
+</head>
+<body>
+
+    <header>
+        <!-- Fixed navbar -->
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <a class="navbar-brand" href="/Home/Index">
+                <img src="/Images/utaxi-title-logos1.png" alt="Airport Taxi | Cabs in Bangalore | Rs 474 Pickup | Rs 674 Drop" />
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto">
+
+                 <li class="nav-item">
+                        <a class="nav-link navlink" href="https://www.utaxi.in/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link navlink" href="https://www.utaxi.in/Home/Packages">Holiday packages</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link navlink" href="https://www.utaxi.in/bangalore/outstation-taxi/bangalore-outstation-cabs.aspx">Outstation Tariffs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link navlink" href="https://www.utaxi.in/bangalore/airport-taxi/bangalore-airport-taxi-offers.aspx">Airport Taxi Offers</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link navlink" href="https://blog.utaxi.in/">Blog</a>
+                    </li>
+               
+
+
+                </ul>
+
+            </div>
+            <div style="margin: 10px;">
+                <a href="https://www.facebook.com/utaxi123">
+                    <img src="/Images/facebook-3-32.png" alt="Airport Taxi | Cabs in Bangalore | Rs 325 Pickup |Rs525 Drop" />
+                </a>
+            </div>
+            <div style="margin: 10px;">
+                <a href="https://twitter.com/Utaxi3">
+                    <img src="/Images/twitter-3-32.png" alt="Airport Taxi | Cabs in Bangalore | Rs 325 Pickup |Rs525 Drop" />
+                </a>
+            </div>
+            <div class="boldFields" style="font-size: 17px; color: white;">
+                <a href="tel:08041466888" style="color: #fff;">Call 080 4146 6888</a>
+            </div>
+        </nav>
+    </header>
     <main role="main" class="container">
 
 
@@ -33,13 +273,13 @@
                             <input type="radio" class="form-check-input" name="outstationOption" id="rdOutstationPackage" value="">Two way
                         </label>
                     </div>
-                    <div class="form-group mt-2" id="divPickup">
+                    <div class="form-group" id="divPickup">
                         <label for="pickupPlace" class="boldFields">Pickup place<span class="mandatoryFields">*</span></label>
                        
                         <input type="text" class="form-control" value="MLA Layout Main Rd, Kalena Agrahara, Bengaluru, Karnataka 560076" placeholder="MLA Layout Main Rd, Kalena Agrahara, Bengaluru, Karnataka 560076" readonly id="pickupPlaceSearch">
                        
                     </div>
-                    <div class="form-group mt-2" id="divAiportPickupField">
+                    <div class="form-group" id="divAiportPickupField">
                         <label for="dropPlace" class="boldFields">Airport Pickup<span class="mandatoryFields">*</span></label>
                         <input type="text" class="form-control" value="Kempegowda International Airport (BLR), Devanahalli, Bengaluru, Karnataka 560300, India" placeholder="Kempegowda International Airport (BLR), Devanahalli, Bengaluru, Karnataka 560300, India" disabled id="pickupPlaceAirportSearch">
                     </div>
@@ -589,4 +829,331 @@
 
         <input type="hidden" id="hdnWebApiURL" value='https://webapis.utaxi.in/Web/' />
     </main>
-</asp:Content>
+    <footer class="footer">
+        <div class="container" style="margin-bottom: 10px;">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="card-header boldFields">Airport Taxi Services 24/7</div>
+                        <div class="card-body">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <h6><a href="https://www.utaxi.in/bangalore/airport-taxi/anekal-to-airport.aspx">Anekal To Airport</a></h6>
+                                </li>
+                                <li class="list-group-item">
+                                    <h6><a href="https://www.utaxi.in/bangalore/airport-taxi/banashankari-to-airport.aspx">Banashankari  To Airport</a></h6>
+                                </li>
+                                <li class="list-group-item">
+                                    <h6><a href="https://www.utaxi.in/bangalore/airport-taxi/banaswadi-to-airport.aspx">Banaswadi To Airport</a></h6>
+                                </li>
+                                <li class="list-group-item">
+                                    <h6><a href="https://www.utaxi.in/bangalore/airport-taxi/bannerghatta-road-to-airport.aspx">Bannerghatta To Airport</a></h6>
+                                </li>
+                                <li class="list-group-item">
+                                    <h6><a href="https://www.utaxi.in/bangalore/airport-taxi/btm-layout-to-airport.aspx">BTM 2Nd Stage To Airport</a></h6>
+                                </li>
+                                <li class="list-group-item">
+                                    <h6>
+                                        <a href="https://www.utaxi.in/bangalore/airport-taxi/begur-to-airport.aspx">Begur To Airport</a>
+                                    </h6>
+                                </li>
+
+                                <li class="list-group-item">
+                                    <h6>
+                                        <a href="https://www.utaxi.in/bangalore/airport-taxi/chamrajpet-to-airport.aspx">Chamrajpet To Airport</a>
+                                    </h6>
+                                </li>
+                                <li class="list-group-item">
+                                    <h6>
+                                        <a href="https://www.utaxi.in/bangalore/airport-taxi/cv-raman-nagar-to-airport.aspx">C.V.Raman Nagar To Airport</a>
+                                    </h6>
+                                </li>
+                                   <li class="list-group-item">
+                                    <h6>
+                                        <a href="https://www.utaxi.in/bangalore/airport-taxi/rajarajeshwarinagar-to-airport.aspx">Rajarajeshwarinagar</a>
+                                    </h6>
+                                </li>
+                                    <li class="list-group-item">
+                                    <h6>
+                                        <a href="https://www.utaxi.in/bangalore/airport-taxi/rajajinagar-to-airport.aspx">Rajajinagar</a>
+                                    </h6>
+                                </li>
+                                    <li class="list-group-item">
+                                    <h6>
+                                        <a href="https://www.utaxi.in/bangalore/airport-taxi/rt-nagar-to-airport.aspx">RT Nagar</a>
+                                    </h6>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="card-header boldFields">Airport Taxi Services 24/7</div>
+                        <div class="card-body">
+                            <ul class="list-group list-group-flush">
+
+                                <li class="list-group-item">
+                                    <h6>
+                                        <a href="https://www.utaxi.in/bangalore/airport-taxi/electronic-city-to-airport.aspx">Electronic City To Airport</a>
+                                    </h6>
+                                </li>
+                                <li class="list-group-item">
+                                    <h6>
+                                        <a href="https://www.utaxi.in/bangalore/airport-taxi/fraser-town-to-airport.aspx">Fraser Town To Airport</a>
+                                    </h6>
+                                </li>
+                                <li class="list-group-item">
+                                    <h6>
+                                        <a href="https://www.utaxi.in/bangalore/airport-taxi/hsr-layout-to-airport.aspx">HSR Layout To Airport</a>
+                                    </h6>
+                                </li>
+                                <li class="list-group-item">
+                                    <h6>
+                                        <a href="https://www.utaxi.in/bangalore/airport-taxi/hal-to-airport.aspx">HAL 2nd Stage  To Airport</a>
+                                    </h6>
+                                </li>
+                                <li class="list-group-item">
+                                    <h6>
+                                        <a href="https://www.utaxi.in/bangalore/airport-taxi/hebbal-to-airport.aspx">Hebbal Nagar To Airport</a>
+                                    </h6>
+                                </li>
+
+                                <li class="list-group-item">
+                                    <h6>
+                                        <a href="https://www.utaxi.in/bangalore/airport-taxi/hosa-road-junction-bus-stop-to-airport.aspx">Hosa Road Junction To Airport</a>
+
+                                    </h6>
+                                </li>
+                                <li class="list-group-item">
+                                    <h6>
+                                        <a href="https://www.utaxi.in/bangalore/airport-taxi/jayanagar-to-airport.aspx">Jayanagar To Airport</a>
+                                    </h6>
+                                </li>
+
+
+                                <li class="list-group-item">
+                                    <h6>
+                                        <a href="https://www.utaxi.in/bangalore/airport-taxi/jalahalli-to-airport.aspx">Jalahalli To Airport</a>
+                                    </h6>
+                                </li>
+                                    <li class="list-group-item">
+                                    <h6>
+                                        <a href="https://www.utaxi.in/bangalore/airport-taxi/shivajinagar-to-airport.aspx">Shivajinagar</a>
+                                    </h6>
+                                </li>
+                                    <li class="list-group-item">
+                                    <h6>
+                                        <a href="https://www.utaxi.in/bangalore/airport-taxi/sarjapur-to-airport.aspx">Sarjapur</a>
+                                    </h6>
+                                </li>
+                                    <li class="list-group-item">
+                                    <h6>
+                                        <a href="https://www.utaxi.in/bangalore/airport-taxi/tannery-road-to-airport.aspx">Tannery Road</a>
+                                    </h6>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            <div class="col-md-3">
+                    <div class="card">
+                        <div class="card-header boldFields">Airport Taxi Services 24/7</div>
+                        <div class="card-body">
+                            <ul class="list-group list-group-flush">
+
+                                <li class="list-group-item">
+                                    <h6>
+                                        <a href="https://www.utaxi.in/bangalore/airport-taxi/jp-nagar-to-airport.aspx">J.P Nagar To Airport</a>
+                                    </h6>
+                                </li>
+                                <li class="list-group-item">
+                                    <h6>
+                                        <a href="https://www.utaxi.in/bangalore/airport-taxi/kumaraswamy-layout-to-airport.aspx">Kumaraswamy Layout To Airport</a>
+                                    </h6>
+                                </li>
+                                <li class="list-group-item">
+                                    <h6>
+                                        <a href="https://www.utaxi.in/bangalore/airport-taxi/koramangala-to-airport.aspx">Koramangala To Airport</a>
+                                    </h6>
+                                </li>
+                                <li class="list-group-item">
+                                    <h6>
+                                        <a href="https://www.utaxi.in/bangalore/airport-taxi/krishnarajapuram-to-airport.aspx">Krishnarajapuram To Airport</a>
+                                    </h6>
+                                </li>
+                                <li class="list-group-item">
+                                    <h6>
+                                        <a href="https://www.utaxi.in/bangalore/airport-taxi/kengeri-to-airport.aspx">Kengeri To Airport</a>
+                                    </h6>
+                                </li>
+
+                                <li class="list-group-item">
+                                    <h6>
+                                        <a href="https://www.utaxi.in/bangalore/airport-taxi/kr-market-to-airport.aspx">K.R Market To Airport</a>
+
+                                    </h6>
+                                </li>
+                                <li class="list-group-item">
+                                    <h6>
+                                        <a href="https://www.utaxi.in/bangalore/airport-taxi/medihalli-to-airport.aspx">Medihalli To Airport</a>
+                                    </h6>
+                                </li>
+
+
+                                <li class="list-group-item">
+                                    <h6>
+                                        <a href="https://www.utaxi.in/bangalore/airport-taxi/magadi-road-to-airport.aspx">Magadi Road To Airport</a>
+                                    </h6>
+                                </li>
+                                    <li class="list-group-item">
+                                    <h6>
+                                        <a href="https://www.utaxi.in/bangalore/airport-taxi/ulsoor-to-airport.aspx">Ulsoor</a>
+                                    </h6>
+                                </li>
+                                    <li class="list-group-item">
+                                    <h6>
+                                        <a href="https://www.utaxi.in/bangalore/airport-taxi/vijayanagar-to-airport.aspx">Vijayanagar</a>
+                                    </h6>
+                                </li>
+                                    <li class="list-group-item">
+                                    <h6>
+                                        <a href="https://www.utaxi.in/bangalore/airport-taxi/wilson-garden-to-airport.aspx">Wilson Garden</a>
+                                    </h6>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="card-header boldFields">Airport Taxi Services 24/7</div>
+                        <div class="card-body">
+                            <ul class="list-group list-group-flush">
+
+                                <li class="list-group-item">
+                                    <h6>
+                                        <a href="https://www.utaxi.in/bangalore/airport-taxi/mahalakshmi-layout-to-airport.aspx">Mahalakshmi Layout To Airport</a>
+                                    </h6>
+                                </li>
+                                <li class="list-group-item">
+                                    <h6>
+                                        <a href="https://www.utaxi.in/bangalore/airport-taxi/malleswaram-to-airport.aspx">Malleswaram To Airport</a>
+                                    </h6>
+                                </li>
+                                <li class="list-group-item">
+                                    <h6>
+                                        <a href="https://www.utaxi.in/bangalore/airport-taxi/mg-road-to-airport.aspx">MG Road To Airport</a>
+                                    </h6>
+                                </li>
+                                <li class="list-group-item">
+                                    <h6>
+                                        <a href="https://www.utaxi.in/bangalore/airport-taxi/majestic-to-airport.aspx">Majestic  To Airport</a>
+                                    </h6>
+                                </li>
+                                <li class="list-group-item">
+                                    <h6>
+                                        <a href="https://www.utaxi.in/bangalore/airport-taxi/mathikere-to-airport.aspx">Mathikere To Airport</a>
+                                    </h6>
+                                </li>
+
+                                <li class="list-group-item">
+                                    <h6>
+                                        <a href="https://www.utaxi.in/bangalore/airport-taxi/nagavara-to-airport.aspx">Nagavara To Airport</a>
+
+                                    </h6>
+                                </li>
+                                <li class="list-group-item">
+                                    <h6>
+                                        <a href="https://www.utaxi.in/bangalore/airport-taxi/nagarabhavi-to-airport.aspx">Nagarabhavi To Airport</a>
+                                    </h6>
+                                </li>
+
+
+                                <li class="list-group-item">
+                                    <h6>
+                                        <a href="https://www.utaxi.in/bangalore/airport-taxi/peenya-to-airport.aspx">Peenya To Airport</a>
+                                    </h6>
+                                </li>
+                                    <li class="list-group-item">
+                                    <h6>
+                                        <a href="https://www.utaxi.in/bangalore/airport-taxi/whitefield-to-airport.aspx">Whitefield</a>
+                                    </h6>
+                                </li>
+                                    <li class="list-group-item">
+                                    <h6>
+                                        <a href="https://www.utaxi.in/bangalore/airport-taxi/yelahanka-to-airport.aspx">Yelahanka</a>
+                                    </h6>
+                                </li>
+                                    <li class="list-group-item">
+                                    <h6>
+                                        <a href="https://www.utaxi.in/bangalore/airport-taxi/yeshwanthpur-to-airport.aspx">Yeshwanthpur</a>
+                                    </h6>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row fullWidth" style="background-color: #000;">
+
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4" style="padding: 20px; color: #fff;">
+
+                        <ul class="w3ls-footer-bottom-list" style="color: #fff; list-style: none;">
+                            <li style="font-size: 20px; font-weight: bold;">GET IN TOUCH</li>
+                            <li><a href="https://www.utaxi.in/About.html" style="color: #ffffff;">About Utaxi</a></li>
+                            <li><a href="https://www.utaxi.in/Services.html" style="color: #ffffff;">Services</a></li>
+                            <li><a href="https://www.utaxi.in/contactus.html" style="color: #ffffff;">Contact Us </a></li>
+                            <li><a href="https://www.utaxi.in/sitemap.html" style="color: #ffffff;">HTML Sitemap </a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-4" style="padding: 20px; color: #fff;">
+
+
+                        <ul class="w3ls-footer-bottom-list" style="color: #fff; list-style: none;">
+                            <li style="font-size: 20px; font-weight: bold;">OUR LOCATION</li>
+                            <li><i class="fa fa-map-marker" aria-hidden="true"></i>#26 6th main, 18th Cross Rd, NS Palya, Stage 2, Bengaluru, Karnataka 560076 </li>
+                            <li><i class="fa fa-envelope-o" aria-hidden="true"></i><a href="mailto:info@utaxi.in" style="color: #ffffff;">info@utaxi.in</a> </li>
+                            <li><i class="fa fa-phone" aria-hidden="true"></i><a href="tel:08041466888" style="color: #ffffff;">Call 080 4146 6888</a>     </li>   
+                            <li><i class="fa fa-clock-o" aria-hidden="true"></i>Office Time  : 24/7</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4" style="padding: 20px; color: #fff;">
+
+
+                        <ul class="w3ls-footer-bottom-list" style="list-style: none; color: #fff;">
+                            <li style="font-size: 20px; font-weight: bold;">OUR SERVICES</li>
+                            <li><a href="https://www.utaxi.in/bangalore/airport-taxi/bangalore-airport-taxi-offers.aspx" style="color: #ffffff;">Airport Transfer </a></li>
+                            <li><a href="https://www.utaxi.in/bangalore/airport-taxi/airport-drop.aspx" style="color: #ffffff;">Airport Drop</a></li>
+                            <li><a href="https://www.utaxi.in/bangalore/airport-taxi/airport-pickup.aspx" style="color: #ffffff;">Airport Pickup</a></li>
+                            <li><a href="https://www.utaxi.in/bangalore/outstation-taxi/bangalore-outstation-cabs.aspx" style="color: #ffffff;">Local Package Outstation</a></li>
+                            <li><a href="https://www.utaxi.in/bangalore-holiday-package-taxi-services.aspx" style="color: #ffffff;">Holiday Package</a></li>
+                        </ul>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-12" style="text-align: center; color: #0a0a0a; background-color: #ffa500; padding: 10px; font-weight: bold;">
+                <p>© 2019 Utaxi. All Rights Reserved Powered by Utaxi.in </p>
+            </div>
+
+
+        </div>
+    </footer>
+    </body>

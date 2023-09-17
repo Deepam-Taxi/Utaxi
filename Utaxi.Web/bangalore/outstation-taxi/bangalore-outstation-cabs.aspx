@@ -1,4 +1,4 @@
-﻿﻿﻿<!DOCTYPE html>
+﻿﻿<!DOCTYPE html>
 <html lang="en-us">
 <head>
     <title>Outstation Cabs in Bengaluru | Cab Hatchback @ Rs.8/-Per Km
@@ -19,7 +19,7 @@
     <meta property="business:contact_data:postal_code" content="560076">
     <meta property="business:contact_data:country_name" content="India">
     <meta property="business:contact_data:email" content="utaxiindia@gmail.com">
-    <meta property="business:contact_data:phone_number" content="9901160735">
+    <meta property="business:contact_data:phone_number" content="080 4684 4684">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="book outstation cabs in bangalore for cheapest Price | innova for outstation ">
     <meta name="twitter:description" content="online outstation cab booking, cheapest outstation cabs,  outstation cabs one way, Book Sedan Cab @ Rs.9.00/- Per Km">
@@ -113,10 +113,35 @@
 
     <script src="/Scripts/mdtimepicker.js"></script>
 
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDPOLWvO-VVdCp0VgNyAhD2AaH13S1E3FQ&libraries=places">
+   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDUznTiPcMB6dsRkOq9ZLNrKLCzVZzvZXo&libraries=places">
     </script>
-    <script src="/Scripts/googlesearch.js"></script>
+    <script src="/Scripts/googlesearch1.js"></script>
     <style type="text/css">
+		#li_drop_loc li{
+	width: 100%;
+    font-weight: bold;
+    text-anchor: end;
+    text-align: left;
+    margin-left: 20px;
+    font-size: 11px;
+    padding: 5px 15px;
+    margin: 0px !important;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+ }
+
+#li_pick_loc li{
+       width: 100%;
+    font-weight: bold;
+    text-anchor: end;
+    text-align: left;
+    margin-left: 20px;
+    font-size: 11px;
+    padding: 5px 15px;
+    margin: 0px !important;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+ }
         .searchplaces {
             background-color: #eaeaea;
         }
@@ -228,7 +253,7 @@
                 </a>
             </div>
             <div class="boldFields" style="font-size: 17px; color: white;">
-                <a href="tel:080 4684 4684" style="color:#fff;">Call 080 4684 4684</a>
+                <a href="tel:08046844684" style="color:#fff;">Call 08046844684</a>
             </div>
         </nav>
     </header>
@@ -395,15 +420,16 @@
                                                     <input type="radio" class="form-check-input" name="outstationOption" id="rdOutstationPackage" value="">Two way
                                                 </label>
                                             </div>
-                                            <div class="form-group mt-2" id="divPickup">
+                                            <div class="form-group" id="divPickup">
                                                 <label for="pickupPlace" class="boldFields">Pickup place<span class="mandatoryFields">*</span></label>
                                                 <div class="searchplaces form-control" id="pickupPlace">
                                                     Enter Search Place
                                                 </div>
                                                 <input type="text" class="form-control" placeholder="Enter Search Place" id="pickupPlaceSearch">
+												<ul class="" id="li_pick_loc" style="max-height:200px;overflow: auto;padding: 0;margin: 0;box-shadow: 0 0 8px rgba(0,0,0,0.23);background: #fff;"></ul>
                                                 <div class="E_FromPlace E_Msg"></div>
                                             </div>
-                                            <div class="form-group mt-2" id="divAiportPickupField">
+                                            <div class="form-group" id="divAiportPickupField">
                                                 <label for="dropPlace" class="boldFields">Airport Pickup<span class="mandatoryFields">*</span></label>
                                                 <input type="text" class="form-control" placeholder="Kempegowda International Airport (BLR), Devanahalli, Bengaluru, Karnataka 560300, India" disabled id="pickupPlaceAirportSearch">
                                             </div>
@@ -413,6 +439,7 @@
                                                     Enter Search Place
                                                 </div>
                                                 <input type="text" class="form-control" placeholder="Enter Search Place" id="dropPlaceSearch">
+												<ul class="" id="li_drop_loc" style="max-height:200px;overflow: auto;padding: 0;margin: 0;box-shadow: 0 0 8px rgba(0,0,0,0.23);background: #fff;"></ul>
                                                 <div class="E_ToPlace E_Msg"></div>
                                             </div>
                                             <div class="form-group" id="divAiportDropField">
@@ -1174,7 +1201,7 @@
                             <li style="font-size: 20px; font-weight: bold;">OUR LOCATION</li>
                             <li><i class="fa fa-map-marker" aria-hidden="true"></i>#26 6th main, 18th Cross Rd, NS Palya, Stage 2, Bengaluru, Karnataka 560076 </li>
                             <li><i class="fa fa-envelope-o" aria-hidden="true"></i><a href="mailto:info@utaxi.in" style="color: #ffffff;">info@utaxi.in</a> </li>
-                            <li><i class="fa fa-phone" aria-hidden="true"></i><a href="tel:080 4684 4684" style="color:#fff;">Call 080 4684 4684</a>     </li>
+                            <li><i class="fa fa-phone" aria-hidden="true"></i><a href="tel:08046844684" style="color:#fff;">Call 08046844684</a>     </li>
                             <li><i class="fa fa-globe" aria-hidden="true"></i><a href="https://www.utaxi.in" style="color: #ffffff;">www.utaxi.in</a> </li>
                             <li><i class="fa fa-clock-o" aria-hidden="true"></i>Office Time  : 24/7</li>
                         </ul>
@@ -1206,6 +1233,41 @@
 
         </div>
     </footer>
+ <!-- Call Icon Start -->
+<style>
+	
+.cp-button-section.cp-callpage__button{right: 1px !important;}
+#callpage .cp-button-section{ bottom: 27px !important;
+    right: 20px !important;}
+	 #callpage1 .cp-button-section {
+    bottom: 40% !important;
+    right: 0px !important;
+}
+</style>
 
+<link href="https://www.deepamtaxi.com/assets/css/callpage-callback.default.css" rel="stylesheet" type="text/css">
+<!--	<div id="callpage1" dir="ltr" data-specifity="" class="cp-callpage cp-callpage--widget-callback cp-theme-light">
+   <div data-test="widget-button-section" class="cp-button-section cp-callpage__button" style="position: fixed!important;
+    z-index: 100!important;
+    transition: all .25s ease-in-out!important;" >
+
+            <a href="https://play.google.com/store/apps/details?id=com.deepam_cabs.customer" target="__blank">
+               <img src="https://www.deepamtaxi.com/admin/uploads/play-store-logoclock.png" alt="playstore" class="playimg" style="float: right; width: 27%;"> </a> 
+   </div>
+</div>-->
+<div id="callpage" dir="ltr" data-specifity="" class="cp-callpage cp-callpage--widget-callback cp-theme-light">
+   <div data-test="widget-button-section" class="cp-button-section cp-callpage__button" >
+      <a href="tel:080 4684 4684">
+         <div data-test="widget-button" class="cp-widget-button">
+            <div data-brand-color="background" class="cp-widget-button__inner">
+				
+			   <img src="../../images/utaxi-calling.png"  alt="Best Airport Taxi service in Bangalore, best affordable outstation taxi service in bangalore, Best taxi service in btm , best airport taxi, deepamtaxi" />
+			   
+            </div>
+         </div>
+      </a>
+   </div>
+</div>
+<!-- Call Icon End -->
 </body>
 </html>
