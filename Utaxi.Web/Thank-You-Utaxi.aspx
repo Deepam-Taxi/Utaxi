@@ -7,6 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
+<!--<meta http-equiv="refresh"
+   content="0; url=https://www.utaxi.in/Thank-You-Utaxi.html">-->
 
   <title>Taxi Services in Banaglore</title>
 
@@ -72,6 +74,8 @@
       <div class="row h-100">
         <div class="col-lg-7 my-auto">
           <div class="header-content mx-auto">
+			  <div class="quadrat">There is an SMS error going on from TRAI.Your booking has been confirmed.Your booking details has also been shared to your mail id.  You will get the driver details before 2 hours of your journey.</div>
+
             <h1 class="mb-5">Thank You! for Booking</h1>
             <p>Your BookingID is <%Response.Write(Session("BookingID"))%>.
                 Kindly provide your valuable feedback either in our facebook or twitter page.</p>
@@ -130,6 +134,26 @@
     </div>
   </section>
 
+<style>
+	.quadrat {
+  
+ -webkit-animation: NAME-YOUR-ANIMATION 1s infinite; /* Safari 4+ */
+  -moz-animation:    NAME-YOUR-ANIMATION 1s infinite; /* Fx 5+ */
+  -o-animation:      NAME-YOUR-ANIMATION 1s infinite; /* Opera 12+ */
+  animation:         NAME-YOUR-ANIMATION 1s infinite; /* IE 10+, Fx 29+ */
+}
+
+@-webkit-keyframes NAME-YOUR-ANIMATION {
+0%, 49% {
+    background-color: rgb(117,209,63);
+    border: 3px solid #ffc405;;
+}
+50%, 100% {
+    background-color: #ffc405;;
+    border: 3px solid rgb(117,209,63);
+}
+}
+</style>
   <footer>
     <div class="container">
       <p>&copy; U Taxi 2019. All Rights Reserved.</p>

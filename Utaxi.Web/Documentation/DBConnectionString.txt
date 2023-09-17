@@ -1,0 +1,4 @@
+﻿
+    <add name="UtaxiConnectionString" connectionString="Data Source=DESKTOP-AO722RE;Initial Catalog=DeepamLive;user ID=sa;pwd=deepam;" providerName="System.Data.SqlClient" />
+    <add name="OnlineConnectionString" connectionString="Data Source=103.14.120.252;Initial Catalog=DeepamLive;user ID=utaxiadmin;pwd=Utaxi@12345;" providerName="System.Data.SqlClient" />
+ 

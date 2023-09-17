@@ -1,0 +1,30 @@
+{
+  "short_name": "U Taxi",
+  "name": "U Taxi",
+  "theme_color": "#4A90E2",
+  "background_color": "#F7F8F9",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "https://www.utaxi.in/assets/icons/launcher-icon-1x.png",
+      "type": "image/png",
+      "sizes": "48x48"
+    },
+    {
+      "src": "https://www.utaxi.in/assets/icons/launcher-icon-2x.png",
+      "type": "image/png",
+      "sizes": "96x96"
+    },
+    {
+      "src": "https://www.utaxi.in/assets/icons/launcher-icon-3x.png",
+      "type": "image/png",
+      "sizes": "144x144"
+    },
+    {
+      "src": "https://www.utaxi.in/assets/icons/launcher-icon-4x.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    }
+  ],
+  "start_url": "https://www.utaxi.in/?utm_source=Mobilehomescreenicon&utm_medium=mobilehomescreen&utm_campaign=mobile_screen_button&utm_term=mobilejson"
+}

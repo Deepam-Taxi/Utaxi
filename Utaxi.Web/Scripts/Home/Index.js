@@ -463,68 +463,69 @@ function sendSMS() {
     var getURL = $('#hdnWebApiURL').val() + "D_MobileNoVerification";
 
     var data = JSON.stringify(
-        {
-            BranchID: '81',
-            ContactNo: $('#mobileNumber').val(),
-        });
+    {
+        BranchID: '81',
+        ContactNo: $('#mobileNumber').val(),
+    });
 
     $.ajax(
-        {
-            type: "POST",
-            url: getURL,
-            data: data,
-            contentType: "application/json; charset=utf-8",
-            dataType: "json",
-            success: function (data) {
-                debugger;
+    {
+        type: "POST",
+        url: getURL,
+        data: data,
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        success: function (data) {
+            debugger;
 
-                $('#bookingName').val('');
-                $('#bookingEmailID').val('');
-                $('#bookingAddress').val('');
+            $('#bookingName').val('');
+            $('#bookingEmailID').val('');
+            $('#bookingAddress').val('');
 
-                if (data.Status == true && data.StatusID == "1") {
-                    $('.errorMsgOTP').hide();
-                    $('#divBooking').show();
-                    $('#divOTPVerification').hide();
+            if (data.Status == true && data.StatusID == "1") {
+                $('.errorMsgOTP').hide();
+                $('#divBooking').show();
+                $('#divOTPVerification').hide();
 
-                    mobileNumber = $('#mobileNumber').val();
+                mobileNumber = $('#mobileNumber').val();
 
-                    $('#bookingName').val(data.Name);
-                    $('#bookingEmailID').val(data.EmailID);
-                    $('#bookingAddress').val(data.Address);
+                $('#bookingName').val(data.Name);
+                $('#bookingEmailID').val(data.EmailID);
+                $('#bookingAddress').val(data.Address);
 
-                    $('#bookingMobileNumber').val(mobileNumber);
-                    $('#bookingFare').val($('#hdnFare').val());
-                    $('#bookingACType').val($('#hdnACTypeID').val());
+                $('#bookingMobileNumber').val(mobileNumber);
+                $('#bookingFare').val($('#hdnFare').val());
+                $('#bookingACType').val($('#hdnACTypeID').val());
 
-                    $('.p_T').html('');
-                    if ($('#hdnEnableOnlinePayment').val() == "0") {
-                        $('#RdlOnlinePay').hide();
-                        var $radiosPaymentOption = $('input:radio[name=bookingPayOption]');
-                        $radiosPaymentOption.filter('[value=5]').prop('checked', true);
-                        $("#paymentOption").trigger("click");
-                    }
-                    else {
-                        var $radiosPaymentOption = $('input:radio[name=bookingPayOption]');
-                        $radiosPaymentOption.filter('[value=5]').prop('checked', false);
-                        $('#RdlOnlinePay').show();
-                        $("#paymentOption").trigger("click");
-                    }
-                } else if (data.OTP != "") {
-                    $('.infoMsgOTP').show();
-                    $('#hdnCustomerOTP').val(data.OTP);
-
-                    $('#divOTP').show();
-                    $('#divMobileNumber').hide();
+                $('.p_T').html('');
+                if ($('#hdnEnableOnlinePayment').val() == "0") {
+                    $('#RdlOnlinePay').hide();
+                    var $radiosPaymentOption = $('input:radio[name=bookingPayOption]');
+                    $radiosPaymentOption.filter('[value=5]').prop('checked', true);
+                    $("#paymentOption").trigger("click");
                 }
-            },
-            failure: function () {
-                console.log(result);
+                else {
+                    var $radiosPaymentOption = $('input:radio[name=bookingPayOption]');
+                    $radiosPaymentOption.filter('[value=5]').prop('checked', false);
+                    $('#RdlOnlinePay').show();
+                    $("#paymentOption").trigger("click");
+                }
+            } else if (data.OTP != "") {
+                $('.infoMsgOTP').show();
+                $('#hdnCustomerOTP').val(data.OTP);
+
+                $('#divOTP').show();
+                $('#divMobileNumber').hide();
             }
-        });
+        },
+        failure: function () {
+            console.log(result);
+        }
+    });
 }
 
-function TimeCheck() {
+function TimeCheck()
+{
     var today = new Date();
     var Christmas = new Date("12-25-2012");
     var diffMs = (Christmas - today); // milliseconds between now & Christmas
@@ -534,206 +535,208 @@ function TimeCheck() {
 
 function loadAvailableRides() {
     debugger;
-    var BookingDate = $('#pickupdatepicker').val() + ' ' + $('#pickuptimepicker').val();
+    var BookingDate= $('#pickupdatepicker').val() +' '+$('#pickuptimepicker').val();
     var today = new Date();
     var TripDate = new Date(BookingDate);
     var diffMs = (TripDate - today); // milliseconds between now & BookingDate
     var diffDays = Math.floor(diffMs / 86400000); // days
     var diffHrs = Math.floor((diffMs % 86400000) / 3600000); // hours 
-    if (diffHrs > 2) {
+    if (diffHrs > 2)
+    {
         $("#hdnEnableOnlinePayment").val('1');
     }
-    else {
+    else
+    {
         $("#hdnEnableOnlinePayment").val('0');
     }
 
     var getTripFareURL = $('#hdnWebApiURL').val() + "D_GetTripFare";
 
     var data = JSON.stringify(
-        {
-            FromLocationID: $('#hdnpickupPlaceID').val(),
-            ToLocationID: $('#hdndropPlaceID').val(),
-            ServiceTypeID: $('#hdnServiceTypeID').val(),
-            ServiceNameID: $('#hdnServiceNameID').val(),
-            ReqDate: $('#pickupdatepicker').val(),
-            ReqTime: $('#pickuptimepicker').val(),
-            TripEndDate: $('#dropdatepicker').val(),
-            TripEndTime: $('#droptimepicker').val(),
-            FromLocation: $('#pickupPlace').html(),
-            ToLocation: $('#dropPlace').html(),
-        });
+    {
+        FromLocationID: $('#hdnpickupPlaceID').val(),
+        ToLocationID: $('#hdndropPlaceID').val(),
+        ServiceTypeID: $('#hdnServiceTypeID').val(),
+        ServiceNameID: $('#hdnServiceNameID').val(),
+        ReqDate: $('#pickupdatepicker').val(),
+        ReqTime: $('#pickuptimepicker').val(),
+        TripEndDate: $('#dropdatepicker').val(),
+        TripEndTime: $('#droptimepicker').val(),
+        FromLocation: $('#pickupPlace').html(),
+        ToLocation: $('#dropPlace').html(),
+    });
 
     $.ajax(
-        {
-            type: "POST",
-            url: getTripFareURL,
-            data: data,
-            contentType: "application/json; charset=utf-8",
-            dataType: "json",
-            beforeSend: function () {
-                //$('.ajax-loader').css("visibility", "visible");
-            },
-            success: function (data) {
+    {
+        type: "POST",
+        url: getTripFareURL,
+        data: data,
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        beforeSend: function () {
+            //$('.ajax-loader').css("visibility", "visible");
+        },
+        success: function (data) {
+            debugger;
+
+            $('.ratelist').html('');
+
+            $.each(data.ApproximateTripFare, function () {
                 debugger;
+                $('#hdnpickupPlaceID').val(this.FromLocationID);
+                $('#hdndropPlaceID').val(this.ToLocationID);
+                $('#hdnRequestID').val(this.RequestID); 
+                $("#hdnEnableOnlinePayment").val(this.EnableOnlinePayment);
 
-                $('.ratelist').html('');
+                var appendRateText = "<li class='list-group-item'><div class='row'><div class='col-md-2'><img src='../Images/car-11-24.png' /></div>";
+                appendRateText = appendRateText + "<div class='col-md-5 cabName' style='text-align: left;'>" + this.VehicleType + "</div>";
+                appendRateText = appendRateText + "<div class='col-md-5 cabName'>";
 
-                $.each(data.ApproximateTripFare, function () {
+                var tooltipText = '';
+
+                console.log("this.FxedRateNAC_S ", this.FxedRateNAC_S);
+
+                if (this.FxedRateNAC_S == "0") {
+                    appendRateText = appendRateText + "<button type='button' class='btn btn-primary booking' disabled data-toggle='popover' title='Fare' data-content='And here's fare details' value='NA'>NA</button>";
+                } else {
+                    if (this.ServiceNameID == 3) {
+                        tooltipText = '<b>Rate Per KM :</b> ' + this.RatePerKM_NonAC + '<br /><b>Min KM :</b> ' + this.MinKMNAC + '<br /><b>Min KM Rate :</b> ' + this.MinKMRateNAC + '<br /><b>Day Bata :</b> ' + this.DayBata + '<br /><b>Night Bata :</b> ' + this.NightBata;
+                    }
+                    else if (this.ServiceNameID == 2) {
+                        tooltipText = '<b>Min Rate :</b> ' + this.MinKMRateNAC + '<br /><b>Extra KM Rate :</b> ' + this.ExtraKMRateNAC + '<br /><b>Extra Hour Rate :</b> ' + this.pkgExtHrRateNAC;
+                    }
+                    else {
+                        tooltipText = '<b>Min KM :</b> ' + this.MinKMNAC + '<br /><b>Min KM Rate :</b> ' + this.MinKMRateNAC + '<br /><b>Extra KM Rate :</b> ' + this.ExtraKMRateNAC;
+                    }
+                    appendRateText = appendRateText + "<button type='button' class='btn btn-primary booking1 DemoTooltipOffset' title='" + tooltipText + "' value='" + this.FxedRateNAC_S + "'onclick=ChooseVehicle(" + this.RateID + ",2," + this.FxedRateNAC_S + ") >₹" + this.FxedRateNAC_S + "</button>";
+                }
+
+                if (this.FxedRateAC_S == "0") {
+                    appendRateText = appendRateText + "<button type='button' class='btn btn-success booking marginleft3px' disabled value='NA'>NA</button>";
+                } else {
+
+                    if (this.ServiceNameID == 3) {
+                        tooltipText = '<b>Rate Per KM :</b> ' + this.RatePerKM_AC + '<br /><b>Min KM :</b> ' + this.MinKMAC + '<br /><b>Min KM Rate :</b> ' + this.MinKMRateAC + '<br /><b>Day Bata :</b> ' + this.DayBata + '<br /><b>Night Bata :</b> ' + this.NightBata;
+                    }
+                    else if (this.ServiceNameID == 2) {
+                        tooltipText = '<b>Min Rate :</b> ' + this.MinKMRateAC + '<br /><b>Extra KM Rate :</b> ' + this.ExtraKMRateAC + '<br /><b>Extra Hour Rate :</b> ' + this.pkgExtHrRateAC;
+                    }
+                    else {
+                        tooltipText = '<b>Min KM :</b> ' + this.MinKMAC + '<br /><b>Min KM Rate :</b> ' + this.MinKMRateAC + '<br /><b>Extra KM Rate :</b> ' + this.ExtraKMRateAC;
+                    }
+                    appendRateText = appendRateText + "<button type='button' class='btn btn-success booking1 marginleft3px DemoTooltipOffset' title='" + tooltipText + "' value='" + this.FxedRateAC_S + "' onclick=ChooseVehicle(" + this.RateID + ",1," + this.FxedRateAC_S + ")>₹" + this.FxedRateAC_S + "</button><span style='display:none'>1</span><input type='hidden' value='" + this.RateID + "' />";
+                }
+
+                //console.log('MinRate', this.MinRate);
+
+                //console.log('RateAC', this.RateAC);
+
+                //console.log('RateNAC', this.RateNAC);
+
+                //console.log('MinKMAC', this.MinKMAC);
+
+                //console.log('MinKMRateAC', this.MinKMRateAC);
+
+                //console.log('ExtraKMRateAC', this.ExtraKMRateAC);
+
+                //console.log('ExtraHrRateAC', this.ExtraHrRateAC);
+
+                //console.log('MinKMNAC', this.MinKMNAC);
+
+                //console.log('MinKMRateNAC', this.MinKMRateNAC);
+
+                //console.log('ExtraKMRateNAC', this.ExtraKMRateNAC);
+
+                //console.log('ExtraHrRateNAC', this.ExtraHrRateNAC);
+
+
+                //console.log('KarCp', this.KarCp);
+
+                //console.log('KerCp', this.KerCp);
+
+                //console.log('APCp', this.APCp);
+
+                //console.log('GoaCp', this.GoaCp);
+
+                //console.log('PondyCp', this.PondyCp);
+
+                //console.log('TNCp', this.TNCp);
+
+
+                //console.log('DayBata', this.DayBata);
+
+                //console.log('NightBata', this.NightBata);
+
+
+                //console.log('FxedRateAC_S', this.FxedRateAC_S);
+
+                //console.log('FxedRateNAC_S', this.FxedRateNAC_S);
+
+                //console.log('RatePerKM_AC', this.RatePerKM_AC);
+
+                //console.log('RatePerKM_NonAC', this.RatePerKM_NonAC);
+
+                //console.log('MinHour_Pkg', this.MinHour_Pkg);
+
+                //console.log('RatelistComments', this.RatelistComments);
+
+                appendRateText = appendRateText + "</div></div></li>";
+
+                $('.ratelist').append(appendRateText);
+
+                if ($('#hdnServiceTypeID').val() != '1' && $('#hdnServiceTypeID').val() != '2' && $('#hdnServiceTypeID').val() != '3') {
+                    $('.DemoTooltipOffset').jBox('Tooltip', {
+                        offset: {
+                            x: 5,
+                            y: -5
+                        }
+                    });
+                }
+
+                $('.booking_AC').click(function () {
+                    $('#hdnACTypeID').val('1');
+                    $('#divSearchRides').hide();
+                    $('#divAvailableRides').hide();
+                    $('#divOTPVerification').show();
+                    $('#divMobileNumber').show();
+                    $('#divOTP').hide();
+                    $('.errorMsg, .errorMsgOTP, .errorMsgBooking, .infoMsgOTP').hide();
                     debugger;
-                    $('#hdnpickupPlaceID').val(this.FromLocationID);
-                    $('#hdndropPlaceID').val(this.ToLocationID);
-                    $('#hdnRequestID').val(this.RequestID);
-                    $("#hdnEnableOnlinePayment").val(this.EnableOnlinePayment);
-
-                    var appendRateText = "<li class='list-group-item'><div class='row'><div class='col-md-2'><img src='../Images/car-11-24.png' /></div>";
-                    appendRateText = appendRateText + "<div class='col-md-5 cabName' style='text-align: left;'>" + this.VehicleType + "</div>";
-                    appendRateText = appendRateText + "<div class='col-md-5 cabName'>";
-
-                    var tooltipText = '';
-
-                    console.log("this.FxedRateNAC_S ", this.FxedRateNAC_S);
-
-                    if (this.FxedRateNAC_S == "0") {
-                        appendRateText = appendRateText + "<button type='button' class='btn btn-primary booking' disabled data-toggle='popover' title='Fare' data-content='And here's fare details' value='NA'>NA</button>";
-                    } else {
-                        if (this.ServiceNameID == 3) {
-                            tooltipText = '<b>Rate Per KM :</b> ' + this.RatePerKM_NonAC + '<br /><b>Min KM :</b> ' + this.MinKMNAC + '<br /><b>Min KM Rate :</b> ' + this.MinKMRateNAC + '<br /><b>Day Bata :</b> ' + this.DayBata + '<br /><b>Night Bata :</b> ' + this.NightBata;
-                        }
-                        else if (this.ServiceNameID == 2) {
-                            tooltipText = '<b>Min Rate :</b> ' + this.MinKMRateNAC + '<br /><b>Extra KM Rate :</b> ' + this.ExtraKMRateNAC + '<br /><b>Extra Hour Rate :</b> ' + this.pkgExtHrRateNAC;
-                        }
-                        else {
-                            tooltipText = '<b>Min KM :</b> ' + this.MinKMNAC + '<br /><b>Min KM Rate :</b> ' + this.MinKMRateNAC + '<br /><b>Extra KM Rate :</b> ' + this.ExtraKMRateNAC;
-                        }
-                        appendRateText = appendRateText + "<button type='button' class='btn btn-primary booking1 DemoTooltipOffset' title='" + tooltipText + "' value='" + this.FxedRateNAC_S + "'onclick=ChooseVehicle(" + this.RateID + ",2," + this.FxedRateNAC_S + ") >₹" + this.FxedRateNAC_S + "</button>";
-                    }
-
-                    if (this.FxedRateAC_S == "0") {
-                        appendRateText = appendRateText + "<button type='button' class='btn btn-success booking marginleft3px' disabled value='NA'>NA</button>";
-                    } else {
-
-                        if (this.ServiceNameID == 3) {
-                            tooltipText = '<b>Rate Per KM :</b> ' + this.RatePerKM_AC + '<br /><b>Min KM :</b> ' + this.MinKMAC + '<br /><b>Min KM Rate :</b> ' + this.MinKMRateAC + '<br /><b>Day Bata :</b> ' + this.DayBata + '<br /><b>Night Bata :</b> ' + this.NightBata;
-                        }
-                        else if (this.ServiceNameID == 2) {
-                            tooltipText = '<b>Min Rate :</b> ' + this.MinKMRateAC + '<br /><b>Extra KM Rate :</b> ' + this.ExtraKMRateAC + '<br /><b>Extra Hour Rate :</b> ' + this.pkgExtHrRateAC;
-                        }
-                        else {
-                            tooltipText = '<b>Min KM :</b> ' + this.MinKMAC + '<br /><b>Min KM Rate :</b> ' + this.MinKMRateAC + '<br /><b>Extra KM Rate :</b> ' + this.ExtraKMRateAC;
-                        }
-                        appendRateText = appendRateText + "<button type='button' class='btn btn-success booking1 marginleft3px DemoTooltipOffset' title='" + tooltipText + "' value='" + this.FxedRateAC_S + "' onclick=ChooseVehicle(" + this.RateID + ",1," + this.FxedRateAC_S + ")>₹" + this.FxedRateAC_S + "</button><span style='display:none'>1</span><input type='hidden' value='" + this.RateID + "' />";
-                    }
-
-                    //console.log('MinRate', this.MinRate);
-
-                    //console.log('RateAC', this.RateAC);
-
-                    //console.log('RateNAC', this.RateNAC);
-
-                    //console.log('MinKMAC', this.MinKMAC);
-
-                    //console.log('MinKMRateAC', this.MinKMRateAC);
-
-                    //console.log('ExtraKMRateAC', this.ExtraKMRateAC);
-
-                    //console.log('ExtraHrRateAC', this.ExtraHrRateAC);
-
-                    //console.log('MinKMNAC', this.MinKMNAC);
-
-                    //console.log('MinKMRateNAC', this.MinKMRateNAC);
-
-                    //console.log('ExtraKMRateNAC', this.ExtraKMRateNAC);
-
-                    //console.log('ExtraHrRateNAC', this.ExtraHrRateNAC);
-
-
-                    //console.log('KarCp', this.KarCp);
-
-                    //console.log('KerCp', this.KerCp);
-
-                    //console.log('APCp', this.APCp);
-
-                    //console.log('GoaCp', this.GoaCp);
-
-                    //console.log('PondyCp', this.PondyCp);
-
-                    //console.log('TNCp', this.TNCp);
-
-
-                    //console.log('DayBata', this.DayBata);
-
-                    //console.log('NightBata', this.NightBata);
-
-
-                    //console.log('FxedRateAC_S', this.FxedRateAC_S);
-
-                    //console.log('FxedRateNAC_S', this.FxedRateNAC_S);
-
-                    //console.log('RatePerKM_AC', this.RatePerKM_AC);
-
-                    //console.log('RatePerKM_NonAC', this.RatePerKM_NonAC);
-
-                    //console.log('MinHour_Pkg', this.MinHour_Pkg);
-
-                    //console.log('RatelistComments', this.RatelistComments);
-
-                    appendRateText = appendRateText + "</div></div></li>";
-
-                    $('.ratelist').append(appendRateText);
-
-                    if ($('#hdnServiceTypeID').val() != '1' && $('#hdnServiceTypeID').val() != '2' && $('#hdnServiceTypeID').val() != '3') {
-                        $('.DemoTooltipOffset').jBox('Tooltip', {
-                            offset: {
-                                x: 5,
-                                y: -5
-                            }
-                        });
-                    }
-
-                    $('.booking_AC').click(function () {
-                        $('#hdnACTypeID').val('1');
-                        $('#divSearchRides').hide();
-                        $('#divAvailableRides').hide();
-                        $('#divOTPVerification').show();
-                        $('#divMobileNumber').show();
-                        $('#divOTP').hide();
-                        $('.errorMsg, .errorMsgOTP, .errorMsgBooking, .infoMsgOTP').hide();
-                        debugger;
-                        $('#hdnFare').val($(this).next().val());
-                    });
-
-                    $('.booking').click(function () {
-
-                        $('#hdnACType').val($(this).next().next().text());
-                        $('#hdnRateID').val($(this).next().next().next().val());
-                        console.log("hdnACType", $('#hdnACType').val());
-                        clear_OTPFields();
-                        $('#hdnACTypeID').val('1');
-                        $('#divSearchRides').hide();
-                        $('#divAvailableRides').hide();
-                        $('#divOTPVerification').show();
-                        $('#divMobileNumber').show();
-                        $('#divOTP').hide();
-                        $('.errorMsg, .errorMsgOTP, .errorMsgBooking, .infoMsgOTP').hide();
-                        debugger;
-                        $('#hdnFare').val($(this).val());
-                        $('#hdnACType').val($(this).next().text());
-                        $('#hdnRateID').val($(this).next().next().val());
-                        console.log(" .booking hdnACType", $('#hdnACType').val());
-                        clear_OTPFields();
-                    });
+                    $('#hdnFare').val($(this).next().val());
                 });
 
-            },
-            complete: function () {
-                //$('.ajax-loader').css("visibility", "hidden");
-            },
-            failure: function () {
-                //createErrorLogs(result, 'loadPackages', 'index.js');
-                //$('.ajax-loader').css("visibility", "hidden");
-                console.log(result);
-            }
-        });
+                $('.booking').click(function () {
+
+                    $('#hdnACType').val($(this).next().next().text());
+                    $('#hdnRateID').val($(this).next().next().next().val());
+                    console.log("hdnACType", $('#hdnACType').val());
+                    clear_OTPFields();
+                    $('#hdnACTypeID').val('1');
+                    $('#divSearchRides').hide();
+                    $('#divAvailableRides').hide();
+                    $('#divOTPVerification').show();
+                    $('#divMobileNumber').show();
+                    $('#divOTP').hide();
+                    $('.errorMsg, .errorMsgOTP, .errorMsgBooking, .infoMsgOTP').hide();
+                    debugger;
+                    $('#hdnFare').val($(this).val());
+                    $('#hdnACType').val($(this).next().text());
+                    $('#hdnRateID').val($(this).next().next().val());
+                    console.log(" .booking hdnACType", $('#hdnACType').val());
+                    clear_OTPFields();
+                });
+            });
+
+        },
+        complete: function () {
+            //$('.ajax-loader').css("visibility", "hidden");
+        },
+        failure: function () {
+            //createErrorLogs(result, 'loadPackages', 'index.js');
+            //$('.ajax-loader').css("visibility", "hidden");
+            console.log(result);
+        }
+    });
 }
 
 function ChooseVehicle(RateID, ACTypeID, Fare) {
@@ -789,86 +792,86 @@ function booknow() {
     }
 
     var data = JSON.stringify(
-        {
-            BranchID: "81",
-            Name: $('#bookingName').val(),
-            MobileNumber: $('#bookingMobileNumber').val(),
-            EmailID: $('#bookingEmailID').val(),
-            Address: $('#bookingAddress').val(),
-            Comments: $('#bookingComments').val(),
-            ReqDate: $('#pickupdatepicker').val() + ' ' + $('#pickuptimepicker').val(),
-            TripEndDate: tripEndDate,
-            ACTypeID: $('#hdnACType').val(),
-            TotalTripFare: $('#bookingFare').val(),
-            RateID: $('#hdnRateID').val(),
-            ServiceNameID: $('#hdnServiceNameID').val(),
-            FromLocationID: $('#hdnpickupPlaceID').val(),
-            ToLocationID: $('#hdndropPlaceID').val(),
-            ServiceTypeID: $('#hdnServiceTypeID').val(),
-            RequestID: $('#hdnRequestID').val(),
-            PaymentTypeID: $('#hdnPaymentType').val(),
-            PaidAmount: $('#hdnPaidAmount').val(),
-            Discount: $('#hdnDiscount').val(),
-            Balance: $('#hdnBalance').val()
+    {
+        BranchID: "81",
+        Name: $('#bookingName').val(),
+        MobileNumber: $('#bookingMobileNumber').val(),
+        EmailID: $('#bookingEmailID').val(),
+        Address: $('#bookingAddress').val(),
+        Comments: $('#bookingComments').val(),
+        ReqDate: $('#pickupdatepicker').val() + ' ' + $('#pickuptimepicker').val(),
+        TripEndDate: tripEndDate,
+        ACTypeID: $('#hdnACType').val(),
+        TotalTripFare: $('#bookingFare').val(),
+        RateID: $('#hdnRateID').val(),
+        ServiceNameID: $('#hdnServiceNameID').val(),
+        FromLocationID: $('#hdnpickupPlaceID').val(),
+        ToLocationID: $('#hdndropPlaceID').val(),
+        ServiceTypeID: $('#hdnServiceTypeID').val(),
+        RequestID: $('#hdnRequestID').val(),
+        PaymentTypeID: $('#hdnPaymentType').val(),
+        PaidAmount: $('#hdnPaidAmount').val(),
+        Discount: $('#hdnDiscount').val(),
+        Balance: $('#hdnBalance').val()
         });
 
 
     //submitgoogleReview("90989", $('#pickupdatepicker').val(), $('#bookingEmailID').val());
 
     $.ajax(
-        {
-            type: "POST",
-            url: getTripFareURL,
-            data: data,
-            contentType: "application/json; charset=utf-8",
-            dataType: "json",
-            success: function (data) {
-                debugger;
-                if (data.Result == "1") {
+    {
+        type: "POST",
+        url: getTripFareURL,
+        data: data,
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        success: function (data) {
+            debugger;
+            if (data.Result == "1") {
 
-                    var payMode = $("#hdnPaymentType").val();
-                    console.log("payMode", payMode);
-                    if (payMode == "5") {
-                        $('#hdnBookingID').val(data.BookID);
+                var payMode = $("#hdnPaymentType").val();
+                console.log("payMode", payMode);
+                if (payMode == "5") {
+                    $('#hdnBookingID').val(data.BookID);
 
-                        $.post('/Home/SetVariable',
-                            { key: "BookingID", value: data.BookID }, function (data) {
+                    $.post('/Home/SetVariable',
+                    { key: "BookingID", value: data.BookID }, function (data) {
 
 
-                                //submitgoogleReview(data.BookID, $('#pickupdatepicker').val(), $('#bookingEmailID').val());
+                        //submitgoogleReview(data.BookID, $('#pickupdatepicker').val(), $('#bookingEmailID').val());
 
-                                //bootbox.alert("Booked successfully with the BookingID " + data.BookID + ". <br \> Kindly provide your valuable feedback either in our facebook or twitter page.");
-                                $('.infoMsgSuccess').html("Booked successfully with the BookingID " + data.BookID + ". <br \> Kindly provide your valuable feedback either in our facebook or twitter page.");
-                                //$('.infoMsgSuccess').html("Booked successfully with the BookingID. <br \> Kindly provide your valuable feedback either in one of our social network page.");
-                                clear_BookingFields();
-                                clear_OTPFields();
-                                clear_Fields();
+                        //bootbox.alert("Booked successfully with the BookingID " + data.BookID + ". <br \> Kindly provide your valuable feedback either in our facebook or twitter page.");
+                        $('.infoMsgSuccess').html("Booked successfully with the BookingID " + data.BookID + ". <br \> Kindly provide your valuable feedback either in our facebook or twitter page.");
+                        //$('.infoMsgSuccess').html("Booked successfully with the BookingID. <br \> Kindly provide your valuable feedback either in one of our social network page.");
+                        clear_BookingFields();
+                        clear_OTPFields();
+                        clear_Fields();
 
-                                $('#divSearchRides').hide();
-                                $('#divAvailableRides').hide();
-                                $('#divOTPVerification').hide();
-                                $('#divBooking').hide();
-                                $('#divOTP').hide();
-                                $('#divBookingSuccess').show();
+                        $('#divSearchRides').hide();
+                        $('#divAvailableRides').hide();
+                        $('#divOTPVerification').hide();
+                        $('#divBooking').hide();
+                        $('#divOTP').hide();
+                        $('#divBookingSuccess').show();
 
-                                window.location.href = '/Thank-You-Utaxi.aspx';
-                            });
-                    }
-                    else {
-                        $('.p_PaymentProcessing').html('<b>Please wait. We are processing your payment .</b>');
-                        $('.p_PaymentProcessing').css('color', 'green');
-                        window.location.href = "https://webapis.utaxi.in/PayTM_GT.aspx?BookID=" + data.BookID;
-                    }
-                } else {
-
-                    bootbox.alert("There is an issue during the booking. Please try again");
+                        window.location.href = '/Thank-You-Utaxi.aspx';
+                    });
                 }
-            },
-            failure: function () {
-                //createErrorLogs(result, 'loadPackages', 'index.js');
-                console.log(result);
+                else {
+                    $('.p_PaymentProcessing').html('<b>Please wait. We are processing your payment .</b>');
+                    $('.p_PaymentProcessing').css('color', 'green');
+                    window.location.href = "https://webapis.utaxi.in/PayTM_GT.aspx?BookID=" + data.BookID;
+                }
+            } else {
+
+                bootbox.alert("There is an issue during the booking. Please try again");
             }
-        });
+        },
+        failure: function () {
+            //createErrorLogs(result, 'loadPackages', 'index.js');
+            console.log(result);
+        }
+    });
 }
 
 function showTabs(tabName) {
@@ -1080,35 +1083,35 @@ function loadPackages() {
     var loadPackagesURL = $('#hdnWebApiURL').val() + "D_PackageType";
 
     $.ajax(
-        {
-            type: "POST",
-            url: loadPackagesURL,
-            data: {},
-            contentType: "application/json; charset=utf-8",
-            dataType: "json",
-            success: function (data) {
+    {
+        type: "POST",
+        url: loadPackagesURL,
+        data: {},
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        success: function (data) {
 
-                $('#ddlPackageType').html('');
-                $('#ddlPackageType').append($("<option     />").val(-1).text('-- Select --'));
+            $('#ddlPackageType').html('');
+            $('#ddlPackageType').append($("<option     />").val(-1).text('-- Select --'));
 
-                $.each(data.PackageType, function () {
-                    $('#ddlPackageType').append($("<option     />").val(this.ServiceTypeID).text(this.ServiceType));
-                });
+            $.each(data.PackageType, function () {
+                $('#ddlPackageType').append($("<option     />").val(this.ServiceTypeID).text(this.ServiceType));
+            });
 
-                $('#ddlPackageType option[value=-1]').attr('selected', 'selected');
+            $('#ddlPackageType option[value=-1]').attr('selected', 'selected');
 
-                var PackageTypevalue = $('#hdnPackageType').val();
+            var PackageTypevalue = $('#hdnPackageType').val();
 
-                if (PackageTypevalue != '') {
-                    $('#ddlPackageType').find('option:selected').remove();
-                    $('#ddlPackageType option[value=' + PackageTypevalue + ']').attr('selected', 'selected');
-                }
-            },
-            failure: function () {
-                //createErrorLogs(result, 'loadPackages', 'index.js');
-                console.log(result);
+            if (PackageTypevalue != '') {
+                $('#ddlPackageType').find('option:selected').remove();
+                $('#ddlPackageType option[value=' + PackageTypevalue + ']').attr('selected', 'selected');
             }
-        });
+        },
+        failure: function () {
+            //createErrorLogs(result, 'loadPackages', 'index.js');
+            console.log(result);
+        }
+    });
 }
 
 

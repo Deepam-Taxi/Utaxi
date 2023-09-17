@@ -1,4 +1,4 @@
-﻿
+
 var GAreaID = "0";
 
 $(document).ready(function () {
@@ -63,7 +63,8 @@ $(document).ready(function () {
 
     $('#rdAirportPickup').click(function () {
         clear_Fields();
-
+		$('#li_drop_loc').html('');
+		$('#li_pick_loc').html('');
         $('#pickupPlaceSearch').hide();
         $('#pickupPlace').show();
         $('#dropPlaceSearch').hide();
@@ -81,7 +82,8 @@ $(document).ready(function () {
 
     $('#rdAirportDrop').click(function () {
         clear_Fields();
-
+		$('#li_drop_loc').html('');
+		$('#li_pick_loc').html('');
         $('#pickupPlaceSearch').hide();
         $('#pickupPlace').show();
         $('#dropPlaceSearch').hide();
@@ -99,7 +101,8 @@ $(document).ready(function () {
 
     $('#rdAirportRT').click(function () {
         clear_Fields();
-
+		$('#li_drop_loc').html('');
+		$('#li_pick_loc').html('');
         $('#pickupPlaceSearch').hide();
         $('#pickupPlace').show();
         $('#dropPlaceSearch').hide();
@@ -409,7 +412,7 @@ function sendSMS_V1() {
     fd.append('phone', $('#mobileNumber').val());
 
     $.ajax({
-        url: 'https://deepamtaxi.com/admin/web_api/login',
+        url: 'https://www.deepamtaxi.com/admin/web_api/login',
         data: fd,
         processData: false,
         contentType: false,
@@ -534,7 +537,7 @@ function loadAirportRates() {
     console.log(fd);
 
     $.ajax({
-        url: 'https://deepamtaxi.com/admin/web_api/airport_price_details',
+        url: 'https://www.deepamtaxi.com/admin/web_api/airport_price_details',
         data: fd,
         processData: false,
         contentType: false,
@@ -753,7 +756,7 @@ function booknow_V1() {
     fd.append('type_of_booking', '2');
 
     $.ajax({
-        url: 'https://deepamtaxi.com/admin/web_api/do_airport_bookings',
+        url: 'https://www.deepamtaxi.com/admin/web_api/do_airport_bookings',
         data: fd,
         processData: false,
         contentType: false,
@@ -1027,7 +1030,7 @@ function loadPackages_V1() {
     debugger;
 
     $.ajax({
-        url: 'https://deepamtaxi.com/admin/web_api/getPackageList',
+        url: 'https://www.deepamtaxi.com/admin/web_api/getPackageList',
         data: {},
         processData: false,
         contentType: false,

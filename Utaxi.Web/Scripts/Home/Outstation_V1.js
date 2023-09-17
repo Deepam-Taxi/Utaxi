@@ -322,7 +322,7 @@ function sendSMS_V1() {
     fd.append('phone', $('#mobileNumber').val());
 
     $.ajax({
-        url: 'https://deepamtaxi.com/admin/web_api/login',
+        url: 'https://www.deepamtaxi.com/admin/web_api/login',
         data: fd,
         processData: false,
         contentType: false,
@@ -628,7 +628,7 @@ function loadOutstationRates() {
     console.log(fd);
 
     $.ajax({
-        url: 'https://deepamtaxi.com/admin/web_api/outstation_price_details',
+        url: 'https://www.deepamtaxi.com/admin/web_api/outstation_price_details',
         data: fd,
         processData: false,
         contentType: false,
@@ -742,7 +742,7 @@ function ShowFareDetails_V1(FromPalce, ToPlace, TravelTime, distance, ExtKmFare,
     TollParking = 'Toll Charge and Parking will be extra';
     var TripDate = $('#pickupdatepicker').val(),
         TripTime = $('#pickuptimepicker').val();
-    $('.FD_FromPalceToPlace').html(FromPalce + ' > ' + ToPlace);
+    $('.FD_FromPalceToPlace').html(FromPalce + ' > ' +ToPlace);
     $('.FD_VehicleType').html(VehicleType);
     $('.FD_ACType').html(ACType);
     $('.FD_Rate').html(Rate);
@@ -753,7 +753,7 @@ function ShowFareDetails_V1(FromPalce, ToPlace, TravelTime, distance, ExtKmFare,
     $('.FD_min_amount').html(min_amount);
     $('.FD_driver_travel_days').html(driver_travel_days);
     $('.FD_driver_allowance').html(driver_allowance);
-    $('.FD_driver_day_allowance').html(day_allowance);
+    $('.FD_driver_day_allowance').html(day_allowance);   
     $('.FD_discont_price').html(discont_price);
 
     var TripsTerms = "<li> Vehicle Type : " + VehicleType + " " + ACType + " , Min KM Rate: ₹" + Rate + "</li>"
@@ -937,7 +937,7 @@ function booknow_V1() {
     //fd.append('type_of_booking', '2');
 
     $.ajax({
-        url: 'https://deepamtaxi.com/admin/web_api/do_outstation_bookings',
+        url: 'https://www.deepamtaxi.com/admin/web_api/do_outstation_bookings',
         data: fd,
         processData: false,
         contentType: false,
@@ -1360,9 +1360,9 @@ function getCategorybyIDDisplay(CategoryID) {
         return 'TEMPO TRAVELLER (12+1)';
     } else if (CategoryID == 6) {
         return 'Mini Bus';
-    } else if (CategoryID == 7) {
+    }else if (CategoryID == 7) {
         return 'Toyota Innova Crysta (7+1)';
-    }
+    }    
 }
 
 function getCategorybyID(CategoryID) {
@@ -1380,7 +1380,7 @@ function getCategorybyID(CategoryID) {
         return 'TEMPO TRAVELLER';
     } else if (CategoryID == 6) {
         return 'Mini Bus';
-    } else if (CategoryID == 7) {
+    }else if (CategoryID == 7) {
         return 'Toyota Innova Crysta';
     }
 }

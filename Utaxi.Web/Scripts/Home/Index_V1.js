@@ -39,7 +39,7 @@ $(document).ready(function () {
     $('#hdnServiceTypeID').val("1");
     $('#hdnStatusID').val("2");
 
-    debugger;
+    //debugger;
     var PackageTypevalue = $('#hdnPackageType').val();
     var AirportServiceNameID = $('#hdnAirportServiceNameID').val();
 
@@ -58,6 +58,38 @@ $(document).ready(function () {
         $('#hdnServiceTypeID').val(AirportServiceNameID);
         $('#hdnStatusID').val("2");
     }
+	
+	var timeoutID;
+
+   $('#dropPlaceSearch').bind('input', function() { 
+      clearTimeout(timeoutID);
+      var $this = $(this);
+      timeoutID = setTimeout(function() {
+         var pickup = $this.val();
+         if (pickup.length > 2) {
+            var html = '';
+            $.ajax({
+               type: 'POST',
+			   url: 'https://www.deepamtaxi.com/template/deepamcabs_get_location/',
+               data: {
+                  'pickup': pickup,
+				  'pickup_flag': false
+               },
+               dataType: 'json',
+               success: function(data) {
+                     $.each(data, function(key, value) {
+                        html += "<li onClick='dropFunction(\"" + value.pickup_area_name + "\")'>" + value.pickup_area_name + "</li>";
+
+                     });
+                     $('#li_drop_loc').html(html);
+               }
+
+            });
+         }
+      }, 1000);
+   });
+
+   
 
     $('#rdAirportPickup').click(function () {
         clear_Fields();
@@ -164,19 +196,16 @@ $(document).ready(function () {
     });
 
     $('#pickupPlace').click(function () {
-        debugger;
         $('#pickupPlaceSearch').show().val('').focus();
         $('#pickupPlace').hide();
         $('#divAvailableRides').hide();
     });
 
     $('#pickupdatepicker').click(function () {
-        debugger;
         $('#divAvailableRides').hide();
     });
 
     $('#dropdatepicker').click(function () {
-        debugger;
         $('#divAvailableRides').hide();
     });
 
@@ -225,20 +254,20 @@ $(document).ready(function () {
 
         if (isEmptyText('#bookingMobileNumber') && isEmptyText('#bookingName') && isEmptyText('#bookingEmailID') && isEmptyDropDown('#bookingACType') && isEmptyText('#bookingAddress')) {
 
-            //$('#paymentOption').removeClass("errors");
-            $('.errorMsgBooking').hide();
+                //$('#paymentOption').removeClass("errors");
+                $('.errorMsgBooking').hide();
 
-            $('#btnBooknow').attr("disabled", true);
-            var tabName = $('.nav-item .active').text();
-            if (tabName == 'Airport Transfer') {
-                booknow_V1();
-            } else if (tabName == 'Local Drop') {
-                booknow_localbookings();
-            } else if (tabName == 'Local Package') {
-                booknow_packagebookings();
-            } else {
-                booknow();
-            }
+                $('#btnBooknow').attr("disabled", true);
+                var tabName = $('.nav-item .active').text();
+                if (tabName == 'Airport Transfer') {
+                    booknow_V1();
+                } else if (tabName == 'Local Drop') {
+                    booknow_localbookings();
+                } else if (tabName == 'Local Package') {
+                    booknow_packagebookings();
+                } else {
+                    booknow();
+                }
         } else {
             $('.errorMsgBooking').show();
         }
@@ -351,7 +380,8 @@ function searchRates_V1() {
     var pickupDateValue = new Date(pickupDate);
     var dropDatevalue = new Date(dropDate);
     var d2 = new Date();
-
+//alert(pickupDateValue);
+//	alert(d2);
     if (tabName == 'Airport Transfer') {
 
         if ($("#rdAirportPickup").is(":checked")) {
@@ -770,14 +800,14 @@ function sendSMS_V1() {
     fd.append('phone', $('#mobileNumber').val());
 
     $.ajax({
-        url: 'https://deepamtaxi.com/admin/web_api/login',
+        url: 'https://www.deepamtaxi.com/admin/web_api/login',
         data: fd,
         processData: false,
         contentType: false,
         type: 'POST',
         success: function (data) {
             debugger;
-
+			
             var obj;
             if (data.response == undefined) {
                 obj = JSON.parse(data);
@@ -1046,7 +1076,7 @@ function loadAirportRates() {
     console.log(fd);
 
     $.ajax({
-        url: 'https://deepamtaxi.com/admin/web_api/airport_price_details',
+        url: 'https://www.deepamtaxi.com/admin/web_api/airport_price_details',
         data: fd,
         processData: false,
         contentType: false,
@@ -1194,7 +1224,7 @@ function loadLocalDropRates() {
     console.log(fd);
 
     $.ajax({
-        url: 'https://deepamtaxi.com/admin/web_api/local_price_details',
+        url: 'https://www.deepamtaxi.com/admin/web_api/local_price_details',
         data: fd,
         processData: false,
         contentType: false,
@@ -1236,7 +1266,7 @@ function loadLocalDropRates() {
                     appendRateText = appendRateText + "<button type='button' class='btn btn-success booking marginleft3px' disabled value='NA'>NA</button>";
                 } else {
                     appendRateText = appendRateText + "<label class='col-form-label DemoTooltipOffset btn btn-link' onclick=ChooseVehicle_V1(" + this.car_category_id + ",1," + this.final_price_ac + ",'','')><b>₹ " + this.final_price_ac + "</b></label>  </div>";
-                    appendRateText = appendRateText + "<div class='col-md-3 col-6 cabName'><button type='button' class='btn btn-outline-primary booking1' onclick=ChooseVehicle_V1(" + this.car_category_id + ",1," + this.final_price_ac + ",'','') value='" + this.final_price_ac + "'>Book Now</button>";
+                    appendRateText = appendRateText + "<div class='col-md-3 col-6 cabName'><button type='button' class='btn btn-outline-primary booking1' onclick=ChooseVehicle_V1(" + this.car_category_id + ",1," + this.final_price_ac + ",'','') value='" + this.final_price_ac + "'>Book Now</button>";                
                 }
 
                 appendRateText += "<br />";
@@ -1346,7 +1376,7 @@ function loadPackageRates() {
     console.log(fd);
 
     $.ajax({
-        url: 'https://deepamtaxi.com/admin/web_api/package_price_details',
+        url: 'https://www.deepamtaxi.com/admin/web_api/package_price_details',
         data: fd,
         processData: false,
         contentType: false,
@@ -1695,7 +1725,7 @@ function booknow_V1() {
     fd.append('type_of_booking', '2');
 
     $.ajax({
-        url: 'https://deepamtaxi.com/admin/web_api/do_airport_bookings',
+        url: 'https://www.deepamtaxi.com/admin/web_api/do_airport_bookings',
         data: fd,
         processData: false,
         contentType: false,
@@ -1802,7 +1832,7 @@ function booknow_localbookings() {
     fd.append('type_of_booking', '2');
 
     $.ajax({
-        url: 'https://deepamtaxi.com/admin/web_api/do_local_bookings',
+        url: 'https://www.deepamtaxi.com/admin/web_api/do_local_bookings',
         data: fd,
         processData: false,
         contentType: false,
@@ -1911,7 +1941,7 @@ function booknow_packagebookings() {
     fd.append('type_of_booking', '2');
 
     $.ajax({
-        url: 'https://deepamtaxi.com/admin/web_api/do_package_bookings',
+        url: 'https://www.deepamtaxi.com/admin/web_api/do_package_bookings',
         data: fd,
         processData: false,
         contentType: false,
@@ -2220,16 +2250,14 @@ function loadPackages() {
 
 function loadPackages_V1() {
 
-    debugger;
 
     $.ajax({
-        url: 'https://deepamtaxi.com/admin/web_api/getPackageList',
+        url: 'https://www.deepamtaxi.com/admin/web_api/getPackageList',
         data: {},
         processData: false,
         contentType: false,
         type: 'POST',
         success: function (data) {
-            debugger;
 
             $('#ddlPackageType').html('');
             $('#ddlPackageType').append($("<option     />").val(-1).text('-- Select --'));

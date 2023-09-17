@@ -27,9 +27,28 @@
   <!-- Custom styles for this template -->
   <link href="css/new-age.min.css" rel="stylesheet">
 
+
+    <!-- Google Tag Manager -->
+    <script type="791a3c85362a0e2809d3b76b-text/javascript">
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-K5N2WF2');</script>
+    <!-- End Google Tag Manager -->
+
 </head>
 
 <body id="page-top">
+ <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K5N2WF2"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
@@ -73,6 +92,8 @@
         <div class="col-lg-7 my-auto">
           <div class="header-content mx-auto">
             <h1 class="mb-5">Thank You! for Booking</h1>
+            <p>Your BookingID is <%Response.Write(Session("BookingID"))%>.
+                Kindly provide your valuable feedback either in our facebook or twitter page.</p>
 			<P>We are specializing in provide taxi service within & outside the city, like 24/7 Airport Pickup, Airport Drop, Local Package, Outstation and Holiday Package we are providing most Reliable & Cheapest fare.</p>
             <a href="#download" class="btn btn-outline btn-xl js-scroll-trigger">Start Now for Free!</a>
           </div>
