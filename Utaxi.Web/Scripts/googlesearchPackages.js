@@ -1,6 +1,6 @@
 ﻿//creating function to load initial MAP when page loading   
 function LoadGoogleMAP() {
-    debugger;
+    ;
 
     var markers = [];
     var map = new google.maps.Map(document.getElementById('divloadMap'), {
@@ -21,12 +21,12 @@ function LoadGoogleMAP() {
 
     var searchBox = new google.maps.places.SearchBox((input));
     var searchBoxdropPlace = new google.maps.places.SearchBox((inputdropPlace));
-    debugger;
+    ;
 
     // Listen for the event fired when the user selects an item from the  
     // pick list. Retrieve the matching places for that item.  
     google.maps.event.addListener(searchBox, 'places_changed', function () {
-        debugger;
+        ;
         var places = searchBox.getPlaces();
 
         if (places.length == 0) {
@@ -40,7 +40,7 @@ function LoadGoogleMAP() {
         $('#pickupPlaceSearch').hide();
 
         $('#divAvailableRides').hide();
-        debugger;
+        ;
         var ServiceAvailable = CheckServiceAvailability($('#hdnServiceNameID').val(), $('#pickupPlaceSearch').val());
         if (ServiceAvailable == true) {
             $('.E_FromPlace').html('');
@@ -53,7 +53,7 @@ function LoadGoogleMAP() {
     });
 
     google.maps.event.addListener(searchBoxdropPlace, 'places_changed', function () {
-        debugger;
+        ;
         var places = searchBoxdropPlace.getPlaces();
 
         if (places.length == 0) {
@@ -80,14 +80,14 @@ function LoadGoogleMAP() {
 
     // current map's viewport.  
     google.maps.event.addListener(map, 'bounds_changed', function () {
-        debugger;
+        ;
         var bounds = map.getBounds();
         searchBoxdropPlace.setBounds(bounds);
     });
 
     // current map's viewport.  
     google.maps.event.addListener(map, 'bounds_changed', function () {
-        debugger;
+        ;
         var bounds = map.getBounds();
         searchBox.setBounds(bounds);
     });
@@ -99,7 +99,7 @@ google.maps.event.addDomListener(window, 'load', LoadGoogleMAP);
 
 
 function CheckServiceAvailability(ServiceTypeID, PlaceName) {
-    debugger;
+    ;
     var Status = true;
     if (ServiceTypeID == "1") {
         if (PlaceName == "KIAL, Gangamuthanahalli, Karnataka, India" ||

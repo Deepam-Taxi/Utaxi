@@ -37,7 +37,7 @@ $(document).ready(function () {
     $('#hdnServiceTypeID').val("1");
     $('#hdnStatusID').val("2");
 
-    debugger;
+    ;
     var PackageTypevalue = $('#hdnPackageType').val();
     var AirportServiceNameID = $('#hdnAirportServiceNameID').val();
 
@@ -162,34 +162,34 @@ $(document).ready(function () {
     });
 
     $('#pickupPlace').click(function () {
-        debugger;
+        ;
         $('#pickupPlaceSearch').show().val('').focus();
         $('#pickupPlace').hide();
         $('#divAvailableRides').hide();
     });
 
     $('#pickupdatepicker').click(function () {
-        debugger;
+        ;
         $('#divAvailableRides').hide();
     });
 
     $('#dropdatepicker').click(function () {
-        debugger;
+        ;
         $('#divAvailableRides').hide();
     });
 
     $('#pickuptimepicker').click(function () {
-        debugger;
+        ;
         $('#divAvailableRides').hide();
     });
 
     $('#droptimepicker').click(function () {
-        debugger;
+        ;
         $('#divAvailableRides').hide();
     });
 
     $('#ddlPackageType').change(function () {
-        debugger;
+        ;
         $('#divAvailableRides').hide();
     });
 
@@ -201,7 +201,7 @@ $(document).ready(function () {
 
     $('#btnSubmit').click(function () {
 
-        debugger;
+        ;
         var tabName = $('.nav-item .active').text();
 
         var pickupDate = $('#pickupdatepicker').val() + " " + $('#pickuptimepicker').val();
@@ -226,7 +226,7 @@ $(document).ready(function () {
 
                         $('#hdnpickupPlaceID').val("564");
                         $('#pickupPlace').html("Airport Pickup");
-                        debugger;
+                        ;
                         GAreaID = AreaRegistration($('#dropPlace').html());
                         $('#hdndropPlaceID').val(GAreaID);
                         console.log("Drop Place ID", GAreaID);
@@ -422,7 +422,7 @@ $(document).ready(function () {
 
         if (isEmptyText('#bookingMobileNumber') && isEmptyText('#bookingName') && isEmptyText('#bookingEmailID') && isEmptyDropDown('#bookingACType') && isEmptyText('#bookingAddress')) {
 
-            debugger;
+            ;
             var bookpayoption = $('input[name=bookingPayOption]:checked').val()
             if (bookpayoption == "" || bookpayoption == undefined) {
                 bootbox.alert("Payment option is required to proceed");
@@ -458,7 +458,7 @@ $(document).ready(function () {
 });
 
 function sendSMS() {
-    debugger;
+    ;
 
     var getURL = $('#hdnWebApiURL').val() + "D_MobileNoVerification";
 
@@ -476,7 +476,7 @@ function sendSMS() {
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         success: function (data) {
-            debugger;
+            ;
 
             $('#bookingName').val('');
             $('#bookingEmailID').val('');
@@ -534,7 +534,7 @@ function TimeCheck()
 }
 
 function loadAvailableRides() {
-    debugger;
+    ;
     var BookingDate= $('#pickupdatepicker').val() +' '+$('#pickuptimepicker').val();
     var today = new Date();
     var TripDate = new Date(BookingDate);
@@ -577,12 +577,12 @@ function loadAvailableRides() {
             //$('.ajax-loader').css("visibility", "visible");
         },
         success: function (data) {
-            debugger;
+            ;
 
             $('.ratelist').html('');
 
             $.each(data.ApproximateTripFare, function () {
-                debugger;
+                ;
                 $('#hdnpickupPlaceID').val(this.FromLocationID);
                 $('#hdndropPlaceID').val(this.ToLocationID);
                 $('#hdnRequestID').val(this.RequestID); 
@@ -701,7 +701,7 @@ function loadAvailableRides() {
                     $('#divMobileNumber').show();
                     $('#divOTP').hide();
                     $('.errorMsg, .errorMsgOTP, .errorMsgBooking, .infoMsgOTP').hide();
-                    debugger;
+                    ;
                     $('#hdnFare').val($(this).next().val());
                 });
 
@@ -718,7 +718,7 @@ function loadAvailableRides() {
                     $('#divMobileNumber').show();
                     $('#divOTP').hide();
                     $('.errorMsg, .errorMsgOTP, .errorMsgBooking, .infoMsgOTP').hide();
-                    debugger;
+                    ;
                     $('#hdnFare').val($(this).val());
                     $('#hdnACType').val($(this).next().text());
                     $('#hdnRateID').val($(this).next().next().val());
@@ -753,12 +753,12 @@ function ChooseVehicle(RateID, ACTypeID, Fare) {
     $('#hdnRateID').val(RateID);
     console.log("hdnACType", $('#hdnACType').val());
     clear_OTPFields();
-    debugger;
+    ;
     $('html, body').animate({ scrollTop: 0 }, "slow");
 }
 
 function submitgoogleReview(ORDER_ID, CUSTOMER_EMAIL, estimated_delivery_date) {
-    debugger;
+    ;
 
     window.renderOptIn = function () {
         window.gapi.load('surveyoptin', function () {
@@ -779,7 +779,7 @@ function submitgoogleReview(ORDER_ID, CUSTOMER_EMAIL, estimated_delivery_date) {
 }
 
 function booknow() {
-    debugger;
+    ;
 
     var tripEndDate = "";
 
@@ -826,7 +826,7 @@ function booknow() {
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         success: function (data) {
-            debugger;
+            ;
             if (data.Result == "1") {
 
                 var payMode = $("#hdnPaymentType").val();
@@ -989,7 +989,7 @@ function showTabs(tabName) {
         $('#hdnServiceTypeID').val("3");
         $('#hdnStatusID').val("2");
     } else if (tabName == 'OutstationPage') {
-        debugger;
+        ;
         window.location.href = "../bestprice/cheapestoutstationcabservice";
     } else if (tabName == 'OutstationPackages') {
         window.location.href = "../Home/Packages";
@@ -1013,7 +1013,7 @@ function isEmptyText(element) {
 }
 
 function isEmptyDiv(element) {
-    debugger;
+    ;
 
     var isValid = false;
 
@@ -1078,7 +1078,7 @@ function clear_OTPFields() {
 
 function loadPackages() {
 
-    debugger;
+    ;
 
     var loadPackagesURL = $('#hdnWebApiURL').val() + "D_PackageType";
 

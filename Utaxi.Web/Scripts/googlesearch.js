@@ -3,7 +3,7 @@ $(document).ready(function () {
     ServiceBlockAreaList();
 });
 function ServiceBlockAreaList() {
-    //debugger;
+    //;
     var loadServiceBlockAreaListURL = $("#hdnWebApiURL").val() + "D_ServiceBlokedAreaList";
     $.ajax({
         type: "POST",
@@ -31,9 +31,9 @@ function LoadGoogleMAP() {
     var inputdropPlace = document.getElementById("dropPlaceSearch");
     var searchBox = new google.maps.places.SearchBox(input, InCityoptions);
     var searchBoxdropPlace = new google.maps.places.SearchBox(inputdropPlace);
-    //debugger;
+    //;
     google.maps.event.addListener(searchBox, "places_changed", function () {
-        //debugger;
+        //;
         var places = searchBox.getPlaces();
         if (places.length == 0) {
             return;
@@ -44,7 +44,7 @@ function LoadGoogleMAP() {
         $("#pickupPlace").show().html($("#pickupPlaceSearch").val());
         $("#pickupPlaceSearch").hide();
         $("#divAvailableRides").hide();
-        //debugger;
+        //;
         var ServiceAvailable = CheckServiceAvailability($("#hdnServiceNameID").val(), $("#pickupPlaceSearch").val());
         if (ServiceAvailable == !0) {
             $(".E_FromPlace").html("");
@@ -55,7 +55,7 @@ function LoadGoogleMAP() {
         }
     });
     google.maps.event.addListener(searchBoxdropPlace, "places_changed", function () {
-        //debugger;
+        //;
         var places = searchBoxdropPlace.getPlaces();
         if (places.length == 0) {
             return;
@@ -76,19 +76,19 @@ function LoadGoogleMAP() {
         }
     });
     google.maps.event.addListener(map, "bounds_changed", function () {
-        //debugger;
+        //;
         var bounds = map.getBounds();
         searchBoxdropPlace.setBounds(bounds);
     });
     google.maps.event.addListener(map, "bounds_changed", function () {
-        //debugger;
+        //;
         var bounds = map.getBounds();
         searchBox.setBounds(bounds);
     });
 }
 google.maps.event.addDomListener(window, "load", LoadGoogleMAP);
 function CheckServiceAvailability(ServiceTypeID, PlaceName) {
-    //debugger;
+    //;
     var Status = !0;
     if (ServiceTypeID == "1") {
         if (BlokedAreaList.length > 0) {

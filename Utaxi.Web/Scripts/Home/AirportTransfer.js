@@ -8,6 +8,7 @@ $(document).ready(function () {
     loadPackages_V1();
     var fare = '';
     var mobileNumber = '';
+    var mobileNumber = '';
     $("#hdnPaymentType").val('5');
     $('#pickupPlaceSearch').hide();
     $('#pickupPlace').show();
@@ -39,7 +40,7 @@ $(document).ready(function () {
     $('#hdnServiceTypeID').val("1");
     $('#hdnStatusID').val("2");
 
-    debugger;
+    ;
     var PackageTypevalue = $('#hdnPackageType').val();
     var AirportServiceNameID = $('#hdnAirportServiceNameID').val();
 
@@ -124,29 +125,29 @@ $(document).ready(function () {
     });
 
     $('#pickupPlace').click(function () {
-        debugger;
+        ;
         $('#pickupPlaceSearch').show().val('').focus();
         $('#pickupPlace').hide();
         $('#divAvailableRides').hide();
     });
 
     $('#pickupdatepicker').click(function () {
-        debugger;
+        ;
         $('#divAvailableRides').hide();
     });
 
     $('#dropdatepicker').click(function () {
-        debugger;
+        ;
         $('#divAvailableRides').hide();
     });
 
     $('#pickuptimepicker').click(function () {
-        debugger;
+        ;
         $('#divAvailableRides').hide();
     });
 
     $('#droptimepicker').click(function () {
-        debugger;
+        ;
         $('#divAvailableRides').hide();
     });
 
@@ -157,12 +158,12 @@ $(document).ready(function () {
     });
 
     $('#btnSubmit').click(function () {
-        debugger;
+        ;
         searchRates_V1();
     });
 
     $('#btnSubmitOTP').click(function () {
-        debugger;
+        ;
         submitOTP_V1();
     });
 
@@ -229,7 +230,7 @@ function submitOTP_V1() {
 }
 
 function searchRates_V1() {
-    debugger;
+    ;
     var tabName = $('.nav-item .active').text();
 
     var pickupDate = $('#pickupdatepicker').val() + " " + $('#pickuptimepicker').val();
@@ -406,7 +407,7 @@ function searchRates_V1() {
 }
 
 function sendSMS_V1() {
-    debugger;
+    ;
 
     var fd = new FormData();
     fd.append('phone', $('#mobileNumber').val());
@@ -418,7 +419,7 @@ function sendSMS_V1() {
         contentType: false,
         type: 'POST',
         success: function (data) {
-            debugger;
+            ;
 
             var obj;
             if (data.response == undefined) {
@@ -464,7 +465,7 @@ function sendSMS_V1() {
                 //    $("#paymentOption").trigger("click");
                 //}
             } else if (obj.response.customer_verification != "") {
-                debugger;
+                ;
                 $('.infoMsgOTP').show();
                 $('#hdnCustomerOTP').val(obj.response.customer_verification);
                 $('#hdncustomer_id').val(obj.response.customer_id);
@@ -485,7 +486,7 @@ function TimeCheck() {
 }
 
 function loadAirportRates() {
-    debugger;
+    ;
 
     if ($('#hdnServiceTypeID').val() == 1) {
         $('#pickupPlace').val("Kempegowda International Airport (BLR), Devanahalli, Bengaluru, Karnataka 560300, India");
@@ -507,7 +508,7 @@ function loadAirportRates() {
     else {
         $("#hdnEnableOnlinePayment").val('0');
     }
-    debugger;
+    ;
 
 
     var date = new Date($('#pickupdatepicker').val());
@@ -543,7 +544,7 @@ function loadAirportRates() {
         contentType: false,
         type: 'POST',
         success: function (data) {
-            debugger;
+            ;
 
             var obj;
             if (data.response == undefined) {
@@ -557,12 +558,12 @@ function loadAirportRates() {
             $('#hdndrop_latitude').val(obj.drop_latitude);
             $('#hdndrop_longitude').val(obj.drop_longitude);
 
-            debugger;
+            ;
 
             $('.ratelist').html('');
 
             $.each(obj.response, function () {
-                debugger;
+                ;
 
                 //$('#hdnRequestID').val(this.RequestID);
                 //$("#hdnEnableOnlinePayment").val(this.EnableOnlinePayment);
@@ -601,13 +602,13 @@ function loadAirportRates() {
                     $('#divMobileNumber').show();
                     $('#divOTP').hide();
                     $('.errorMsg, .errorMsgOTP, .errorMsgBooking, .infoMsgOTP').hide();
-                    debugger;
+                    ;
                     $('#hdnFare').val($(this).next().val());
                 });
 
                 $('.booking').click(function () {
 
-                    debugger;
+                    ;
 
                     $('#hdnACType').val($(this).next().next().text());
                     $('#hdnACTypeID').val('0');
@@ -657,7 +658,7 @@ function ChooseVehicle_V1(carCategoryID, ACTypeID, Fare) {
 
     console.log("hdnACType", $('#hdnACType').val());
     clear_OTPFields();
-    debugger;
+    ;
     $('html, body').animate({ scrollTop: 0 }, "slow");
 }
 
@@ -683,7 +684,7 @@ function ShowFareDetails_V1(FromPalce, ToPlace, TravelTime, distance, ExtKmFare,
 }
 
 function submitgoogleReview(ORDER_ID, CUSTOMER_EMAIL, estimated_delivery_date) {
-    debugger;
+    ;
 
     window.renderOptIn = function () {
         window.gapi.load('surveyoptin', function () {
@@ -704,7 +705,7 @@ function submitgoogleReview(ORDER_ID, CUSTOMER_EMAIL, estimated_delivery_date) {
 }
 
 function booknow_V1() {
-    debugger;
+    ;
     var date = new Date($('#pickupdatepicker').val());
     var d = date.getDate();
     var m = date.getMonth() + 1; //Month from 0 to 11
@@ -762,7 +763,7 @@ function booknow_V1() {
         contentType: false,
         type: 'POST',
         success: function (data) {
-            debugger;
+            ;
 
             var obj;
             if (data.response == undefined) {
@@ -938,7 +939,7 @@ function showTabs(tabName) {
         $('#hdnServiceTypeID').val("3");
         $('#hdnStatusID').val("2");
     } else if (tabName == 'OutstationPage') {
-        debugger;
+        ;
         window.location.href = "../bestprice/cheapestoutstationcabservice";
     } else if (tabName == 'OutstationPackages') {
         window.location.href = "../Home/Packages";
@@ -962,7 +963,7 @@ function isEmptyText(element) {
 }
 
 function isEmptyDiv(element) {
-    debugger;
+    ;
 
     var isValid = false;
 
@@ -1027,7 +1028,7 @@ function clear_OTPFields() {
 
 function loadPackages_V1() {
 
-    debugger;
+    ;
 
     $.ajax({
         url: 'https://www.deepamtaxi.com/admin/web_api/getPackageList',
@@ -1036,7 +1037,7 @@ function loadPackages_V1() {
         contentType: false,
         type: 'POST',
         success: function (data) {
-            debugger;
+            ;
 
             $('#ddlPackageType').html('');
             $('#ddlPackageType').append($("<option     />").val(-1).text('-- Select --'));
@@ -1098,7 +1099,7 @@ function getCategorybyID(CategoryID) {
 }
 
 function loadPickupDropOptions() {
-    debugger;
+    ;
     if ($("#rdAirportPickup").is(":checked")) {
 
         clear_Fields();

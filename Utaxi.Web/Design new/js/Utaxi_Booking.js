@@ -22,12 +22,12 @@ tjq(document).ready(function () {
     tjq('.divEditDetails').hide();    
 
     tjq('#btnSubmit').click(function () {
-        debugger;
+        ;
         searchRates();
     });
 
     tjq('#btnConfirmBooking').click(function () {
-        debugger;
+        ;
 
         if (isEmptyText('.bookingName') && isEmptyText('.bookingMobileNumber') && isEmptyText('.bookingEmailID') && isEmptyText('.bookingAddress')) {
 
@@ -47,7 +47,7 @@ tjq(document).ready(function () {
 });
 
 function searchRates() {
-    debugger;
+    ;
     var pickupDate = tjq('#datepicker').val() + " " + tjq('#timepicker').val();
     var pickupDateValue = new Date(pickupDate);
     var d2 = new Date();
@@ -74,7 +74,7 @@ function searchRates() {
 }
 
 function loadAirportRates() {
-    debugger;
+    ;
 
     //if (tjq('#hdnServiceTypeID').val() == 1) {
     //    tjq('#pickupPlace').val("Kempegowda International Airport (BLR), Devanahalli, Bengaluru, Karnataka 560300, India");
@@ -125,7 +125,7 @@ function loadAirportRates() {
         contentType: false,
         type: 'POST',
         success: function (data) {
-            debugger;
+            ;
 
             var obj;
             if (data.pick_latitude == undefined) {
@@ -151,14 +151,14 @@ function loadAirportRates() {
             tjq('.ddDropplace').html(tjq('#dropPlaceSearch').val());
             tjq('.ddPickupDateTime').html(tjq('#datepicker').val() + " " + tjq('#timepicker').val());
 
-            debugger;
+            ;
 
             tjq('.ratelist').html('');
             var noOfRecords = 0;
 
             tjq.each(obj.response, function () {
 
-                debugger;
+                ;
 
                 noOfRecords += 1;
 
@@ -396,7 +396,7 @@ function loadAirportRates() {
 }
 
 function loadLocalDropRates() {
-    debugger;
+    ;
 
     var BookingDate = tjq('#pickupdatepicker').val() + ' ' + tjq('#pickuptimepicker').val();
     var today = new Date();
@@ -411,7 +411,7 @@ function loadLocalDropRates() {
     else {
         tjq("#hdnEnableOnlinePayment").val('0');
     }
-    debugger;
+    ;
 
 
     var date = new Date(tjq('#pickupdatepicker').val());
@@ -447,7 +447,7 @@ function loadLocalDropRates() {
         contentType: false,
         type: 'POST',
         success: function (data) {
-            debugger;
+            ;
 
             var obj;
             if (data.pick_latitude == undefined) {
@@ -464,12 +464,12 @@ function loadLocalDropRates() {
             var pickupPlace = obj.pickup;
             var dropoffPlace = obj.dropoff;
 
-            debugger;
+            ;
 
             tjq('.ratelist').html('');
 
             tjq.each(obj.response, function () {
-                debugger;
+                ;
 
                 tjq("#hdnEstimatedDistance").val(this.distance);
 
@@ -509,13 +509,13 @@ function loadLocalDropRates() {
                     tjq('#divMobileNumber').show();
                     tjq('#divOTP').hide();
                     tjq('.errorMsg, .errorMsgOTP, .errorMsgBooking, .infoMsgOTP').hide();
-                    debugger;
+                    ;
                     tjq('#hdnFare').val(tjq(this).next().val());
                 });
 
                 tjq('.booking').click(function () {
 
-                    debugger;
+                    ;
 
                     tjq('#hdnACType').val(tjq(this).next().next().text());
                     tjq('#hdnACTypeID').val('0');
@@ -545,7 +545,7 @@ function loadLocalDropRates() {
 }
 
 function loadPackageRates() {
-    debugger;
+    ;
 
     var BookingDate = tjq('#pickupdatepicker').val() + ' ' + tjq('#pickuptimepicker').val();
     var today = new Date();
@@ -560,7 +560,7 @@ function loadPackageRates() {
     else {
         tjq("#hdnEnableOnlinePayment").val('0');
     }
-    debugger;
+    ;
 
 
     var date = new Date(tjq('#pickupdatepicker').val());
@@ -596,7 +596,7 @@ function loadPackageRates() {
         contentType: false,
         type: 'POST',
         success: function (data) {
-            debugger;
+            ;
             console.log(data);
 
             var obj;
@@ -615,12 +615,12 @@ function loadPackageRates() {
             var pickupPlace = obj.pickup;
             var dropoffPlace = obj.dropoff;
 
-            debugger;
+            ;
 
             tjq('.ratelist').html('');
 
             tjq.each(obj.response, function () {
-                debugger;
+                ;
 
                 tjq("#hdnEstimatedDistance").val(this.distance);
 
@@ -663,7 +663,7 @@ function loadPackageRates() {
 }
 
 function booknow() {
-    debugger;
+    ;
     var date = new Date(tjq('#hdnpickupdatepicker').val());
     var d = date.getDate();
     var m = date.getMonth() + 1; //Month from 0 to 11
@@ -721,7 +721,7 @@ function booknow() {
         contentType: false,
         type: 'POST',
         success: function (data) {
-            debugger;
+            ;
 
             var obj;
             if (data.status == undefined) {
@@ -784,7 +784,7 @@ function isEmptyText(element) {
 }
 
 function isEmptyDiv(element) {
-    debugger;
+    ;
 
     var isValid = false;
 
@@ -826,11 +826,11 @@ function chooseVehicle(carCategoryID, ACTypeID, Fare, coupon_code, coupon_code_d
     tjq('#hdnCoupon_code_discount_amount').val(coupon_code_discount_percent);
 
     //clear_OTPFields();
-    //debugger;
+    //;
 }
 
 function submitOTP(mobilenumber) {
-    debugger;
+    ;
     if (isEmptyText(tjq('.' + mobilenumber))) {
         tjq('.errorMsgOTP').addClass('hide');
         tjq('.otpSubmit').attr('data-dismiss', 'modal');
@@ -841,7 +841,7 @@ function submitOTP(mobilenumber) {
 }
 
 function sendSMS(mobilenumber) {
-    debugger;
+    ;
     var mobileNumber = tjq('.' + mobilenumber).val();
 
     var fd = new FormData();
@@ -854,7 +854,7 @@ function sendSMS(mobilenumber) {
         contentType: false,
         type: 'POST',
         success: function (data) {
-            debugger;
+            ;
 
             var obj;
             if (data.response == undefined) {
@@ -895,7 +895,7 @@ function sendSMS(mobilenumber) {
 
             }
             else if (obj.response.customer_verification != "") {
-                debugger;
+                ;
 
                 tjq('#hdnCustomerOTP').val(obj.response.customer_verification);
                 tjq('#hdncustomer_id').val(obj.response.customer_id);

@@ -1,4 +1,4 @@
-﻿﻿<!DOCTYPE html>
+﻿﻿﻿<!DOCTYPE html>
 <html lang="en-us">
 <head>
     <title>
@@ -11,7 +11,7 @@
     <meta name="keywords" content="Airport drop in Bangalore,  airport drop off, cab near me, airport drop to Kempegowda International Airport, cab to airport fare, airport cab service Bengaluru,  airport drop services, cab services airport,  taxi airport offers, cab to airport price, flat rate, Bangalore airport cab pickup, airport cabs offers, airport taxi Bengaluru, airport Drop cab offers Bangalore, cabs to airport, airport cab fares, cheapest airport cabs in Bengaluru" />
     <meta name="google-site-verification" content="YjMSxJcF19Pz3R99oOVICxufyYFuH8zXhRt97-bkKnY" />
     <meta property="og:type" content="business.business">
-    <meta property="og:title" content="airport drop bangalore | Best airport drop Rs.674/-"">
+    <meta property="og:title" content="airport drop bangalore | Best airport drop Rs.674/-">
     <meta property="og:description" content="airport taxi Rs.674/-, bangalore airport drop taxi, taxi services in bangalore, cheap airport taxi in bangalore">
     <meta property="og:url" content="https://www.utaxi.in/bangalore/airport-taxi/airport-drop.aspx">
     <meta property="business:contact_data:street_address" content="No. 28, 7th Main, ">
@@ -116,7 +116,8 @@
     </script>
 
     
-     <!-- Global site tag (gtag.js) - Google Analytics -->
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-134213901-1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -150,7 +151,6 @@
         <script src="/Scripts/mdtimepicker.js"></script>
     
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?&key=AIzaSyCrVud8x3PFL-jig7HpNaw7hXZbo0rl1jo&libraries=places"></script>
-<script src="/Scripts/googlesearch1.js"></script>
 <style type="text/css">
     .searchplaces {
         background-color: #eaeaea;
@@ -1079,6 +1079,3 @@
     <!-- Call Icon End -->
 </body>
 </html>
-
-
-

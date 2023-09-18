@@ -1,4 +1,4 @@
-﻿﻿<!DOCTYPE html>
+﻿﻿﻿<!DOCTYPE html>
 <html lang="en-us">
 <head>
     <title>Outstation Cabs in Bengaluru | Cab Hatchback @ Rs.8/-Per Km
@@ -86,8 +86,6 @@
         gtag('js', new Date());
 
         gtag('config', 'UA-134213901-1');
-        ga('send', 'pageview', '/cheapesttaxiinbangalore/JayanagartoAirporttransfer/AirportPickup');
-        ga('myTracker.set', 'page', '/cheapesttaxiinbangalore/JayanagartoAirporttransfer/AirportPickup');
     </script>
 
     <!-- Google Tag Manager -->
@@ -115,7 +113,6 @@
 
    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDUznTiPcMB6dsRkOq9ZLNrKLCzVZzvZXo&libraries=places">
     </script>
-    <script src="/Scripts/googlesearch1.js"></script>
     <style type="text/css">
 		#li_drop_loc li{
 	width: 100%;

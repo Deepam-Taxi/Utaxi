@@ -114,7 +114,8 @@
     </script>
     
     
-     <!-- Global site tag (gtag.js) - Google Analytics -->
+     
+    <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-134213901-1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -149,7 +150,6 @@
 
     
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?&key=AIzaSyCrVud8x3PFL-jig7HpNaw7hXZbo0rl1jo&libraries=places"></script>
-    <script src="/Scripts/googlesearch1.js"></script>
     <style type="text/css">
         .searchplaces {
             background-color: #eaeaea;

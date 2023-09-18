@@ -1,5 +1,5 @@
 ﻿function LoadGoogleMAP() {
-    debugger;
+    ;
 
     var markers = [];
     var map = new google.maps.Map(document.getElementById('divloadMap'),

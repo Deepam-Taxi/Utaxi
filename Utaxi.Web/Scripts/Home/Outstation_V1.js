@@ -316,7 +316,7 @@ function sendSMS() {
 }
 
 function sendSMS_V1() {
-    debugger;
+    ;
 
     var fd = new FormData();
     fd.append('phone', $('#mobileNumber').val());
@@ -328,7 +328,7 @@ function sendSMS_V1() {
         contentType: false,
         type: 'POST',
         success: function (data) {
-            debugger;
+            ;
             //var obj = JSON.parse(data);
             var obj = data;
 
@@ -369,7 +369,7 @@ function sendSMS_V1() {
                     $("#paymentOption").trigger("click");
                 }
             } else if (obj.response.customer_verification != "") {
-                debugger;
+                ;
                 $('.infoMsgOTP').show();
                 $('#hdnCustomerOTP').val(obj.response.customer_verification);
                 $('#hdncustomer_id').val(obj.response.customer_id);
@@ -579,7 +579,7 @@ function convertToTime(time) {
 
 
 function loadOutstationRates() {
-    debugger;
+    ;
 
     $('#pickupPlace').val($("#pickupPlaceSearch").val());
     $('#dropPlace').val($("#dropPlaceSearch").val());
@@ -597,7 +597,7 @@ function loadOutstationRates() {
     else {
         $("#hdnEnableOnlinePayment").val('0');
     }
-    debugger;
+    ;
 
     var date = new Date($('#pickupdatepicker').val());
     var pickupDate = convertToDate(date);
@@ -634,7 +634,7 @@ function loadOutstationRates() {
         contentType: false,
         type: 'POST',
         success: function (data) {
-            debugger;
+            ;
             var obj = JSON.parse(data);
             console.log(data);
             console.log(obj.response);
@@ -651,7 +651,7 @@ function loadOutstationRates() {
 
             $.each(obj.response, function () {
 
-                debugger;
+                ;
 
                 $('#hdnEstimatedDistance').val(this.distance_ac);
 
@@ -702,13 +702,13 @@ function loadOutstationRates() {
                     $('#divMobileNumber').show();
                     $('#divOTP').hide();
                     $('.errorMsg, .errorMsgOTP, .errorMsgBooking, .infoMsgOTP').hide();
-                    debugger;
+                    ;
                     $('#hdnFare').val($(this).next().val());
                 });
 
                 $('.booking').click(function () {
 
-                    debugger;
+                    ;
 
                     $('#hdnACType').val($(this).next().next().text());
                     $('#hdnACTypeID').val('0');
@@ -760,7 +760,7 @@ function ShowFareDetails_V1(FromPalce, ToPlace, TravelTime, distance, ExtKmFare,
     TripsTerms += "<li>" + TravelTime + " of driving time</li>"
     TripsTerms += "<li>Distance travelled beyond " + distance + " KM will be charged at Rs." + ExtKmFare + "/KM</li>"
     TripsTerms += "<li>" + TollParking + "</li>"
-    debugger;
+    ;
     $('#FD_FareModal').modal('show');
 }
 
@@ -780,7 +780,7 @@ function ChooseVehicle_V1(carCategoryID, ACTypeID, Fare) {
 
     console.log("hdnACType", $('#hdnACType').val());
     clear_OTPFields();
-    debugger;
+    ;
     $('html, body').animate({ scrollTop: 0 }, "slow");
 }
 
@@ -882,7 +882,7 @@ function booknow() {
 }
 
 function booknow_V1() {
-    debugger;
+    ;
 
     var date = new Date($('#pickupdatepicker').val());
     var pickupDate = convertToDate(date);
@@ -943,7 +943,7 @@ function booknow_V1() {
         contentType: false,
         type: 'POST',
         success: function (data) {
-            debugger;
+            ;
 
             //var obj = JSON.parse(data);
             var obj = data;
@@ -1185,32 +1185,35 @@ function clear_OTPFields() {
 }
 
 function loadPackages() {
-    var loadPackagesURL = $('#hdnWebApiURL').val() + "D_PackageType";
-    $.ajax(
-        {
-            type: "POST",
-            url: loadPackagesURL,
-            data:
-                {},
-            contentType: "application/json; charset=utf-8",
-            dataType: "json",
-            success: function (data) {
-                $('#ddlPackageType').html('');
-                $('#ddlPackageType').append($("<option     />").val(-1).text('-- Select --'));
-                $.each(data.PackageType, function () {
-                    $('#ddlPackageType').append($("<option     />").val(this.ServiceTypeID).text(this.ServiceType))
-                });
-                $('#ddlPackageType option[value=-1]').attr('selected', 'selected');
-                var PackageTypevalue = $('#hdnPackageType').val();
-                if (PackageTypevalue != '') {
-                    $('#ddlPackageType').find('option:selected').remove();
-                    $('#ddlPackageType option[value=' + PackageTypevalue + ']').attr('selected', 'selected')
-                }
-            },
-            failure: function () {
-                console.log(result)
+    $.ajax({
+        url: 'https://www.deepamtaxi.com/admin/web_api/getPackageList',
+        data: {},
+        processData: false,
+        contentType: false,
+        type: 'POST',
+        success: function (data) {
+
+            $('#ddlPackageType').html('');
+            $('#ddlPackageType').append($("<option     />").val(-1).text('-- Select --'));
+
+            $.each(data.response, function () {
+                $('#ddlPackageType').append($("<option     />").val(this.id).text(this.package_name));
+            });
+
+            $('#ddlPackageType option[value=-1]').attr('selected', 'selected');
+
+            var PackageTypevalue = $('#hdnPackageType').val();
+
+            if (PackageTypevalue != '') {
+                $('#ddlPackageType').find('option:selected').remove();
+                $('#ddlPackageType option[value=' + PackageTypevalue + ']').attr('selected', 'selected');
             }
-        })
+        },
+        failure: function () {
+            //createErrorLogs(result, 'loadPackages', 'index.js');
+            console.log(result);
+        }
+    });
 }
 
 function PaymentType() {
@@ -1346,7 +1349,7 @@ function ShowFareDetails(FromPalce, ToPlace, TravelTime, ExtKmFare, TollParking,
 }
 
 function getCategorybyIDDisplay(CategoryID) {
-    debugger;
+    ;
     console.log(CategoryID);
     if (CategoryID == 1) {
         return 'Mini (4+1)';
@@ -1366,7 +1369,7 @@ function getCategorybyIDDisplay(CategoryID) {
 }
 
 function getCategorybyID(CategoryID) {
-    debugger;
+    ;
     console.log(CategoryID);
     if (CategoryID == 1) {
         return 'Mini';

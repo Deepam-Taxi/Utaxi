@@ -9,7 +9,7 @@
 <script src="~/Scripts/googlesearch.js"></script>
 <script>
     $(document).ready(function () {
-        debugger;
+        ;
         var url = $(location).attr('href'),
             parts = url.split("/"),
             last_part = parts[parts.length - 1];
@@ -101,7 +101,7 @@
     //}
 
     function loadAvailableRides() {
-        debugger;
+        ;
 
         var getTripFareURL = $('#hdnWebApiURL').val() + "D_GetTripFare";
 
@@ -130,12 +130,12 @@
                     $('.ajax-loader').css("visibility", "visible");
                 },
                 success: function (data) {
-                    debugger;
+                    ;
 
                     $('.ratelist').html('');
 
                     $.each(data.ApproximateTripFare, function () {
-                        debugger;
+                        ;
                         $('#hdnpickupPlaceID').val(this.FromLocationID);
                         $('#hdndropPlaceID').val(this.ToLocationID);
                         $('#hdnRequestID').val(this.RequestID);
@@ -200,7 +200,7 @@
                             $('#divMobileNumber').show();
                             $('#divOTP').hide();
                             $('.errorMsg, .errorMsgOTP, .errorMsgBooking, .infoMsgOTP').hide();
-                            debugger;
+                            ;
                             $('#hdnFare').val($(this).next().val());
                             $('#hdnRateID').val($(this).next().next().val());
 
@@ -222,7 +222,7 @@
                             $('#divMobileNumber').show();
                             $('#divOTP').hide();
                             $('.errorMsg, .errorMsgOTP, .errorMsgBooking, .infoMsgOTP').hide();
-                            debugger;
+                            ;
                             $('#hdnFare').val($(this).val());
                             $('#hdnACType').val($(this).next().text());
                             $('#hdnRateID').val($(this).next().next().val());
