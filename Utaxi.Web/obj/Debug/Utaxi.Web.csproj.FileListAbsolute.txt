@@ -14,3 +14,11 @@ D:\Utaxi\Git hub\Utaxi.in\Utaxi.Web\obj\Debug\Utaxi.Web.csproj.CoreCompileInputs
 D:\Utaxi\Git hub\Utaxi.in\Utaxi.Web\obj\Debug\Utaxi.Web.csproj.CopyComplete
 D:\Utaxi\Git hub\Utaxi.in\Utaxi.Web\obj\Debug\Utaxi.Web.dll
 D:\Utaxi\Git hub\Utaxi.in\Utaxi.Web\obj\Debug\Utaxi.Web.pdb
+C:\Users\Lenovo\source\repos\Utaxi\Utaxi.Web\bin\Utaxi.Web.dll.config
+C:\Users\Lenovo\source\repos\Utaxi\Utaxi.Web\bin\Utaxi.Web.dll
+C:\Users\Lenovo\source\repos\Utaxi\Utaxi.Web\bin\Utaxi.Web.pdb
+C:\Users\Lenovo\source\repos\Utaxi\Utaxi.Web\obj\Debug\Utaxi.Web.csproj.AssemblyReference.cache
+C:\Users\Lenovo\source\repos\Utaxi\Utaxi.Web\obj\Debug\Utaxi.Web.csproj.CoreCompileInputs.cache
+C:\Users\Lenovo\source\repos\Utaxi\Utaxi.Web\obj\Debug\Utaxi.Web.csproj.CopyComplete
+C:\Users\Lenovo\source\repos\Utaxi\Utaxi.Web\obj\Debug\Utaxi.Web.dll
+C:\Users\Lenovo\source\repos\Utaxi\Utaxi.Web\obj\Debug\Utaxi.Web.pdb
