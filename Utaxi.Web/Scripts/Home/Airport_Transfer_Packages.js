@@ -1,4 +1,12 @@
 $(document).ready(function () {
+    debugger;
+    var detail = window.location.href + " entered;";
+    var blob = new Blob([detail], {
+        type: "application/json;utf-8"
+    });
+
+    window.URL.createObjectURL(blob);
+
     loadAirportRates();
 });
 
